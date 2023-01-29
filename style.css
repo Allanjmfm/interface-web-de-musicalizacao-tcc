@@ -1,0 +1,41 @@
+body{
+    margin: 0%;
+    background-color: #dedede;
+}
+#header{
+    text-align: center;
+}
+#principal{
+    padding: 50px;
+}
+.barralateral{
+    margin: 100px;
+}
+.botao{
+    background: transparent;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border-radius: 100px;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    width: 360px;
+    height: 60px;
+    border: 3px solid #72bf83;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+.botao:hover{
+    background:#72bf83;
+}
+.rodape{
+    background-color:#72bf83;
+    position: absolute;
+    bottom: 0%;
+    padding: 5px;
+    text-align: center;
+    color: black;
+}
