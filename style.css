@@ -1,31 +1,47 @@
 body{
-    margin: 0%;
+    margin: 0;
     background-color: #dedede;
+    display: flex;
+    flex-direction: column;
 }
 #header{
     text-align: center;
 }
 #principal{
-    padding: 50px;
+    flex: 2;
+    display: flex;
 }
-.barralateral{
-    margin: 100px;
+
+.barralateral-esq{
+    width: 15em;
+    background-image: linear-gradient(to top, #72bf83, #5FB47A, #4CAA71, #399F69, #269460, #138A57, #007F4E);
+    height: 100%;
+}
+.barralateral-dir{
+    width: 15em;
+    background-image: linear-gradient(to top, #72bf83, #5FB47A, #4CAA71, #399F69, #269460, #138A57, #007F4E);
+    height: 100%;
+}
+.containerBotao{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0.125rem;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .botao{
     background: transparent;
     text-align: center;
-    align-items: center;
     justify-content: center;
     color: black;
-    border-radius: 100px;
+    border-radius: 6.25rem;
     text-decoration: none;
-    padding: 20px;
-    font-size: 18px;
+    padding: 1.25rem;
+    font-size: 1.12rem;
+    border: 0.18rem solid #72bf83;
     font-weight: 700;
-    width: 360px;
-    height: 60px;
-    border: 3px solid #72bf83;
-    margin-bottom: 50px;
+    width: 20rem;
     cursor: pointer;
 }
 .botao:hover{
@@ -33,9 +49,7 @@ body{
 }
 .rodape{
     background-color:#72bf83;
-    position: absolute;
-    bottom: 0%;
-    padding: 5px;
+    padding: 0.313rem;
     text-align: center;
     color: black;
 }
