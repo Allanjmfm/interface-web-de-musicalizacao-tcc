@@ -26,21 +26,21 @@ header, .navbar{
 }
 
 #logo{
-    width: 75px;
-    margin-left: 14rem;
-}
-
-.navbar-brand{
-    padding: 0;
-    color: white;
+    width: 60px;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 #navbar-links a{
     color: black;
-    margin: 0.7rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
 }
 #sobre-menu{
+    font-size: 24px;
+}
+#home-menu{
     font-size: 24px;
 }
