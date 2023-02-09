@@ -12,13 +12,15 @@ body{
 }
 
 p, li{
-    color: gray;
-    font-size: 12px;
+    color: rgb(0, 0, 0);
 }
 
 /* Barra de Navegação: NavBar*/
 header, .navbar{
     background-color: #d9d9d9;
+}
+nav p{
+    font-size: 24px;
 }
 #nav-container{
     padding-top: 0;
@@ -27,23 +29,22 @@ header, .navbar{
 
 #logo{
     width: 60px;
-    margin-left: 4rem;
-    margin-right: 4rem;
 }
 #navbar-links a{
     color: black;
-    margin-left: 1rem;
-    margin-right: 1rem;
 }
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
 }
 #sobre-menu{
     font-size: 1.5rem;
+    color: black;
 }
 #home-menu{
     font-size: 1.5rem;
+    color: black;
 }
+
 /* Botões */
 .main-btn{
     background-color:#350D7C;
