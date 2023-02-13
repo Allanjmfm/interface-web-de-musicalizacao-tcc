@@ -57,10 +57,14 @@ nav p{
     border-radius: 30px;
     border: 3px;
     transition: 0.5s;
+    
 }
 .main-btn:hover{
     background-color: #5b3d91;
     color: #FFF;
     text-decoration: none;
     border-color: #350D7C;
+}
+#btn-ajuste{
+    height: 200px;
 }
