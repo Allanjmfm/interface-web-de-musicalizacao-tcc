@@ -11,3 +11,4 @@ function toggleDarkMode(){
 
 contrast.addEventListener("click", toggleDarkMode());
 
+
