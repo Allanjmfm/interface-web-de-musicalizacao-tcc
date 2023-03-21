@@ -1,0 +1,13 @@
+.selecao-etapas-btn{
+    background-color:#350D7C;
+    color: #FFF;
+    padding: 1.25rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 600px;
+    height: 60px;
+    border-radius: 20px;
+    border: 3px;
+    transition: 0.5s;
+}
