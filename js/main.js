@@ -18,30 +18,60 @@ function toggleDarkMode(){
 contrast.addEventListener("click", toggleDarkMode());
 
 // Scripts Troca de conteúdo
-selecaoEtapa.addEventListener("click", (e)=>{
-    if(e.type == 'click'){
-        console.log(selecaoEtapa);
-        trocaConteudo("views/selecao_etapas.html");
-        // voltar=document.querySelector("#btn_voltar");
-    }
-});
-function voltar(){
+// selecaoEtapa.addEventListener("click", (e)=>{
+//     if(e.type == 'click'){
+//         console.log(selecaoEtapa);
+//         trocaConteudo("views/selecao_etapas.html");
+//         console.log(e);
+//         // voltar=document.querySelector("#btn_voltar");
+//     }
+// });
+// function voltar(){
     
-    trocaConteudo("views/tela_inicial.html");
+//     trocaConteudo("views/tela_inicial.html");
         
-};
+// };
+let telas =[{
+    "telaInicial": "/views/tela_inicial.html"},
+    {"selecaoEtapas": "/views/selecao_etapas.html"},
+    {"testeEtapa1" : "/views/etapa1/teste_etapa1.html"},
+    {"testeArray" : "/views/etapa1/teste_etapa1_1.html"}
+]
 
-// Botão Voltar tela inicial
-function trocaConteudo(arquivo) {
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            var response = xhr.responseText;
-            document.getElementById("conteudo").innerHTML = response;
-        }
-    };
-    xhr.open("GET", arquivo, true);
-    xhr.send();
-    return;
+let voltar;
+let telaAnterior = null;
+// const telaInicial = "/views/tela_inicial.html"
+// const selecaoEtapas = "/views/selecao_etapas.html"
+// const testeEtapa1 = "/views/etapa1/teste_etapa1.html"
+
+
+trocaConteudo(telas[0].telaInicial);
+
+function btnSelEtapas(){
+    voltar = telas[0].telaInicial;
+    trocaConteudo(telas[1].selecaoEtapas);
 }
 
+function btnVoltar(){
+    trocaConteudo( voltar);
+    if(telaAnterior){
+        voltar = telaAnterior;
+        telaAnterior = telas.map((conteudo, index)=>{
+            if(telaAnterior==conteudo.selecaoEtapas){
+                return conteudo.telaInicial;
+            }
+        })
+        console.log(telaAnterior);
+
+    }
+}
+function btnEtapa1(){
+    telaAnterior = voltar;
+    voltar = telas[1].selecaoEtapas;
+    trocaConteudo(telas[2].testeEtapa1);
+}
+function btnTesteArray(){
+    telaAnterior = voltar;
+    voltar = telas[2].testeEtapa1;
+    trocaConteudo(telas[3].testeArray);
+}

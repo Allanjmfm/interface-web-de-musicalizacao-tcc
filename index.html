@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/tela_inicial.css">
     <link rel="stylesheet" href="css/selecao_etapas.css">
     <script defer src="js/main.js"></script>
+    <script src="js/troca-conteudo.js"></script>
     <title>Módulo de Musicalização</title> 
 </head>
 <body id="dark-mode" class="d-flex flex-column min-vh-100">
@@ -45,17 +46,19 @@
             </ul>
         </nav>
     </header>
-    <div id="conteudo" class="mt-auto my-auto text-center">
-        <div class="container-fluid">
-            <p>Módulo de Musicalização para Pessoas Surdas através de Imagens</p>
-        </div>
-        <div class="container my-auto tela-inicial-container">
-            <div class="d-flex flex-column align-items-center justify-content-around btn-ajuste">
-                <button id="btn_inicio" class="btn main-btn tela-inicial-btn" role="button">Início</button>
-                <button id="btn_sel_etapas" class="btn main-btn tela-inicial-btn" role="button">Seleção de Etapas</button>
-            </div>
-        </div>
+    <div id="main-container" conteudo="/views/tela_inicial.html"  class="mt-auto my-auto text-center">
     </div>
+    <script>
+        let arquivo = "/views/tela_inicial.html"
+        trocaConteudo(arquivo);
+    </script>
+    <script>
+        function btnSelEtapas(){
+            let arquivo = "views/selecao_etapas.html"
+            console.log('oi')
+            trocaConteudo( arquivo);
+        }
+    </script>
     <footer class="mt-auto text-center">
         <div class="container-fluid">
             <p>Universidade Federal do Pará - 2023</p>
