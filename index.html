@@ -30,37 +30,27 @@
                 </a>
             <ul class="nav col-md-4 justify-content-end">
                 <li>
-                    <a class="nav-item nav-link" id="sobre-menu" href="#">Sobre</a>
+                    <button class="btn main-btn nav-link" id="sobre-menu" href="#">Sobre</button>
                 </li>
                 <li>
-                    <a class="nav-item nav-link" id="home-menu" href="#">Home</a>
+                    <button class="btn main-btn nav-link" id="home-menu" href="#">Home</button>
                 </li>
                 <li>
-                    <a onclick="toggleDarkMode()" class="nav-item nav-link" id="dark-menu" href="#">
-                        <span class="material-symbols-outlined"> contrast</span> </a>
+                    <button onclick="toggleDarkMode()" class="btn main-btn nav-link" id="dark-menu" href="#">
+                        <span class="material-symbols-outlined"> contrast</span> </button>
                 </li>
                 <li>
-                    <a class="nav-item nav-link" id="font-menu" href="#">
-                        <span   class="material-symbols-outlined"> text_increase</span></a>
+                    <button onclick="increaseTextSize()" class="btn main-btn nav-link" id="font-menu" href="#">
+                        <span class="material-symbols-outlined"> text_increase</span></button>
                 </li>
             </ul>
         </nav>
     </header>
     <div id="main-container" conteudo="/views/tela_inicial.html"  class="mt-auto my-auto text-center">
     </div>
-    <script>
-        let arquivo = "/views/tela_inicial.html"
-        trocaConteudo(arquivo);
-    </script>
-    <script>
-        function btnSelEtapas(){
-            let arquivo = "views/selecao_etapas.html"
-            console.log('oi')
-            trocaConteudo( arquivo);
-        }
-    </script>
+    
     <footer class="mt-auto text-center">
-        <div class="container-fluid">
+        <div id="text" class="container-fluid">
             <p>Universidade Federal do Pará - 2023</p>
         </div>
     </footer>
