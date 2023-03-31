@@ -1,19 +1,25 @@
 /* Botões */
 .tela-inicial-btn{
-    background-color:#f8f9fa;
+    background-color: var(--btn-bg);
     transition: 0.5s;
+    border: 1px solid #eceeef ;
 }
 .tela-inicial-btn:hover{
-    background-color: #f8f9fa;
+    background-color: var(--btn-bg-hover);
 }
 .main-btn:hover{
-    background-color: #f8f9fa;
+    background-color: var(--btn-bg-hover);
     color: #000;
     text-decoration: none;
 }
 .btn-ajuste{
     height: 100%;
+    margin: 1rem;
 }
 .tela-inicial-container{
     height: 500px;
+}
+.svg-container{
+    padding: 2rem;
+    max-width: 300px;
 }

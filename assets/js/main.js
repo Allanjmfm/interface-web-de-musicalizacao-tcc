@@ -13,6 +13,8 @@ function toggleDarkMode(){
     document.querySelector("#home-menu").classList.toggle("letra-dark");
     document.querySelector("#dark-menu").classList.toggle("letra-dark");
     document.querySelector("#font-menu").classList.toggle("letra-dark");
+    // document.querySelector("#p-negrito").classList.toggle("letra-dark");
+    // document.getElementsByName("p").classList.toggle("letra-dark");
 }
 
 contrast.addEventListener("click", toggleDarkMode());

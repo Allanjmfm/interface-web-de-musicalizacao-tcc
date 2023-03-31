@@ -1,6 +1,8 @@
 :root{
     --dark-mode: #000;
     --light-mode: #fff;
+    --btn-bg: rgba(255, 255, 255, 0.125);
+    --btn-bg-hover: #d3d4d5;
 }
 /* Classe bootstrap */
 .nav-link{
@@ -15,6 +17,12 @@ body{
 body.dark-mode{
     background-color: var(--light-mode);
     color: var(--dark-mode);
+}
+/* p{
+    color: var(--light-mode);
+} */
+.letra-light{
+    color: var(--light-mode);
 }
 .letra-dark{
     color: var(--dark-mode)
@@ -44,5 +52,8 @@ nav p{
 }
 #home-menu{
     font-size: 1.2rem;
-    
+}
+
+.p-negrito{
+    font-weight: bolder;
 }
