@@ -6,21 +6,21 @@
 }
 /* Classe bootstrap */
 .nav-link{
-    color: var(--light-mode);
+    color: var(--dark-mode);
 }
 /* Dark mode */
 body{
     font-family: 'Roboto', sans-serif;
-    background-color:var(--dark-mode);
-    color:var(--light-mode);
+    background-color:var(--light-mode);
+    color:var(--dark-mode);
 }
 body.dark-mode{
-    background-color: var(--light-mode);
-    color: var(--dark-mode);
-}
-/* p{
+    background-color: var(--dark-mode);
     color: var(--light-mode);
-} */
+}
+.btn-dark-mode{
+    color: var(--light-mode);
+}
 .letra-light{
     color: var(--light-mode);
 }

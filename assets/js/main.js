@@ -9,15 +9,16 @@ const selecaoEtapa=document.querySelector("#btn_sel_etapas");
 // Dark Mode
 function toggleDarkMode(){
     darkMode.classList.toggle("dark-mode");
-    document.querySelector("#sobre-menu").classList.toggle("letra-dark");
-    document.querySelector("#home-menu").classList.toggle("letra-dark");
-    document.querySelector("#dark-menu").classList.toggle("letra-dark");
-    document.querySelector("#font-menu").classList.toggle("letra-dark");
+    document.querySelector("#sobre-menu").classList.toggle("letra-light");
+    document.querySelector("#home-menu").classList.toggle("letra-light");
+    document.querySelector("#dark-menu").classList.toggle("letra-light");
+    document.querySelector("#font-menu").classList.toggle("letra-light");
+    document.querySelector("button").classList.toggle("btn-dark-mode");
     // document.querySelector("#p-negrito").classList.toggle("letra-dark");
     // document.getElementsByName("p").classList.toggle("letra-dark");
 }
 
-contrast.addEventListener("click", toggleDarkMode());
+// contrast.addEventListener("click", toggleDarkMode());
 
 var textIncreaseCount = 0;
 
