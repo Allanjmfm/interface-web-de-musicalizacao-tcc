@@ -4,7 +4,6 @@ const contrast=document.querySelector("#dark-menu");
 
 // Variável troca de conteúdo
 const selecaoEtapa=document.querySelector("#btn_sel_etapas");
-// const voltar=document.querySelector("#btn_voltar");
 
 // Dark Mode
 function toggleDarkMode(){
@@ -13,9 +12,7 @@ function toggleDarkMode(){
     document.querySelector("#home-menu").classList.toggle("letra-light");
     document.querySelector("#dark-menu").classList.toggle("letra-light");
     document.querySelector("#font-menu").classList.toggle("letra-light");
-    document.querySelector("button").classList.toggle("btn-dark-mode");
-    // document.querySelector("#p-negrito").classList.toggle("letra-dark");
-    // document.getElementsByName("p").classList.toggle("letra-dark");
+    document.querySelectorAll("button").forEach((a)=>a.classList.toggle("btn-dark-mode"));
 }
 
 // contrast.addEventListener("click", toggleDarkMode());
@@ -76,6 +73,7 @@ let telas = {
     // Se variavel volata == telainicial então a tela anterior recebe null.
     if (voltar == telas.telaInicial) {
       telaAnterior = null;
+      setTimeout(CheckDarkmode, 10);
       return;
     }
     // aqui se tela anterior não é null.
@@ -101,6 +99,20 @@ let telas = {
       //console.log(telaAnterior);
     }
   }
+  // Função de verificar se está em darkmode
+  function CheckDarkmode(){
+    if (darkMode.classList.contains("dark-mode")){
+      document.querySelectorAll("button").forEach((a)=>{
+        if(!(a.classList.contains("btn-dark-mode"))){
+          a.classList.add("btn-dark-mode");
+        }
+        else{
+          a.classList.remove("btn-dark-mode");
+        }
+      })
+    }
+  }
+
   function btnEtapa1() {
     telaAnterior = voltar;
     voltar = telas.selecaoEtapas;
