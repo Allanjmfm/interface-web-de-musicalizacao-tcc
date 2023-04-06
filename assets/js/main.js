@@ -101,10 +101,40 @@ let telas = {
      setTimeout(CheckDarkmode, 10);
   }
 
+<<<<<<< HEAD
+=======
+  // Função de verificar se está em darkmode o contéudo da página html
+  function CheckDarkmode(){
+    if (darkMode.classList.contains("dark-mode")){
+      document.querySelectorAll("button").forEach((a)=>{
+        if(!(a.classList.contains("btn-dark-mode"))){
+          a.classList.add("btn-dark-mode");
+        }
+        else{
+          a.classList.remove("btn-dark-mode");
+        }
+      })
+    }
+  }
+  // while(darkMode.classList.contains("dark-mode")){
+  //   if (darkMode.classList.contains("dark-mode")){
+  //     document.querySelectorAll("button").forEach((a)=>{
+  //       if(!(a.classList.contains("btn-dark-mode"))){
+  //         a.classList.add("btn-dark-mode");
+  //       }
+  //       else{
+  //         a.classList.remove("btn-dark-mode");
+  //       }
+  //     })
+  //   }
+  // }
+
+>>>>>>> parent of cc3a8a4 (Merge pull request #1 from ajudaprincepfv/main)
   function btnEtapa1() {
     telaAnterior = voltar;
     voltar = telas.selecaoEtapas;
     trocaConteudo(telas.testeEtapa1);
+<<<<<<< HEAD
   }
   function btnTesteArray() {
     telaAnterior = voltar;
@@ -114,3 +144,11 @@ let telas = {
 
    // Função de verificar se está em darkmode o contéudo da página html
    
+=======
+  }
+  function btnTesteArray() {
+    telaAnterior = voltar;
+    voltar = telas.testeEtapa1;
+    trocaConteudo(telas.testeArray);
+  }
+>>>>>>> parent of cc3a8a4 (Merge pull request #1 from ajudaprincepfv/main)
