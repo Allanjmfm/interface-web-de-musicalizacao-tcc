@@ -14,8 +14,13 @@
 .selecao-etapas-btn{
     background-color: var(--btn-bg);
     transition: 0.5s;
-    border: 1px solid #eceeef ;
+    border: 2px solid #eceeef ;
+    
 }
 .selecao-etapas-btn:hover{
     background-color: var(--btn-bg-hover);
+}
+.svg-container-selecao{
+    max-width: 12.5rem;
+    
 }
