@@ -39,116 +39,87 @@ function increaseTextSize() {
 }
 
 let telas = {
-    telaInicial: "/views/tela_inicial.html",
-    selecaoEtapas: "/views/selecao_etapas.html",
-    testeEtapa1: "/views/etapa1/teste_etapa1.html",
-    testeArray: "/views/etapa1/teste_etapa1_1.html",
-  };
+  telaInicial: "/views/tela_inicial.html",
+  selecaoEtapas: "/views/selecao_etapas.html",
+  testeEtapa1: "/views/etapa1/teste_etapa1.html",
+  testeArray: "/views/etapa1/teste_etapa1_1.html",
+};
 
-  // Variável que receber tela anterior para ajudar
-  // o usuaro para navigar para tele anterior.
-  let voltar;
-  let telaAnterior = null;
-  
-  // const telaInicial = "/views/tela_inicial.html"
-  // const selecaoEtapas = "/views/selecao_etapas.html"
-  // const testeEtapa1 = "/views/etapa1/teste_etapa1.html"
-  
+// Variável que receber tela anterior para ajudar
+// o usuaro para navigar para tele anterior.
+let voltar;
+let telaAnterior = null;
 
-  trocaConteudo(telas.telaInicial);
+trocaConteudo(telas.telaInicial);
   
-  function btnSelEtapas() {
-    voltar = telas.telaInicial;
-    trocaConteudo(telas.selecaoEtapas);
+//async function  Ela permite que você escreva código assíncrono
+// em um estilo síncrono.
+async function btnVoltar() {
+  // Chamamos a func Troca Conteudo com algumento variavel voltar.
+  // await para esperar que uma operação assíncrona termine
+  // antes de continuar a execução da função
+  await trocaConteudo(voltar);
+  setTimeout(CheckDarkmode, 10);
+
+  // Se variavel volata == telainicial então a tela anterior recebe null.
+  if (voltar == telas.telaInicial) {
+    telaAnterior = null;
+    // setTimeout(CheckDarkmode, 10);
+    return;
   }
-  
-  //async function  Ela permite que você escreva código assíncrono
-  // em um estilo síncrono.
-  async function btnVoltar() {
-    // Chamamos a func Troca Conteudo com algumento variavel voltar.
-    // await para esperar que uma operação assíncrona termine
-    // antes de continuar a execução da função
-    await trocaConteudo(voltar);
-  
-    // Se variavel volata == telainicial então a tela anterior recebe null.
-    if (voltar == telas.telaInicial) {
-      telaAnterior = null;
-      // setTimeout(CheckDarkmode, 10);
-      return;
-    }
-    // aqui se tela anterior não é null.
-    if (telaAnterior) {
-      // variavel voltar receber tela anterior.
-      voltar = telaAnterior;
-  
-      // Coloquei "telas" em colchetes porque o a func map só funciona
-      // arry, `[]` representa um array vazio em JavaScript.
-      // Um array é uma estrutura de dados que pode armazenar
-      // múltiplos valores em uma única variável.
-      [telas].map(function (conteudo) {
-        // Aqui verifiquei se tela aterior se sim a tela anterior
-        // recebe endreço da tela inicial.
-        if (telaAnterior == conteudo.selecaoEtapas) {
-          telaAnterior = conteudo.telaInicial;
-          return;
-        } /* else if (telaAnterior == conteudo.selecaoEtapas) {
-          console.log(conteudo);
-          return conteudo.telaInicial;
-        } */
-      });
-      //console.log(telaAnterior);
-    }
-     setTimeout(CheckDarkmode, 10);
-  }
+  // aqui se tela anterior não é null.
+  if (telaAnterior) {
+    // variavel voltar receber tela anterior.
+    voltar = telaAnterior;
 
-<<<<<<< HEAD
-=======
+    // Coloquei "telas" em colchetes porque o a func map só funciona
+    // arry, `[]` representa um array vazio em JavaScript.
+    // Um array é uma estrutura de dados que pode armazenar
+    // múltiplos valores em uma única variável.
+    [telas].map(function (conteudo) {
+      // Aqui verifiquei se tela aterior se sim a tela anterior
+      // recebe endreço da tela inicial.
+      if (telaAnterior == conteudo.selecaoEtapas) {
+        telaAnterior = conteudo.telaInicial;
+        return;
+      } /* else if (telaAnterior == conteudo.selecaoEtapas) {
+        console.log(conteudo);
+        return conteudo.telaInicial;
+      } */
+    });
+    //console.log(telaAnterior);
+  }
+}
+
+function btnSelEtapas() {
+  voltar = telas.telaInicial;
+  trocaConteudo(telas.selecaoEtapas);
+  setTimeout(CheckDarkmode, 10);
+}
+
+function btnEtapa1() {
+  telaAnterior = voltar;
+  voltar = telas.selecaoEtapas;
+  trocaConteudo(telas.testeEtapa1);
+  setTimeout(CheckDarkmode, 10);
+}
+function btnTesteArray() {
+  telaAnterior = voltar;
+  voltar = telas.testeEtapa1;
+  trocaConteudo(telas.testeArray);
+  setTimeout(CheckDarkmode, 10);
+}
+
   // Função de verificar se está em darkmode o contéudo da página html
-  function CheckDarkmode(){
-    if (darkMode.classList.contains("dark-mode")){
-      document.querySelectorAll("button").forEach((a)=>{
-        if(!(a.classList.contains("btn-dark-mode"))){
-          a.classList.add("btn-dark-mode");
-        }
-        else{
-          a.classList.remove("btn-dark-mode");
-        }
-      })
-    }
+function CheckDarkmode(){
+  if (darkMode.classList.contains("dark-mode")){
+    document.querySelectorAll("button").forEach((a)=>{
+      if(!(a.classList.contains("btn-dark-mode"))){
+        a.classList.add("btn-dark-mode");
+      }
+      else{
+        a.classList.remove("btn-dark-mode");
+      }
+    })
   }
-  // while(darkMode.classList.contains("dark-mode")){
-  //   if (darkMode.classList.contains("dark-mode")){
-  //     document.querySelectorAll("button").forEach((a)=>{
-  //       if(!(a.classList.contains("btn-dark-mode"))){
-  //         a.classList.add("btn-dark-mode");
-  //       }
-  //       else{
-  //         a.classList.remove("btn-dark-mode");
-  //       }
-  //     })
-  //   }
-  // }
-
->>>>>>> parent of cc3a8a4 (Merge pull request #1 from ajudaprincepfv/main)
-  function btnEtapa1() {
-    telaAnterior = voltar;
-    voltar = telas.selecaoEtapas;
-    trocaConteudo(telas.testeEtapa1);
-<<<<<<< HEAD
-  }
-  function btnTesteArray() {
-    telaAnterior = voltar;
-    voltar = telas.testeEtapa1;
-    trocaConteudo(telas.testeArray);
-  }
-
-   // Função de verificar se está em darkmode o contéudo da página html
-   
-=======
-  }
-  function btnTesteArray() {
-    telaAnterior = voltar;
-    voltar = telas.testeEtapa1;
-    trocaConteudo(telas.testeArray);
-  }
->>>>>>> parent of cc3a8a4 (Merge pull request #1 from ajudaprincepfv/main)
+}

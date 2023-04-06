@@ -1,16 +1,6 @@
-/* .selecao-etapas-btn{
-    background-color:#350D7C;
-    color: #FFF;
-    padding: 1.25rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    width: 100%;
-    max-width: 600px;
-    height: 60px;
-    border-radius: 20px;
-    border: 3px;
-    transition: 0.5s;
-} */
+img{
+    padding: 0 0 1rem 0;
+}
 .selecao-etapas-btn{
     background-color: var(--btn-bg);
     transition: 0.5s;
@@ -22,5 +12,11 @@
 }
 .svg-container-selecao{
     max-width: 12.5rem;
-    
+    height: 10rem;
+}
+.svg-container-selecao p{
+    margin: 0;
+}
+.btn-ajuste-selecao button{
+    margin:0.2rem 0.2rem ;
 }

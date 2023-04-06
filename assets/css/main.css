@@ -27,6 +27,17 @@ body.dark-mode{
 .letra-dark{
     color: var(--dark-mode)
 }
+/* Botões Gerais */
+.main-btn:hover{
+    background-color: var(--btn-bg-hover);
+    color: #000;
+    text-decoration: none;
+}
+.btn-ajuste{
+    height: 100%;
+    margin: 0.5rem;
+}
+
 /* Estilos Gerais */
 .row{
     margin: 0;
