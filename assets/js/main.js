@@ -73,7 +73,7 @@ let telas = {
     // Se variavel volata == telainicial então a tela anterior recebe null.
     if (voltar == telas.telaInicial) {
       telaAnterior = null;
-      setTimeout(CheckDarkmode, 10);
+      // setTimeout(CheckDarkmode, 10);
       return;
     }
     // aqui se tela anterior não é null.
@@ -98,8 +98,10 @@ let telas = {
       });
       //console.log(telaAnterior);
     }
+     setTimeout(CheckDarkmode, 10);
   }
-  // Função de verificar se está em darkmode
+
+  // Função de verificar se está em darkmode o contéudo da página html
   function CheckDarkmode(){
     if (darkMode.classList.contains("dark-mode")){
       document.querySelectorAll("button").forEach((a)=>{
@@ -112,6 +114,18 @@ let telas = {
       })
     }
   }
+  // while(darkMode.classList.contains("dark-mode")){
+  //   if (darkMode.classList.contains("dark-mode")){
+  //     document.querySelectorAll("button").forEach((a)=>{
+  //       if(!(a.classList.contains("btn-dark-mode"))){
+  //         a.classList.add("btn-dark-mode");
+  //       }
+  //       else{
+  //         a.classList.remove("btn-dark-mode");
+  //       }
+  //     })
+  //   }
+  // }
 
   function btnEtapa1() {
     telaAnterior = voltar;

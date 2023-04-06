@@ -1,4 +1,4 @@
-.selecao-etapas-btn{
+/* .selecao-etapas-btn{
     background-color:#350D7C;
     color: #FFF;
     padding: 1.25rem;
@@ -10,4 +10,12 @@
     border-radius: 20px;
     border: 3px;
     transition: 0.5s;
+} */
+.selecao-etapas-btn{
+    background-color: var(--btn-bg);
+    transition: 0.5s;
+    border: 1px solid #eceeef ;
+}
+.selecao-etapas-btn:hover{
+    background-color: var(--btn-bg-hover);
 }
