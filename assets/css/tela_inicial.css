@@ -7,15 +7,7 @@
 .tela-inicial-btn:hover{
     background-color: var(--btn-bg-hover);
 }
-.main-btn:hover{
-    background-color: var(--btn-bg-hover);
-    color: #000;
-    text-decoration: none;
-}
-.btn-ajuste{
-    height: 100%;
-    margin: 1rem;
-}
+
 .tela-inicial-container{
     height: 31.25rem;
 }
