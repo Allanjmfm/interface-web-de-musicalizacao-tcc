@@ -13,6 +13,7 @@ function toggleDarkMode(){
     document.querySelector("#dark-menu").classList.toggle("letra-light");
     document.querySelector("#font-menu").classList.toggle("letra-light");
     document.querySelectorAll("button").forEach((a)=>a.classList.toggle("btn-dark-mode"));
+    document.querySelector('footer').classList.toggle("footer-dark-mode")
 }
 
 // contrast.addEventListener("click", toggleDarkMode());
