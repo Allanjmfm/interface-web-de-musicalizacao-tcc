@@ -11,6 +11,7 @@ img{
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     padding: .5rem 1.5rem .5rem 1.5rem;
     transition: 0.5s;
+    position: relative;
     
 }
 
@@ -39,6 +40,16 @@ img{
     display:grid;
 
 }
+.etapas-num{
+    background-color: #C780FA;
+    font-weight: 550;
+    padding: 0.18rem 0.3rem;
+    border-radius: 0 5px 0 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 @media (max-width: 1000px) {
     .container{
         padding-bottom: 4rem;
@@ -65,9 +76,4 @@ img{
     .grid-etapas{ 
         grid-template-columns: repeat(5, 1fr);
     }
-}
-.scrollbar{
-    width: 200px; 
-    white-space: nowrap; 
-    overflow-x: scroll;
 }
