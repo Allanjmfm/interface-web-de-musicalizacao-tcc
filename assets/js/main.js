@@ -40,10 +40,10 @@ function increaseTextSize() {
 }
 
 let telas = {
-  telaInicial: "/views/tela_inicial.html",
-  selecaoEtapas: "/views/selecao_etapas.html",
-  testeEtapa1: "/views/etapa1/teste_etapa1.html",
-  testeArray: "/views/etapa1/teste_etapa1_1.html",
+  telaInicial: "views/tela_inicial.html",
+  selecaoEtapas: "views/selecao_etapas.html",
+  testeEtapa1: "views/etapa1/teste_etapa1.html",
+  testeArray: "views/etapa1/teste_etapa1_1.html",
 };
 
 // Variável que receber tela anterior para ajudar
