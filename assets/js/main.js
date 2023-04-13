@@ -42,7 +42,7 @@ function increaseTextSize() {
 let telas = {
   telaInicial: "views/tela_inicial.html",
   selecaoEtapas: "views/selecao_etapas.html",
-  testeEtapa1: "views/etapa1/teste_etapa1.html",
+  etapa1Tela1: "views/etapa1/etapa1_tela1.html",
   testeArray: "views/etapa1/teste_etapa1_1.html",
 };
 
@@ -101,7 +101,7 @@ function btnSelEtapas() {
 function btnEtapa1() {
   telaAnterior = voltar;
   voltar = telas.selecaoEtapas;
-  trocaConteudo(telas.testeEtapa1);
+  trocaConteudo(telas.etapa1Tela1);
   setTimeout(CheckDarkmode, 10);
 }
 function btnTesteArray() {
