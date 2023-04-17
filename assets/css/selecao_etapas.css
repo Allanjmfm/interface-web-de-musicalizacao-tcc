@@ -7,12 +7,10 @@ img{
 }
 .selecao-etapas-btn{
     background-color: var(--btn-bg);
-    /* border:0.001rem solid #4f5050 ; */
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     padding: .5rem 1.5rem .5rem 1.5rem;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     transition: 0.5s;
     position: relative;
-    
 }
 
 .selecao-etapas-btn:hover{

@@ -1,5 +1,5 @@
-<div class="d-flex flex-column justify-content-center container align-items-center etapa1-container">
-    <div class="d-flex justify-content-between etapa1-menu-container">
+<div class="d-flex flex-column justify-content-center container align-items-center etapa1-container"> 
+    <div class="d-flex align-items-center etapa1-menu-container">
         <div class="icon-container">
             <img class="icon-img"  src="assets/img/professor.svg"/>
         </div>
@@ -7,41 +7,43 @@
             <h2>Etapa 1</h2>
             <h5>Aprendendo o nome das notas musicais</h5>
         </div>
-
     </div>
     <section class="container-content text-dark bg-opacity-10">
         <div class="d-flex flex-wrap justify-content-center">
-            <p>Existem sete (7) notas musicais, são elas: </p>
+            <p>Existem sete (7) notas musicais:</p>
             <p>Dó -  Ré - Mi - Fá - Sol - Lá - Si</p>
-            <p>Podemos nos referir a essas notas utilizando letras da seguinte forma:</p>
+            <p>Podemos nos referir a essas notas utilizando     letras da seguinte forma:</p>
         </div>
-        <div class="d-flex flex-wrap justify-content-between">
-           <div class="etapa1-notas">
-            Dó = C
-           </div>
-           <div class="etapa1-notas">
-            Ré = D
-           </div>
-           <div class="etapa1-notas">
-            Mi = E
-           </div>
-           <div class="etapa1-notas">
-            Fá = F
-           </div>
-           <div class="etapa1-notas">
-            Sol = G
-           </div>
-           <div class="etapa1-notas">
-            Lá = A
-           </div>
-           <div class="etapa1-notas">
-            Si = B
-           </div>
+        <div class="etapa1-grid-notas d-flex flex-wrap justify-content-around align-items-center">
+            <div class="etapa1-notas">
+                Dó = C
+            </div>
+            <div class="etapa1-notas">
+                Ré = D
+            </div>
+            <div class="etapa1-notas">
+                Mi = E
+            </div>
+            <div class="etapa1-notas">
+                Fá = F
+            </div>
+            <div class="etapa1-notas">
+                Sol = G
+            </div>
+            <div class="etapa1-notas">
+                Lá = A
+            </div>
+            <div class="etapa1-notas">
+                Si = B
+            </div>
         </div>
     </section>
-
-    
+    <div class="btn-etapas-container d-flex justify-content-between">
+        <div class="btn-container"> 
+            <button id="btn_voltar" onclick="btnVoltar()" class="btn selecao-etapas-btn" role="button">Voltar</button>
+        </div>
+        <div class="btn-container"> 
+            <button id="btn_voltar" onclick="btnVoltar()" class="btn selecao-etapas-btn" role="button">Avançar</button>
+        </div>
+    </div>
 </div>
-<!-- <h1> TESTE BACKGROUND</h1>
-    <button id="btn_voltar" onclick="btnTesteArray()" class="btn main-btn selecao-etapas-btn" role="button">Teste Array</button>
-    <button id="btn_voltar" onclick="btnVoltar()" class="btn main-btn selecao-etapas-btn" role="button">Voltar</button> -->
