@@ -16,8 +16,6 @@ function toggleDarkMode(){
     document.querySelector('footer').classList.toggle("footer-dark-mode")
 }
 
-// contrast.addEventListener("click", toggleDarkMode());
-
 var textIncreaseCount = 0;
 
 function increaseTextSize() {
@@ -52,7 +50,7 @@ let voltar;
 let telaAnterior = null;
 
 trocaConteudo(telas.telaInicial);
-  
+
 //async function  Ela permite que você escreva código assíncrono
 // em um estilo síncrono.
 async function btnVoltar() {

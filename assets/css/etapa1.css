@@ -1,14 +1,18 @@
 .etapa1-menu-container{
+    width: 100%;
     max-width: 800px;
+    position: relative;
 }
 .etapa1-container{
     /* height: 800px; */
 }
 .container-content{
+    width: 100%;
     max-width: 800px;
     height: 350px;
-    background-color: #F5F5F5;
+    background-color: rgba(0, 0, 0, 0.04);
     padding: 2rem;
+    border-radius: 5px;
     
 }
 .etapa1-notas{
@@ -20,10 +24,24 @@
 }
 .etapa1-grid-notas{
     justify-items: center;
-    height: calc(100% - 20%);
+    height: calc(100% - 70%);
 }
 .btn-etapas-container{
     width: 100%;
     max-width: 800px;
     padding: 0 50px 0 50px;
+}
+.etapa1-texto{
+    height: 100%;
+    max-height: 12rem;
+}
+
+@media(min-width: 760px){
+    .etapa1-icon-prof{
+        position: absolute;
+        left: 0;
+    }
+    .etapa1-menu-container{
+        padding: 2rem;
+    }
 }

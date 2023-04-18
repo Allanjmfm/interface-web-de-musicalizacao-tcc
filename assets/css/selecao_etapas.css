@@ -36,6 +36,7 @@ img{
 .grid-etapas{
     margin: 0 auto;
     display:grid;
+    padding: 5px;
 
 }
 .etapas-num{
