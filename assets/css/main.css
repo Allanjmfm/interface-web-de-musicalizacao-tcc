@@ -2,7 +2,7 @@
     --dark-mode: #000;
     --light-mode: #fff;
     --btn-bg: rgba(255, 255, 255, 0.125);
-    --btn-bg-hover: #d3d4d5;
+    --btn-bg-hover: #d3d4d58c;
 }
 /* Classe bootstrap */
 .nav-link{
@@ -11,7 +11,7 @@
 
 /* Dark mode */
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color:var(--light-mode);
     color:var(--dark-mode);
 }
@@ -64,6 +64,14 @@ footer p{
 }
 
 /* Estilos Gerais */
+a { color: inherit; } 
+
+h1{
+    font-size: 25px;
+}
+h5{
+    font-size: 16px;
+}
 .row{
     margin: 0;
 }
@@ -78,22 +86,11 @@ nav p{
     padding-bottom: 0;
 }
 
-.logo{
-    max-width: 3.75rem;
-}
-
 #sobre-menu{
     font-size: 1.2rem;
 }
 #home-menu{
     font-size: 1.2rem;
-}
-
-.p-main-texto{
-    font-weight: bolder; 
-}
-.p-texto{
-    font-weight: lighter;
 }
 .icon-container{
     padding: 1rem;
