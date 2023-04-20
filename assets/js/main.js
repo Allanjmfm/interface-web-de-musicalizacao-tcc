@@ -13,7 +13,7 @@ function toggleDarkMode(){
     document.querySelector("#dark-menu").classList.toggle("letra-light");
     document.querySelector("#font-menu").classList.toggle("letra-light");
     document.querySelectorAll("button").forEach((a)=>a.classList.toggle("btn-dark-mode"));
-    document.querySelector('footer').classList.toggle("footer-dark-mode")
+    document.querySelector('footer').classList.toggle("footer-dark-mode");
 }
 
 var textIncreaseCount = 0;
@@ -49,7 +49,7 @@ let telas = {
 let voltar;
 let telaAnterior = null;
 
-trocaConteudo(telas.telaInicial);
+trocaConteudo(telas.telaInicial,"#main-container");
 
 //async function  Ela permite que você escreva código assíncrono
 // em um estilo síncrono.
@@ -57,7 +57,7 @@ async function btnVoltar() {
   // Chamamos a func Troca Conteudo com algumento variavel voltar.
   // await para esperar que uma operação assíncrona termine
   // antes de continuar a execução da função
-  await trocaConteudo(voltar);
+  await trocaConteudo(voltar, "#main-container");
   setTimeout(CheckDarkmode, 10);
 
   // Se variavel volata == telainicial então a tela anterior recebe null.
@@ -92,20 +92,20 @@ async function btnVoltar() {
 
 function btnSelEtapas() {
   voltar = telas.telaInicial;
-  trocaConteudo(telas.selecaoEtapas);
+  trocaConteudo(telas.selecaoEtapas, "#main-container");
   setTimeout(CheckDarkmode, 10);
 }
 
 function btnEtapa1() {
   telaAnterior = voltar;
   voltar = telas.selecaoEtapas;
-  trocaConteudo(telas.etapa1Tela1);
+  trocaConteudo(telas.etapa1Tela1, "#main-container");
   setTimeout(CheckDarkmode, 10);
 }
 function btnTesteArray() {
   telaAnterior = voltar;
   voltar = telas.testeEtapa1;
-  trocaConteudo(telas.testeArray);
+  trocaConteudo(telas.testeArray, "#main-container");
   setTimeout(CheckDarkmode, 10);
 }
 

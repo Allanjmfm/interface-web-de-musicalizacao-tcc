@@ -1,7 +1,8 @@
 // Script Troca de Conteúdo
-function trocaConteudo(arquivo, cb ) {
+function trocaConteudo(arquivo,conteudo, cb ) {
     let xhttp;
-    const mainContainer = document.querySelector('#main-container');
+    // const mainContainer = document.querySelector('#main-container');
+    const mainContainer = document.querySelector(conteudo);
     // arquivo
     //  = mainContainer.getAttribute("conteudo");
     if (arquivo){
