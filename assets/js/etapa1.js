@@ -76,3 +76,8 @@ function voltarConteudoEtapa1(){
     btnVoltarEtapas(voltarEtapa1, conteudo_etapa1, conteudoEtapa1);
     conteudoAtual = voltarEtapa1;
 }
+
+function Exercicio1Etapa1(){
+     
+    VerificaExercicio();
+}
