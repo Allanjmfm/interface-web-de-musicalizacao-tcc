@@ -126,21 +126,27 @@ function CheckDarkmode(){
 
 // Função para verificar a resposta do exercício
 
-function VerificaExercicio(respostaUsuario, respostaCorreta, cb){
+const respostaCorreta = document.getElementById("otrec");
+const respostaErrada = document.getElementById("odarre");
+
+
+function verificaExercicio(respostaUsuario, respostaCorreta, cb){
   if (respostaUsuario == respostaCorreta){
-    const mensagemCerta = "Parabéns, resposta correta!!"
-    return cb(mensagemCerta);
+    document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
+    // const mensagemCerta = "Parabéns, resposta correta!!"
+    // return cb(mensagemCerta);
   } 
   else{
-    const mensagemErrada = "Resposta Errada, tente novamente"
-    return cb(mensagemErrada)
+    document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
+    // const mensagemErrada = "Resposta Errada, tente novamente"
+    // return cb(mensagemErrada);
   }
 }
 
-function otrec(){
-  trocaConteudo()
-}
+// function otrec(){
+//   document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
+// }
 
-function odarre(){
-
-}
+// function odarre(){
+//   document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
+// }

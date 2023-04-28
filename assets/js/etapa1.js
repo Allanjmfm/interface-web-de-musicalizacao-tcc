@@ -77,7 +77,28 @@ function voltarConteudoEtapa1(){
     conteudoAtual = voltarEtapa1;
 }
 
+
 function Exercicio1Etapa1(){
-     
-    VerificaExercicio();
+
+    verificaExercicio();
 }
+
+// const respostaCorreta = "B"; // defina aqui a resposta correta do exercício
+// const botões = document.querySelectorAll(".alternativa"); // selecione os botões das alternativas
+// const mensagem = document.getElementById("mensagem"); // selecione o elemento HTML que exibirá a mensagem
+
+// // adicione um evento de clique a cada botão de alternativa
+// botões.forEach(function(botão) {
+//   botão.addEventListener("click", function() {
+//     // verifique se a alternativa selecionada é a resposta correta
+//     if (this.value === respostaCorreta) {
+//       mensagem.innerHTML = "Resposta correta!"; // exiba mensagem de acerto
+//       setTimeout(function() {
+//         // troque o conteúdo da div após um delay de 4 segundos
+//         trocaConteudo(Exercicio1Etapa1());
+//       }, 4000);
+//     } else {
+//       mensagem.innerHTML = "Resposta incorreta. Tente novamente."; // exiba mensagem de erro
+//     }
+//   });
+// });
