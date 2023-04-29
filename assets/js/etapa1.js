@@ -19,6 +19,8 @@ let proxConteudoEtapa1 = null;
 function conteudoInicial() {
   trocaConteudo(conteudo_etapa1.conteudo1, conteudoEtapa1);
   setTimeout(CheckDarkmode, 10);
+  //   setTimeout(document.getElementById("btn-voltar-context").innerHTML = "Voltar", 10
+  //   )
 }
 
 function btnAvancar() {
@@ -64,14 +66,51 @@ function btnAvancar() {
       conteudoAtual = proxConteudoEtapa1;
       return;
     }
-    //   if (conteudoAtual == items.exercicio7) {
-    //     proxConteudoEtapa1 = items.TELA INCIAL ETAPA 2;
-    // }
+    if (conteudoAtual == items.exercicio7) {
+      proxConteudoEtapa1; //items.TELA INCIAL ETAPA 2;
+    }
   });
   trocaConteudoEtapas(proxConteudoEtapa1, conteudoEtapa1);
   setTimeout(CheckDarkmode, 10);
+
+  //   Este trecho de código em JavaScript verifica se o conteúdo
+  //   atual da página é o exercício 7 da etapa 1. Se sim, ele atualiza
+  //   o texto do botão de avançar para "Etapa 2". Caso contrário, ele
+  //   atualiza o texto do botão de avançar para "Avançar".
+  //   A função que contém este trecho de código deve ser acionada quando o
+  //   usuário está navegando pela página e avança ou retorna para diferentes
+  //   conteúdos da etapa 1.
+  if (conteudoAtual == conteudo_etapa1.exercicio7) {
+    document.getElementById("btn-avancar-context").innerHTML = "Etapa 2";
+  } else {
+    document.getElementById("btn-avancar-context").innerHTML = "Avançar";
+  }
+
+  //   Este trecho de código em JavaScript verifica se o conteúdo atual da página
+  //   é o primeiro conteúdo da etapa 1. Se sim, ele atualiza o texto do botão de voltar para
+  //   "Voltar para Etapas". Caso contrário, ele atualiza o texto do botão de voltar para
+  //   "Voltar". A função que contém este trecho de código deve ser acionada quando o usuário
+  //   está navegando pela página e retorna para diferentes conteúdos da etapa 1.
+  if (conteudoAtual == conteudo_etapa1.conteudo1) {
+    //aqui para troca texto no botom de voltar se o usuario esta na tela de etapa1 tela1
+    document.getElementById("btn-voltar-context").innerHTML =
+      "Voltar para Etapas";
+  } else {
+    document.getElementById("btn-voltar-context").innerHTML = "Voltar";
+  }
 }
 
+// A função "voltarConteudoEtapa1" é um trecho de código em JavaScript que atualiza
+// o conteúdo e o botão de volta de uma página da web quando o usuário clica no botão
+// de voltar para retornar ao conteúdo da etapa 1.
+
+// Para isso, a função verifica se o conteúdo atual é igual a um dos exercícios ou conteúdos
+// da etapa 1 e, em seguida, define o conteúdo atual como o conteúdo anterior correspondente.
+// Em seguida, a função chama a função "btnVoltarEtapas" para atualizar o conteúdo e o botão de
+// volta com o conteúdo anterior.
+
+// Se o conteúdo anterior for a tela de seleção de etapas, a função atualiza o botão de volta
+// para mostrar "Voltar para Etapas", caso contrário, ele mostra "Voltar".
 function voltarConteudoEtapa1() {
   //   conteudoAtual = voltarEtapa1;
 
@@ -125,14 +164,25 @@ function voltarConteudoEtapa1() {
     btnVoltarEtapas(voltarEtapa1, conteudo_etapa1, conteudoEtapa1);
   }
 
+  if (conteudoAtual == conteudo_etapa1.exercicio7) {
+    document.getElementById("btn-avancar-context").innerHTML = "Etapa 2";
+  } else {
+    document.getElementById("btn-avancar-context").innerHTML = "Avançar";
+  }
+
   if (voltarEtapa1 == conteudo_etapa1.conteudo1) {
     voltarEtapa1 = telas.selecaoEtapas;
+    //aqui para troca texto no botom de voltar se o usuario esta na tela de etapa1 tela1
+    document.getElementById("btn-voltar-context").innerHTML =
+      "Voltar para Etapas";
+  } else {
+    document.getElementById("btn-voltar-context").innerHTML = "Voltar";
   }
 }
 
-function Exercicio1Etapa1() {
-  verificaExercicio();
-}
+// function Exercicio1Etapa1() {
+//   verificaExercicio();
+// }
 
 // const respostaCorreta = "B"; // defina aqui a resposta correta do exercício
 // const botões = document.querySelectorAll(".alternativa"); // selecione os botões das alternativas

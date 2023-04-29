@@ -1,28 +1,32 @@
 // Variável dark mode
-const darkMode=document.querySelector("#dark-mode");
-const contrast=document.querySelector("#dark-menu");
+const darkMode = document.querySelector("#dark-mode");
+const contrast = document.querySelector("#dark-menu");
 
 // Variável troca de conteúdo
-const selecaoEtapa=document.querySelector("#btn_sel_etapas");
+const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
 // Dark Mode
-function toggleDarkMode(){
-    darkMode.classList.toggle("dark-mode");
-    document.querySelector("#sobre-menu").classList.toggle("letra-light");
-    document.querySelector("#home-menu").classList.toggle("letra-light");
-    document.querySelector("#dark-menu").classList.toggle("letra-light");
-    document.querySelector("#font-menu").classList.toggle("letra-light");
-    document.querySelectorAll("button").forEach((a)=>a.classList.toggle("btn-dark-mode"));
-    document.querySelector('footer').classList.toggle("footer-dark-mode");
+function toggleDarkMode() {
+  darkMode.classList.toggle("dark-mode");
+  document.querySelector("#sobre-menu").classList.toggle("letra-light");
+  document.querySelector("#home-menu").classList.toggle("letra-light");
+  document.querySelector("#dark-menu").classList.toggle("letra-light");
+  document.querySelector("#font-menu").classList.toggle("letra-light");
+  document
+    .querySelectorAll("button")
+    .forEach((a) => a.classList.toggle("btn-dark-mode"));
+  document.querySelector("footer").classList.toggle("footer-dark-mode");
 }
 
 var textIncreaseCount = 0;
 
 function increaseTextSize() {
   var text = document.getElementById("text");
-  var currentSize = parseInt(window.getComputedStyle(text).getPropertyValue("font-size"));
+  var currentSize = parseInt(
+    window.getComputedStyle(text).getPropertyValue("font-size")
+  );
   var newSize = currentSize + 2;
-  
+
   // Verifica se o texto já foi aumentado 3 vezes
   if (textIncreaseCount >= 3) {
     // Se sim, redefine o tamanho da fonte para o valor inicial (16 pixels)
@@ -50,7 +54,7 @@ let voltar;
 let telaAnterior = null;
 const mainContainer = "#main-container";
 
-trocaConteudo(telas.telaInicial,mainContainer);
+trocaConteudo(telas.telaInicial, mainContainer);
 
 //async function  Ela permite que você escreva código assíncrono
 // em um estilo síncrono.
@@ -111,46 +115,69 @@ function btnEtapa1() {
 //   setTimeout(CheckDarkmode, 10);
 // }
 
-  // Função de verificar se está em darkmode o contéudo da página html
-function CheckDarkmode(){
-  if (darkMode.classList.contains("dark-mode")){
-    document.querySelectorAll("button").forEach((a)=>{
-      if(!(a.classList.contains("btn-dark-mode"))){
+// Função de verificar se está em darkmode o contéudo da página html
+function CheckDarkmode() {
+  if (darkMode.classList.contains("dark-mode")) {
+    document.querySelectorAll("button").forEach((a) => {
+      if (!a.classList.contains("btn-dark-mode")) {
         a.classList.add("btn-dark-mode");
       }
       // else{
       //   a.classList.remove("btn-dark-mode");
       // }
-    })
+    });
   }
 }
 
 // Função para verificar a resposta do exercício
 
-const respostaCorreta = document.getElementById("otrec");
-const respostaErrada = document.getElementById("odarre");
+// const respostaCorreta = document.getElementById("otrec");
+// const respostaErrada = document.getElementById("odarre");
+
+// function verificaExercicio(respostaUsuario, respostaCorreta, cb){
+//   if (respostaUsuario == respostaCorreta){
+//     document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
+//     // const mensagemCerta = "Parabéns, resposta correta!!"
+//     // return cb(mensagemCerta);
+//   }
+//   else{
+//     document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
+//     // const mensagemErrada = "Resposta Errada, tente novamente"
+//     // return cb(mensagemErrada);
+//   }
+// }
 
 
-function verificaExercicio(respostaUsuario, respostaCorreta, cb){
-  if (respostaUsuario == respostaCorreta){
-    document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
-    // const mensagemCerta = "Parabéns, resposta correta!!"
-    // return cb(mensagemCerta);
-  } 
-  else{
-    document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
-    // const mensagemErrada = "Resposta Errada, tente novamente"
-    // return cb(mensagemErrada);
+// A função "otrec" atualiza a aparência e conteúdo de um elemento de 
+// mensagem em uma página da web quando uma resposta correta é dada, 
+// verificando se o elemento não tem a classe "msg-certa-cor", 
+// removendo a classe "msg-incorrta-cor" se ela existir, adicionando a classe 
+// "msg-certa-cor" e definindo o conteúdo HTML interno como 
+// "Resposta Certa. Mandou bem.".
+function otrec() {
+  const div = document.getElementById("mensagem");
+  if (!div.classList.contains("msg-certa-cor")) {
+    if(div.classList.remove("msg-incorrta-cor")){
+      div.classList.remove("msg-incorrta-cor");
+    }
+    div.classList.add("msg-certa-cor");
   }
+  div.innerHTML = "Resposta Certa. Mandou bem.";
 }
 
-function otrec(){
-  console.log('certo')
-
-  document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
-}
-
-function odarre(){
-  console.log('errado')
-  document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
+// A função "odarre" atualiza a aparência e conteúdo de um 
+// elemento de mensagem em uma página da web quando uma resposta 
+// incorreta é dada, verificando se o elemento não tem a classe 
+// "msg-incorrta-cor", removendo a classe "msg-certa-cor" se ela existir, 
+// adicionando a classe "msg-incorrta-cor" e definindo o conteúdo HTML interno como 
+// "Resposta Incorreta. Tente novamente.".
+function odarre() {
+  const div = document.getElementById("mensagem");
+  if (!div.classList.contains("msg-incorrta-cor")) {
+    if(div.classList.remove("msg-certa-cor")){
+      div.classList.remove("msg-certa-cor");
+    }
+    div.classList.add("msg-incorrta-cor");
+  }
+  div.innerHTML = "Resposta Incorreta. Tente novamente.";
 }
