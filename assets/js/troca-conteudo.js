@@ -7,31 +7,23 @@ function trocaConteudoEtapas(proxConteudo, id){
 function btnVoltarEtapas(voltar, conteudoLinks ,id) {
     console.log(voltar);
     const links = conteudoLinks;
-
     trocaConteudo(voltar, id);
     setTimeout(CheckDarkmode, 10);
   
   
     if (voltar == links.conteudo1) {
       telaAnterior = null;
-  
       return;
     }
     
     if (telaAnterior) {
-      
       voltar = telaAnterior;
-  
-
       [links].map(function (conteudo) {
-
         if (telaAnterior == conteudo.conteudo2) {
           telaAnterior = conteudo.conteudo1;
           return;
         } 
-          
       });
-      
     }
   }
 

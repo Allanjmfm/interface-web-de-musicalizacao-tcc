@@ -48,8 +48,9 @@ let telas = {
 // o usuaro para navigar para tele anterior.
 let voltar;
 let telaAnterior = null;
+const mainContainer = "#main-container";
 
-trocaConteudo(telas.telaInicial,"#main-container");
+trocaConteudo(telas.telaInicial,mainContainer);
 
 //async function  Ela permite que você escreva código assíncrono
 // em um estilo síncrono.
@@ -57,7 +58,7 @@ async function btnVoltar() {
   // Chamamos a func Troca Conteudo com algumento variavel voltar.
   // await para esperar que uma operação assíncrona termine
   // antes de continuar a execução da função
-  await trocaConteudo(voltar, "#main-container");
+  await trocaConteudo(voltar, mainContainer);
   setTimeout(CheckDarkmode, 10);
 
   // Se variavel volata == telainicial então a tela anterior recebe null.
@@ -92,16 +93,16 @@ async function btnVoltar() {
 
 function btnSelEtapas() {
   voltar = telas.telaInicial;
-  trocaConteudo(telas.selecaoEtapas, "#main-container");
+  trocaConteudo(telas.selecaoEtapas, mainContainer);
   setTimeout(CheckDarkmode, 10);
-  setTimeout(conteudoInicial, 100);
 }
 
 function btnEtapa1() {
   telaAnterior = voltar;
-  voltar = telas.selecaoEtapas;
-  trocaConteudo(telas.etapa1Tela1, "#main-container");
-  setTimeout(CheckDarkmode, 10);
+  voltarEtapa1 = telas.selecaoEtapas;
+  trocaConteudo(telas.etapa1Tela1, mainContainer);
+  // setTimeout(CheckDarkmode, 10);
+  setTimeout(conteudoInicial, 100);
 }
 // function btnEtapa1() {
 //   telaAnterior = voltar;
@@ -117,9 +118,9 @@ function CheckDarkmode(){
       if(!(a.classList.contains("btn-dark-mode"))){
         a.classList.add("btn-dark-mode");
       }
-      else{
-        a.classList.remove("btn-dark-mode");
-      }
+      // else{
+      //   a.classList.remove("btn-dark-mode");
+      // }
     })
   }
 }
@@ -143,10 +144,13 @@ function verificaExercicio(respostaUsuario, respostaCorreta, cb){
   }
 }
 
-// function otrec(){
-//   document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
-// }
+function otrec(){
+  console.log('certo')
 
-// function odarre(){
-//   document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
-// }
+  document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
+}
+
+function odarre(){
+  console.log('errado')
+  document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
+}
