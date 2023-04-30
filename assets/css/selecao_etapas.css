@@ -18,10 +18,12 @@
     background-color: var(--btn-bg-hover);
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
+
 .svg-container-selecao{
     width: 100%;
     height: 10rem;
 }
+
 .svg-container-selecao p{
     margin: 0;
 }
@@ -34,8 +36,8 @@
     margin: 0 auto;
     display:grid;
     padding: 5px;
-
 }
+
 .etapas-num{
     background-color: #C780FA;
     font-weight: 550;
@@ -50,9 +52,9 @@
     .container{
         padding-bottom: 4rem;
     }
+    
     .selecao-etapas-btn{
         box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-
     }
 }
 
@@ -60,7 +62,6 @@
     .grid-etapas{ 
         grid-template-columns: repeat(2, 1fr);
     }
-    
 }
 
 /* @media( min-width: 900px){
