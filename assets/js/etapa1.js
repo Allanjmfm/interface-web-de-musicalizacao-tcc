@@ -1,38 +1,69 @@
 let conteudo_etapa1 =[
-   {conteudo1: "views/etapa1/etapa1_tela1.html"},
-   {conteudo2: "views/etapa1/etapa1_tela2.html"},
-   {exercicio1: "views/etapa1/etapa1_exercicio1.html"},
-   {exercicio2: "views/etapa1/etapa1_exercicio2.html"},
-   {exercicio3: "views/etapa1/etapa1_exercicio3.html"},
-   {exercicio4: "views/etapa1/etapa1_exercicio4.html"},
-   {exercicio5: "views/etapa1/etapa1_exercicio5.html"},
-   {exercicio6: "views/etapa1/etapa1_exercicio6.html"},
-   {exercicio7: "views/etapa1/etapa1_exercicio7.html"},
+   "views/etapa1/etapa1_tela1.html",
+   "views/etapa1/etapa1_tela2.html",
+    "views/etapa1/etapa1_exercicio1.html",
+    "views/etapa1/etapa1_exercicio2.html",
+    "views/etapa1/etapa1_exercicio3.html",
+    "views/etapa1/etapa1_exercicio4.html",
+    "views/etapa1/etapa1_exercicio5.html",
+    "views/etapa1/etapa1_exercicio6.html",
+    "views/etapa1/etapa1_exercicio7.html",
  
 ]
 
 const conteudoEtapa1 = "#conteudo-etapas";
 
 let voltarEtapa1;
-let conteudoAtual = conteudo_etapa1[0].conteudo1;
+let conteudoAtual = conteudo_etapa1[0];
 let proxConteudoEtapa1 = null;
 
 function conteudoInicial() {
-  trocaConteudo(conteudo_etapa1[0].conteudo1, conteudoEtapa1);
+  trocaConteudo(conteudo_etapa1[0], conteudoEtapa1);
   setTimeout(CheckDarkmode, 10);
   //   setTimeout(document.getElementById("btn-voltar-context").innerHTML = "Voltar", 10
   //   )
 }
 function btnAvancar(proxIndex, arrayEtapas) {
-  console.log(arrayEtapas);
-  proxConteudoEtapa1 = arrayEtapas.map((items,index)=>{
-    if(proxIndex == index) return items
-  });
-  console.log(proxConteudoEtapa1)
-  
+  arrayEtapas.map((item,index)=>{
+    if(proxIndex == index){
+      // proxConteudoEtapa1 = item
+      
+      //   Este trecho de código em JavaScript verifica se o conteúdo
+      //   atual da página é o exercício 7 da etapa 1. Se sim, ele atualiza
+      //   o texto do botão de avançar para "Etapa 2". Caso contrário, ele
+      //   atualiza o texto do botão de avançar para "Avançar".
+      //   A função que contém este trecho de código deve ser acionada quando o
+      //   usuário está navegando pela página e avança ou retorna para diferentes
+      //   conteúdos da etapa 1.
+      trocaConteudoEtapas(item, conteudoEtapa1);
+      setTimeout(CheckDarkmode, 10);
+      
+      if (index == 8) {
+        console.log(document.getElementById("btn-avancar-context"))
+        document.getElementById("btn-avancar-context").innerHTML = "Etapa 2";
+      } else {
+        document.getElementById("btn-avancar-context").innerHTML = "Avançar";
+      }
+      
+      //   Este trecho de código em JavaScript verifica se o conteúdo atual da página
+      //   é o primeiro conteúdo da etapa 1. Se sim, ele atualiza o texto do botão de voltar para
+      //   "Voltar para Etapas". Caso contrário, ele atualiza o texto do botão de voltar para
+      //   "Voltar". A função que contém este trecho de código deve ser acionada quando o usuário
+      //   está navegando pela página e retorna para diferentes conteúdos da etapa 1.
+      if (index > 0) {
+        //aqui para troca texto no botom de voltar se o usuario esta na tela de etapa1 tela1
+        // document.getElementById("btn-voltar-context").innerHTML =
+      //   "Voltar para Etapas";
+        document.getElementById("btn-voltar-context").innerHTML = "Voltar";
+    } 
+    
+    return item
+  } 
+});
+
 }
 // function btnAvancar() {
-//   voltarEtapa1 = conteudoAtual;
+  //   voltarEtapa1 = conteudoAtual;
 //   [conteudo_etapa1].map(function (items) {
 //     if (conteudoAtual == items.conteudo1) {
 //       proxConteudoEtapa1 = items.conteudo2;
