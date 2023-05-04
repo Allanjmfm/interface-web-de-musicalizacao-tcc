@@ -5,6 +5,11 @@ const contrast = document.querySelector("#dark-menu");
 // Variável troca de conteúdo
 const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
+// IDs para xxxx.......
+const conteudoEtapas = "#conteudo-etapas";
+const mainContainer = "#main-container";
+
+
 // Dark Mode
 function toggleDarkMode() {
   darkMode.classList.toggle("dark-mode");
@@ -52,7 +57,6 @@ let telas = {
 // o usuaro para navigar para tele anterior.
 let voltar;
 let telaAnterior = null;
-const mainContainer = "#main-container";
 
 trocaConteudo(telas.telaInicial, mainContainer);
 
@@ -180,4 +184,24 @@ function odarre() {
     div.classList.add("msg-incorrta-cor");
   }
   div.innerHTML = "Resposta Incorreta. Tente novamente.";
+}
+
+// funcão para avançar
+function btnAvancar(proxIndex, arrayEtapas) {
+  arrayEtapas.map((item,index)=>{
+    if(proxIndex == index){
+      // proxConteudoEtapa1 = item
+      
+      //   Este trecho de código em JavaScript verifica se o conteúdo
+      //   atual da página é o exercício 7 da etapa 1. Se sim, ele atualiza
+      //   o texto do botão de avançar para "Etapa 2". Caso contrário, ele
+      //   atualiza o texto do botão de avançar para "Avançar".
+      //   A função que contém este trecho de código deve ser acionada quando o
+      //   usuário está navegando pela página e avança ou retorna para diferentes
+      //   conteúdos da etapa 1.
+      trocaConteudoEtapas(item, conteudoEtapas);
+      setTimeout(CheckDarkmode, 10);
+    return item
+    } 
+  });
 }

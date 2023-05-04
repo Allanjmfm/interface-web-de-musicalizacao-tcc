@@ -5,7 +5,6 @@ function trocaConteudoEtapas(proxConteudo, id){
 
 
 function btnVoltarEtapas(voltar, conteudoLinks ,id) {
-    console.log(voltar);
     const links = conteudoLinks;
     trocaConteudo(voltar, id);
     setTimeout(CheckDarkmode, 10);
