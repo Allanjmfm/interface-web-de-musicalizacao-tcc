@@ -9,6 +9,4 @@ function conteudoInicialEtapa2() {
     console.log(conteudo_etapa2.conteudo1Etapa2);
     trocaConteudo(conteudo_etapa2.conteudo1Etapa2, conteudoEtapa2);
     setTimeout(CheckDarkmode, 10);
-    //   setTimeout(document.getElementById("btn-voltar-context").innerHTML = "Voltar", 10
-    //   )
   }
