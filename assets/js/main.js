@@ -5,7 +5,7 @@ const contrast = document.querySelector("#dark-menu");
 // Variável troca de conteúdo
 const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
-// IDs para xxxx.......
+// IDs para trocas de conteudos
 const conteudoEtapas = "#conteudo-etapas";
 const mainContainer = "#main-container";
 

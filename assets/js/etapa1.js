@@ -1,27 +1,27 @@
-let conteudo_etapa1 =[
-   "views/etapa1/etapa1_tela1.html",
-   "views/etapa1/etapa1_tela2.html",
-    "views/etapa1/etapa1_exercicio1.html",
-    "views/etapa1/etapa1_exercicio2.html",
-    "views/etapa1/etapa1_exercicio3.html",
-    "views/etapa1/etapa1_exercicio4.html",
-    "views/etapa1/etapa1_exercicio5.html",
-    "views/etapa1/etapa1_exercicio6.html",
-    "views/etapa1/etapa1_exercicio7.html",
- 
-]
+let conteudo_etapa1 = {
+  conteudo1: "views/etapa1/etapa1_tela1.html",
+  conteudo2: "views/etapa1/etapa1_tela2.html",
+  exercicio1: "views/etapa1/etapa1_exercicio1.html",
+  exercicio2: "views/etapa1/etapa1_exercicio2.html",
+  exercicio3: "views/etapa1/etapa1_exercicio3.html",
+  exercicio4: "views/etapa1/etapa1_exercicio4.html",
+  exercicio5: "views/etapa1/etapa1_exercicio5.html",
+  exercicio6: "views/etapa1/etapa1_exercicio6.html",
+  exercicio7: "views/etapa1/etapa1_exercicio7.html",
+}
 
 let voltarEtapa1;
-let conteudoAtual = conteudo_etapa1[0];
+// let conteudoAtual = conteudo_etapa1;
 let proxConteudoEtapa1 = null;
 
 function conteudoInicial() {
-  trocaConteudo(conteudo_etapa1[0], conteudoEtapas);
+  trocaConteudo(conteudo_etapa1.conteudo1, conteudoEtapas);
   setTimeout(CheckDarkmode, 10);
 }
 
 // Se o conteúdo anterior for a tela de seleção de etapas, a função atualiza o botão de volta
 // para mostrar "Voltar para Etapas", caso contrário, ele mostra "Voltar".
+
 function voltarConteudoEtapas(anterior, arrayEtapas) {
   arrayEtapas.map((item, index)=>{
     if(anterior == index){
@@ -30,6 +30,9 @@ function voltarConteudoEtapas(anterior, arrayEtapas) {
     }
   });
 }
+
+
+
 //   [conteudo_etapa1].map(function (items) {
 //     if (conteudoAtual == items.conteudo2) {
 //       voltarEtapa1 = items.conteudo1;
