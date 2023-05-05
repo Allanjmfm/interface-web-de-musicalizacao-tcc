@@ -51,6 +51,7 @@ let telas = {
   selecaoEtapas: "views/selecao_etapas.html",
   etapa1Tela1: "views/etapa1/conteudo_inicial.html",
   etapa1Tela2: "views/etapa1/etapa1_tela2.html",
+  etapa2Tela1: "views/Etapa 2/conteudo_inicial2.html"
 };
 
 // Variável que receber tela anterior para ajudar
@@ -106,18 +107,18 @@ function btnSelEtapas() {
 }
 
 function btnEtapa1() {
-  telaAnterior = voltar;
+  // telaAnterior = voltar;
   voltarEtapa1 = telas.selecaoEtapas;
   trocaConteudo(telas.etapa1Tela1, mainContainer);
   // setTimeout(CheckDarkmode, 10);
   setTimeout(conteudoInicial, 100);
 }
-// function btnEtapa1() {
-//   telaAnterior = voltar;
-//   voltar = telas.testeEtapa1;
-//   trocaConteudo(telas.testeArray, "#main-container");
-//   setTimeout(CheckDarkmode, 10);
-// }
+function btnEtapa2() {
+  // telaAnterior = voltar;
+  voltar = telas.testeEtapa1;
+  trocaConteudo(telas.etapa2Tela1, mainContainer);
+  setTimeout(conteudoInicialEtapa2, 100);
+}
 
 // Função de verificar se está em darkmode o contéudo da página html
 function CheckDarkmode() {
