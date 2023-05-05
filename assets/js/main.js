@@ -5,6 +5,11 @@ const contrast = document.querySelector("#dark-menu");
 // Variável troca de conteúdo
 const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
+// IDs para trocas de conteudos
+const idConteudoEtapas = "#conteudo-etapas";
+const mainContainer = "#main-container";
+
+
 // Dark Mode
 function toggleDarkMode() {
   darkMode.classList.toggle("dark-mode");
@@ -24,14 +29,13 @@ let telas = {
   selecaoEtapas: "views/selecao_etapas.html",
   etapa1Tela1: "views/etapa1/conteudo_inicial.html",
   etapa1Tela2: "views/etapa1/etapa1_tela2.html",
-  etapa2Tela1: "views/Etapa 2/conteudo_inicial2.html"
+  etapa2Tela1: "views/etapa2/conteudo_inicial2.html"
 };
 
 // Variável que receber tela anterior para ajudar
 // o usuaro para navigar para tele anterior.
 let voltar;
 let telaAnterior = null;
-const mainContainer = "#main-container";
 
 trocaConteudo(telas.telaInicial, mainContainer);
 
@@ -108,25 +112,6 @@ function CheckDarkmode() {
   }
 }
 
-// Função para verificar a resposta do exercício
-
-// const respostaCorreta = document.getElementById("otrec");
-// const respostaErrada = document.getElementById("odarre");
-
-// function verificaExercicio(respostaUsuario, respostaCorreta, cb){
-//   if (respostaUsuario == respostaCorreta){
-//     document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
-//     // const mensagemCerta = "Parabéns, resposta correta!!"
-//     // return cb(mensagemCerta);
-//   }
-//   else{
-//     document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
-//     // const mensagemErrada = "Resposta Errada, tente novamente"
-//     // return cb(mensagemErrada);
-//   }
-// }
-
-
 // A função "otrec" atualiza a aparência e conteúdo de um elemento de 
 // mensagem em uma página da web quando uma resposta correta é dada, 
 // verificando se o elemento não tem a classe "msg-certa-cor", 
@@ -159,4 +144,16 @@ function odarre() {
     div.classList.add("msg-incorrta-cor");
   }
   div.innerHTML = "Resposta Incorreta. Tente novamente.";
+}
+
+// função para avançar
+function btnAvancar(proxConteudo) {
+  trocaConteudo(proxConteudo, idConteudoEtapas)
+  setTimeout(CheckDarkmode, 10);
+}
+
+// função para volter entre etapas
+function btnVoltarEtapas(voltar, id) {
+  trocaConteudo(voltar, id);
+  setTimeout(CheckDarkmode, 10);
 }
