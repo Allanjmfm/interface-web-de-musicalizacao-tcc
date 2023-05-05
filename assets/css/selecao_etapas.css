@@ -48,6 +48,14 @@
     right: 0;
 }
 
+.container-estapas-div{
+  max-width: 800px;
+  max-height: 340px;
+  height: 100%;
+  width: 100%;
+    
+}
+
 @media (max-width: 1000px) {
     .container{
         padding-bottom: 4rem;
