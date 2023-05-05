@@ -6,7 +6,7 @@ const contrast = document.querySelector("#dark-menu");
 const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
 // IDs para trocas de conteudos
-const conteudoEtapas = "#conteudo-etapas";
+const idConteudoEtapas = "#conteudo-etapas";
 const mainContainer = "#main-container";
 
 
@@ -51,7 +51,7 @@ let telas = {
   selecaoEtapas: "views/selecao_etapas.html",
   etapa1Tela1: "views/etapa1/conteudo_inicial.html",
   etapa1Tela2: "views/etapa1/etapa1_tela2.html",
-  etapa2Tela1: "views/Etapa 2/conteudo_inicial2.html"
+  etapa2Tela1: "views/etapa2/conteudo_inicial2.html"
 };
 
 // Variável que receber tela anterior para ajudar
@@ -134,25 +134,6 @@ function CheckDarkmode() {
   }
 }
 
-// Função para verificar a resposta do exercício
-
-// const respostaCorreta = document.getElementById("otrec");
-// const respostaErrada = document.getElementById("odarre");
-
-// function verificaExercicio(respostaUsuario, respostaCorreta, cb){
-//   if (respostaUsuario == respostaCorreta){
-//     document.getElementById("mensagem").innerHTML = "Resposta Certa. Mandou bem.";
-//     // const mensagemCerta = "Parabéns, resposta correta!!"
-//     // return cb(mensagemCerta);
-//   }
-//   else{
-//     document.getElementById("mensagem").innerHTML = "Resposta Incorreta. Tente novamente.";
-//     // const mensagemErrada = "Resposta Errada, tente novamente"
-//     // return cb(mensagemErrada);
-//   }
-// }
-
-
 // A função "otrec" atualiza a aparência e conteúdo de um elemento de 
 // mensagem em uma página da web quando uma resposta correta é dada, 
 // verificando se o elemento não tem a classe "msg-certa-cor", 
@@ -187,22 +168,14 @@ function odarre() {
   div.innerHTML = "Resposta Incorreta. Tente novamente.";
 }
 
-// funcão para avançar
-function btnAvancar(proxIndex, arrayEtapas) {
-  arrayEtapas.map((item,index)=>{
-    if(proxIndex == index){
-      // proxConteudoEtapa1 = item
-      
-      //   Este trecho de código em JavaScript verifica se o conteúdo
-      //   atual da página é o exercício 7 da etapa 1. Se sim, ele atualiza
-      //   o texto do botão de avançar para "Etapa 2". Caso contrário, ele
-      //   atualiza o texto do botão de avançar para "Avançar".
-      //   A função que contém este trecho de código deve ser acionada quando o
-      //   usuário está navegando pela página e avança ou retorna para diferentes
-      //   conteúdos da etapa 1.
-      trocaConteudoEtapas(item, conteudoEtapas);
-      setTimeout(CheckDarkmode, 10);
-    return item
-    } 
-  });
+// função para avançar
+function btnAvancar(proxConteudo) {
+  trocaConteudo(proxConteudo, idConteudoEtapas)
+  setTimeout(CheckDarkmode, 10);
+}
+
+// função para volter entre etapas
+function btnVoltarEtapas(voltar, id) {
+  trocaConteudo(voltar, id);
+  setTimeout(CheckDarkmode, 10);
 }

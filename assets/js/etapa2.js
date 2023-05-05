@@ -1,6 +1,6 @@
 let conteudo_etapa2 = {
-    conteudo1Etapa2: "views/Etapa 2/etapa2_tela1.html",
-    conteudo2Etapa2: "views/Etapa 2/etapa1_tela2.html",
+    conteudo1Etapa2: "views/etapa2/etapa2_tela1.html",
+    conteudo2Etapa2: "views/etapa2/etapa1_tela2.html",
   };
 
 const conteudoEtapa2 = "#conteudo-etapas2";
