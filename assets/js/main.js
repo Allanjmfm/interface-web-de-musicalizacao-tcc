@@ -18,28 +18,6 @@ function toggleDarkMode() {
   document.querySelector("footer").classList.toggle("footer-dark-mode");
 }
 
-var textIncreaseCount = 0;
-
-function increaseTextSize() {
-  var text = document.getElementById("text");
-  var currentSize = parseInt(
-    window.getComputedStyle(text).getPropertyValue("font-size")
-  );
-  var newSize = currentSize + 2;
-
-  // Verifica se o texto já foi aumentado 3 vezes
-  if (textIncreaseCount >= 3) {
-    // Se sim, redefine o tamanho da fonte para o valor inicial (16 pixels)
-    text.style.fontSize = "16px";
-    // Zera a contagem
-    textIncreaseCount = 0;
-  } else {
-    // Se não, aumenta o tamanho da fonte normalmente
-    text.style.fontSize = newSize + "px";
-    // Incrementa a contagem
-    textIncreaseCount++;
-  }
-}
 
 let telas = {
   telaInicial: "views/tela_inicial.html",
