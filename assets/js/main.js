@@ -154,6 +154,6 @@ function btnAvancar(proxConteudo) {
 
 // função para volter entre etapas
 function btnVoltarEtapas(voltar, id) {
-  trocaConteudo(voltar, id);
+  trocaConteudo(voltar, id? id: idConteudoEtapas);
   setTimeout(CheckDarkmode, 10);
 }
