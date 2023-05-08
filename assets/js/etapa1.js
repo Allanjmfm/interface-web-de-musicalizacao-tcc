@@ -14,8 +14,8 @@ let voltarEtapa1;
 // let conteudoAtual = conteudo_etapa1;
 let proxConteudoEtapa1 = null;
 
-function conteudoInicial() {
-  trocaConteudo(conteudo_etapa1.conteudo1, idConteudoEtapas);
+async function conteudoInicial() {
+  await trocaConteudo(conteudo_etapa1.conteudo1, idConteudoEtapas);
   setTimeout(CheckDarkmode, 10);
 }
 

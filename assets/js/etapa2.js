@@ -10,8 +10,8 @@ let conteudo_etapa2 = {
 
 // const conteudoEtapa2 = "#conteudo-etapas2";
 
-function conteudoInicialEtapa2() {
+async function conteudoInicialEtapa2() {
     //IDs idConteudoEtapas vai ser para todos estapas
-    trocaConteudo(conteudo_etapa2.etapa2Conteudo1, idConteudoEtapas);
+    await trocaConteudo(conteudo_etapa2.etapa2Conteudo1, idConteudoEtapas);
     setTimeout(CheckDarkmode, 10);
   }

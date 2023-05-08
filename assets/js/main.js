@@ -36,9 +36,9 @@ let telas = {
 // o usuaro para navigar para tele anterior.
 let voltar;
 let telaAnterior = null;
-
-trocaConteudo(telas.telaInicial, mainContainer);
-
+(async() => {
+  await trocaConteudo(telas.telaInicial, mainContainer);
+})()
 //async function  Ela permite que você escreva código assíncrono
 // em um estilo síncrono.
 async function btnVoltar() {
@@ -78,23 +78,23 @@ async function btnVoltar() {
   }
 }
 
-function btnSelEtapas() {
+async function btnSelEtapas() {
   voltar = telas.telaInicial;
-  trocaConteudo(telas.selecaoEtapas, mainContainer);
+ await trocaConteudo(telas.selecaoEtapas, mainContainer);
   setTimeout(CheckDarkmode, 10);
 }
 
-function btnEtapa1() {
+async function btnEtapa1() {
   // telaAnterior = voltar;
   voltarEtapa1 = telas.selecaoEtapas;
-  trocaConteudo(telas.etapa1Tela1, mainContainer);
+ await trocaConteudo(telas.etapa1Tela1, mainContainer);
   // setTimeout(CheckDarkmode, 10);
   setTimeout(conteudoInicial, 100);
 }
-function btnEtapa2() {
+async function btnEtapa2() {
   // telaAnterior = voltar;
   voltar = telas.testeEtapa1;
-  trocaConteudo(telas.etapa2Tela1, mainContainer);
+ await trocaConteudo(telas.etapa2Tela1, mainContainer);
   setTimeout(conteudoInicialEtapa2, 100);
 }
 
@@ -148,13 +148,13 @@ function odarre() {
 }
 
 // função para avançar
-function btnAvancar(proxConteudo) {
-  trocaConteudo(proxConteudo, idConteudoEtapas)
+async function btnAvancar(proxConteudo) {
+ await trocaConteudo(proxConteudo, idConteudoEtapas)
   setTimeout(CheckDarkmode, 10);
 }
 
 // função para volter entre etapas
-function btnVoltarEtapas(voltar, id) {
-  trocaConteudo(voltar, id? id: idConteudoEtapas);
+async function btnVoltarEtapas(voltar, id) {
+ await trocaConteudo(voltar, id? id: idConteudoEtapas);
   setTimeout(CheckDarkmode, 10);
 }
