@@ -14,6 +14,7 @@ async function trocaConteudo(arquivo,id, cb ) {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
             if (this.readyState == 4 && this.status == 200){
+                console.log(mainContainer);
                 mainContainer.innerHTML = this.responseText;
                 // mainContainer.removeAttribute("conteudo");
                 trocaConteudo(cb);
