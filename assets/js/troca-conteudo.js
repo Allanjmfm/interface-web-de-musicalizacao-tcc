@@ -20,8 +20,8 @@ async function trocaConteudo(arquivo,id, cb ) {
                 trocaConteudo(cb);
             }
         }
-      await  xhttp.open("GET", arquivo, true);
-      await  xhttp.send();
+        xhttp.open("GET", arquivo, true);
+        xhttp.send();
         return;
     }
     if (cb) cb();
