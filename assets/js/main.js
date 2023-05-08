@@ -88,13 +88,13 @@ async function btnEtapa1() {
   voltarEtapa1 = telas.selecaoEtapas;
  await trocaConteudo(telas.etapa1Tela1, mainContainer);
   // setTimeout(CheckDarkmode, 10);
-  setTimeout(conteudoInicial, 500);
+  setTimeout(conteudoInicial, 250);
 }
 async function btnEtapa2() {
   // telaAnterior = voltar;
   voltar = telas.testeEtapa1;
  await trocaConteudo(telas.etapa2Tela1, mainContainer);
-  setTimeout(conteudoInicialEtapa2, 500);
+  setTimeout(conteudoInicialEtapa2, 250);
 }
 
 // Função de verificar se está em darkmode o contéudo da página html
