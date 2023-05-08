@@ -6,7 +6,6 @@ const contrast = document.querySelector("#dark-menu");
 const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
 // IDs para trocas de conteudos
-const idConteudoEtapas = "#conteudo-etapas";
 const mainContainer = "#main-container";
 
 
@@ -89,13 +88,13 @@ async function btnEtapa1() {
   voltarEtapa1 = telas.selecaoEtapas;
  await trocaConteudo(telas.etapa1Tela1, mainContainer);
   // setTimeout(CheckDarkmode, 10);
-  setTimeout(conteudoInicial, 10);
+  setTimeout(conteudoInicial, 100);
 }
 async function btnEtapa2() {
   // telaAnterior = voltar;
   voltar = telas.testeEtapa1;
  await trocaConteudo(telas.etapa2Tela1, mainContainer);
-  setTimeout(conteudoInicialEtapa2, 10);
+  setTimeout(conteudoInicialEtapa2, 100);
 }
 
 // Função de verificar se está em darkmode o contéudo da página html
