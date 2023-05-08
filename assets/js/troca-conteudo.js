@@ -4,7 +4,7 @@ function trocaConteudoEtapas(proxConteudo, id){
 }
 
 // Script Troca de Conteúdo
-function trocaConteudo(arquivo,id, cb ) {
+async function trocaConteudo(arquivo,id, cb ) {
     let xhttp;
     // const mainContainer = document.querySelector('#main-container');
     const mainContainer = document.querySelector(id);
@@ -19,8 +19,8 @@ function trocaConteudo(arquivo,id, cb ) {
                 trocaConteudo(cb);
             }
         }
-        xhttp.open("GET", arquivo, true);
-        xhttp.send();
+      await  xhttp.open("GET", arquivo, true);
+      await  xhttp.send();
         return;
     }
     if (cb) cb();

@@ -103,6 +103,7 @@ function CheckDarkmode() {
   if (darkMode.classList.contains("dark-mode")) {
     document.querySelectorAll("button").forEach((a) => {
       if (!a.classList.contains("btn-dark-mode")) {
+        console.log("a");
         a.classList.add("btn-dark-mode");
       }
       // else{
