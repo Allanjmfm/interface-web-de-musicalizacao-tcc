@@ -7,8 +7,8 @@ let conteudo_etapa2 = {
   };
 
 
-async function conteudoInicialEtapa2() {
-    //IDs idConteudoEtapas vai ser para todos estapas
-    await trocaConteudo(conteudo_etapa2.etapa2Conteudo1, idConteudoEtapas);
-    setTimeout(CheckDarkmode, 10);
-  }
+// async function conteudoInicialEtapa2() {
+//     //IDs idConteudoEtapas vai ser para todos estapas
+//     await trocaConteudo(conteudo_etapa2.etapa2Conteudo1, idConteudoEtapas);
+//     setTimeout(CheckDarkmode, 10);
+//   }

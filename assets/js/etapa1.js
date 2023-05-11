@@ -10,15 +10,13 @@ let conteudo_etapa1 = {
   exercicio7: "views/etapa1/etapa1_exercicio7.html",
 }
 
-const idConteudoEtapas = "#conteudo-etapas";
 
+// let voltarEtapa1;
+// // let conteudoAtual = conteudo_etapa1;
+// let proxConteudoEtapa1 = null;
 
-let voltarEtapa1;
-// let conteudoAtual = conteudo_etapa1;
-let proxConteudoEtapa1 = null;
-
-async function conteudoInicial() {
-  await trocaConteudo(conteudo_etapa1.conteudo1, idConteudoEtapas);
-  setTimeout(CheckDarkmode, 10);
-}
+// async function conteudoInicial() {
+//   await trocaConteudo(conteudo_etapa1.conteudo1, idConteudoEtapas);
+//   setTimeout(CheckDarkmode, 10);
+// }
 

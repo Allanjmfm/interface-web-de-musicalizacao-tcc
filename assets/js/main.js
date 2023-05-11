@@ -7,7 +7,7 @@ const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
 // IDs para trocas de conteudos
 const mainContainer = "#main-container";
-
+const idConteudoEtapas = "#conteudo-etapas";
 
 // Dark Mode
 function toggleDarkMode() {
@@ -22,79 +22,84 @@ function toggleDarkMode() {
   document.querySelector("footer").classList.toggle("footer-dark-mode");
 }
 
-
+// Lista de objeto arquivo Json para os conteúdos 
 let telas = {
   telaInicial: "views/tela_inicial.html",
   selecaoEtapas: "views/selecao_etapas.html",
   etapa1Tela1: "views/etapa1/conteudo_inicial.html",
-  etapa1Tela2: "views/etapa1/etapa1_tela2.html",
-  etapa2Tela1: "views/etapa2/conteudo_inicial2.html"
+  etapa2Tela1: "views/etapa2/conteudo_inicial2.html",
+  etapa3Tela1: "views/etapa3/conteudo_inicial3.html"
 };
 
-// Variável que receber tela anterior para ajudar
-// o usuaro para navigar para tele anterior.
-let voltar;
-let telaAnterior = null;
+// Função self-invoking para executar a tela inicial no index
 (async() => {
   await trocaConteudo(telas.telaInicial, mainContainer);
 })()
-//async function  Ela permite que você escreva código assíncrono
-// em um estilo síncrono.
-async function btnVoltar() {
-  // Chamamos a func Troca Conteudo com algumento variavel voltar.
-  // await para esperar que uma operação assíncrona termine
-  // antes de continuar a execução da função
-  await trocaConteudo(voltar, mainContainer);
-  setTimeout(CheckDarkmode, 10);
 
-  // Se variavel volata == telainicial então a tela anterior recebe null.
-  if (voltar == telas.telaInicial) {
-    telaAnterior = null;
-    // setTimeout(CheckDarkmode, 10);
-    return;
-  }
-  // aqui se tela anterior não é null.
-  if (telaAnterior) {
-    // variavel voltar receber tela anterior.
-    voltar = telaAnterior;
 
-    // Coloquei "telas" em colchetes porque o a func map só funciona
-    // arry, `[]` representa um array vazio em JavaScript.
-    // Um array é uma estrutura de dados que pode armazenar
-    // múltiplos valores em uma única variável.
-    [telas].map(function (conteudo) {
-      // Aqui verifiquei se tela aterior se sim a tela anterior
-      // recebe endreço da tela inicial.
-      if (telaAnterior == conteudo.selecaoEtapas) {
-        telaAnterior = conteudo.telaInicial;
-        return;
-      } /* else if (telaAnterior == conteudo.selecaoEtapas) {
-        console.log(conteudo);
-        return conteudo.telaInicial;
-      } */
-    });
-    //console.log(telaAnterior);
-  }
-}
+// // Variável que receber tela anterior para ajudar
+// // o usuaro para navigar para tele anterior.
+// let voltar;
+// let telaAnterior = null;
+
+// //async function  Ela permite que você escreva código assíncrono
+// // em um estilo síncrono.
+// async function btnVoltar() {
+//   // Chamamos a func Troca Conteudo com algumento variavel voltar.
+//   // await para esperar que uma operação assíncrona termine
+//   // antes de continuar a execução da função
+//   await trocaConteudo(voltar, mainContainer);
+//   setTimeout(CheckDarkmode, 10);
+
+//   // Se variavel volata == telainicial então a tela anterior recebe null.
+//   if (voltar == telas.telaInicial) {
+//     telaAnterior = null;
+//     // setTimeout(CheckDarkmode, 10);
+//     return;
+//   }
+//   // aqui se tela anterior não é null.
+//   if (telaAnterior) {
+//     // variavel voltar receber tela anterior.
+//     voltar = telaAnterior;
+
+//     // Coloquei "telas" em colchetes porque o a func map só funciona
+//     // arry, `[]` representa um array vazio em JavaScript.
+//     // Um array é uma estrutura de dados que pode armazenar
+//     // múltiplos valores em uma única variável.
+//     [telas].map(function (conteudo) {
+//       // Aqui verifiquei se tela aterior se sim a tela anterior
+//       // recebe endreço da tela inicial.
+//       if (telaAnterior == conteudo.selecaoEtapas) {
+//         telaAnterior = conteudo.telaInicial;
+//         return;
+//       } /* else if (telaAnterior == conteudo.selecaoEtapas) {
+//         console.log(conteudo);
+//         return conteudo.telaInicial;
+//       } */
+//     });
+//     //console.log(telaAnterior);
+//   }
+// }
+
+// Botões para selecionar as etapas
 
 async function btnSelEtapas() {
-  voltar = telas.telaInicial;
  await trocaConteudo(telas.selecaoEtapas, mainContainer);
   setTimeout(CheckDarkmode, 10);
 }
 
 async function btnEtapa1() {
-  // telaAnterior = voltar;
-  voltarEtapa1 = telas.selecaoEtapas;
  await trocaConteudo(telas.etapa1Tela1, mainContainer);
-  // setTimeout(CheckDarkmode, 10);
-  setTimeout(conteudoInicial, 250);
+  setTimeout(CheckDarkmode, 10);
 }
 async function btnEtapa2() {
-  // telaAnterior = voltar;
-  voltar = telas.testeEtapa1;
  await trocaConteudo(telas.etapa2Tela1, mainContainer);
-  setTimeout(conteudoInicialEtapa2, 250);
+  setTimeout(CheckDarkmode, 10);
+}
+
+async function btnEtapa3() {
+ await trocaConteudo(telas.etapa3Tela1, mainContainer);
+  setTimeout(CheckDarkmode, 10);
 }
 
 // Função de verificar se está em darkmode o contéudo da página html
@@ -105,9 +110,6 @@ function CheckDarkmode() {
         console.log("a");
         a.classList.add("btn-dark-mode");
       }
-      // else{
-      //   a.classList.remove("btn-dark-mode");
-      // }
     });
   }
 }
@@ -152,7 +154,7 @@ async function btnAvancar(proxConteudo) {
   setTimeout(CheckDarkmode, 10);
 }
 
-// função para volter entre etapas
+// função para voltar
 async function btnVoltarEtapas(voltar, id) {
  await trocaConteudo(voltar, id? id: idConteudoEtapas);
   setTimeout(CheckDarkmode, 10);
