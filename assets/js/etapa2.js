@@ -4,11 +4,12 @@ let conteudo_etapa2 = {
     etapa2Conteudo3: "views/etapa2/etapa2_tela3.html",
     etapa2Conteudo4: "views/etapa2/etapa2_tela4.html",
     etapa2Conteudo5: "views/etapa2/etapa2_tela5.html",
+    etapa2Conteudo6: "views/etapa2/etapa2_exercicio1.html",
+    etapa2Conteudo7: "views/etapa2/etapa2_exercicio2.html",
+    etapa2Conteudo8: "views/etapa2/etapa2_exercicio3.html",
+    etapa2Conteudo9: "views/etapa2/etapa2_exercicio4.html",
+    etapa2Conteudo10: "views/etapa2/etapa2_exercicio5.html",
+    etapa2Conteudo11: "views/etapa2/etapa2_exercicio6.html",
+    etapa2Conteudo12: "views/etapa2/etapa2_exercicio7.html",
+    etapa2Conteudo13: "views/etapa2/etapa2_parabens.html"
   };
-
-
-// async function conteudoInicialEtapa2() {
-//     //IDs idConteudoEtapas vai ser para todos estapas
-//     await trocaConteudo(conteudo_etapa2.etapa2Conteudo1, idConteudoEtapas);
-//     setTimeout(CheckDarkmode, 10);
-//   }
