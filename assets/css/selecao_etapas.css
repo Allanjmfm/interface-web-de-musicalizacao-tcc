@@ -3,6 +3,7 @@
 }
 
 .btn-container{
+    
     margin-top: 1rem ;
 }
 .selecao-etapas-btn{
@@ -48,18 +49,10 @@
     right: 0;
 }
 
-.container-estapas-div{
-  max-width: 800px;
-  max-height: 340px;
-  height: 100%;
-  width: 100%;
-    
-}
-
 @media (max-width: 1000px) {
-    .container{
+    /* .container{
         padding-bottom: 4rem;
-    }
+    } */
     
     .selecao-etapas-btn{
         box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
