@@ -10,5 +10,15 @@ let conteudo_etapa3 = {
     etapa3Conteudo9: "views/etapa3/etapa3_tela9.html",
     etapa3Conteudo10: "views/etapa3/etapa3_tela10.html",
     etapa3Conteudo11: "views/etapa3/etapa3_tela11.html",
-    etapa3Conteudo12: "views/etapa3/etapa3_tela12.html"
+    etapa3Conteudo12: "views/etapa3/etapa3_tela12.html",
+    etapa3Conteudo13: "views/etapa3/etapa3_tela13.html",
+    etapa3Conteudo14: "views/etapa3/etapa3_tela12.html",
+    etapa3Conteudo15: "views/etapa3/etapa3_tela12.html",
+    etapa3Conteudo16: "views/etapa3/etapa3_tela12.html",
+    etapa3Conteudo17: "views/etapa3/etapa3_tela12.html",
+    etapa3Conteudo18: "views/etapa3/etapa3_exercicio1.html",
+    etapa3Conteudo19: "views/etapa3/etapa3_exercicio2.html",
+    etapa3Conteudo19: "views/etapa3/etapa3_exercicio3.html",
+    etapa3Conteudo19: "views/etapa3/etapa3_exercicio2.html"
+
   };
