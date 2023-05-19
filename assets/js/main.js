@@ -149,8 +149,8 @@ function odarre() {
 }
 
 // função para avançar
-async function btnAvancar(proxConteudo) {
- await trocaConteudo(proxConteudo, idConteudoEtapas)
+async function btnAvancar(proxConteudo, id) {
+ await trocaConteudo(proxConteudo, id? id: idConteudoEtapas)
   setTimeout(CheckDarkmode, 10);
 }
 

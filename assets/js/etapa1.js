@@ -8,6 +8,7 @@ let conteudo_etapa1 = {
   exercicio5: "views/etapa1/etapa1_exercicio5.html",
   exercicio6: "views/etapa1/etapa1_exercicio6.html",
   exercicio7: "views/etapa1/etapa1_exercicio7.html",
+  etapa1_parabens: "views/etapa1/etapa1_parabens.html"
 }
 
 

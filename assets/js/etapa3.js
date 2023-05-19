@@ -12,13 +12,18 @@ let conteudo_etapa3 = {
     etapa3Conteudo11: "views/etapa3/etapa3_tela11.html",
     etapa3Conteudo12: "views/etapa3/etapa3_tela12.html",
     etapa3Conteudo13: "views/etapa3/etapa3_tela13.html",
-    etapa3Conteudo14: "views/etapa3/etapa3_tela12.html",
-    etapa3Conteudo15: "views/etapa3/etapa3_tela12.html",
-    etapa3Conteudo16: "views/etapa3/etapa3_tela12.html",
-    etapa3Conteudo17: "views/etapa3/etapa3_tela12.html",
+    etapa3Conteudo14: "views/etapa3/etapa3_tela14.html",
+    etapa3Conteudo15: "views/etapa3/etapa3_tela15.html",
+    etapa3Conteudo16: "views/etapa3/etapa3_tela16.html",
+    etapa3Conteudo17: "views/etapa3/etapa3_tela17.html",
     etapa3Conteudo18: "views/etapa3/etapa3_exercicio1.html",
     etapa3Conteudo19: "views/etapa3/etapa3_exercicio2.html",
-    etapa3Conteudo19: "views/etapa3/etapa3_exercicio3.html",
-    etapa3Conteudo19: "views/etapa3/etapa3_exercicio2.html"
-
+    etapa3Conteudo20: "views/etapa3/etapa3_exercicio3.html",
+    etapa3Conteudo21: "views/etapa3/etapa3_tela18.html",
+    etapa3Conteudo22: "views/etapa3/etapa3_tela19.html",
+    etapa3Conteudo23: "views/etapa3/etapa3_exercicio4.html",
+    etapa3Conteudo24: "views/etapa3/etapa3_exercicio5.html",
+    etapa3Conteudo25: "views/etapa3/etapa3_exercicio6.html",
+    etapa3Conteudo26: "views/etapa3/etapa3_exercicio7.html",
+    etapa3Conteudo27: "views/etapa3/etapa3_parabens.html"
   };
