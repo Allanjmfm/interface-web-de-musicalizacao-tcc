@@ -28,58 +28,14 @@ let telas = {
   selecaoEtapas: "views/selecao_etapas.html",
   etapa1Tela1: "views/etapa1/conteudo_inicial.html",
   etapa2Tela1: "views/etapa2/conteudo_inicial2.html",
-  etapa3Tela1: "views/etapa3/conteudo_inicial3.html"
+  etapa3Tela1: "views/etapa3/conteudo_inicial3.html",
+  etapa4Tela1: "views/etapa4/conteudo_incial4.html"
 };
 
 // Função self-invoking para executar a tela inicial no index
 (async() => {
   await trocaConteudo(telas.telaInicial, mainContainer);
 })()
-
-
-// // Variável que receber tela anterior para ajudar
-// // o usuaro para navigar para tele anterior.
-// let voltar;
-// let telaAnterior = null;
-
-// //async function  Ela permite que você escreva código assíncrono
-// // em um estilo síncrono.
-// async function btnVoltar() {
-//   // Chamamos a func Troca Conteudo com algumento variavel voltar.
-//   // await para esperar que uma operação assíncrona termine
-//   // antes de continuar a execução da função
-//   await trocaConteudo(voltar, mainContainer);
-//   setTimeout(CheckDarkmode, 10);
-
-//   // Se variavel volata == telainicial então a tela anterior recebe null.
-//   if (voltar == telas.telaInicial) {
-//     telaAnterior = null;
-//     // setTimeout(CheckDarkmode, 10);
-//     return;
-//   }
-//   // aqui se tela anterior não é null.
-//   if (telaAnterior) {
-//     // variavel voltar receber tela anterior.
-//     voltar = telaAnterior;
-
-//     // Coloquei "telas" em colchetes porque o a func map só funciona
-//     // arry, `[]` representa um array vazio em JavaScript.
-//     // Um array é uma estrutura de dados que pode armazenar
-//     // múltiplos valores em uma única variável.
-//     [telas].map(function (conteudo) {
-//       // Aqui verifiquei se tela aterior se sim a tela anterior
-//       // recebe endreço da tela inicial.
-//       if (telaAnterior == conteudo.selecaoEtapas) {
-//         telaAnterior = conteudo.telaInicial;
-//         return;
-//       } /* else if (telaAnterior == conteudo.selecaoEtapas) {
-//         console.log(conteudo);
-//         return conteudo.telaInicial;
-//       } */
-//     });
-//     //console.log(telaAnterior);
-//   }
-// }
 
 // Botões para selecionar as etapas
 
@@ -101,6 +57,11 @@ async function btnEtapa3() {
  await trocaConteudo(telas.etapa3Tela1, mainContainer);
   setTimeout(CheckDarkmode, 10);
 }
+
+async function btnEtapa4() {
+  await trocaConteudo(telas.etapa4Tela1, mainContainer);
+   setTimeout(CheckDarkmode, 10);
+ }
 
 // Função de verificar se está em darkmode o contéudo da página html
 function CheckDarkmode() {
