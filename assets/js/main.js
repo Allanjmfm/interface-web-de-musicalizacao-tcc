@@ -22,47 +22,6 @@ function toggleDarkMode() {
   document.querySelector("footer").classList.toggle("footer-dark-mode");
 }
 
-// Lista de objeto arquivo Json para os conteúdos 
-let telas = {
-  telaInicial: "views/tela_inicial.html",
-  selecaoEtapas: "views/selecao_etapas.html",
-  etapa1Tela1: "views/etapa1/conteudo_inicial.html",
-  etapa2Tela1: "views/etapa2/conteudo_inicial2.html",
-  etapa3Tela1: "views/etapa3/conteudo_inicial3.html",
-  etapa4Tela1: "views/etapa4/conteudo_inicial4.html"
-};
-
-// Função self-invoking para executar a tela inicial no index
-(async() => {
-  await trocaConteudo(telas.telaInicial, mainContainer);
-})()
-
-// Botões para selecionar as etapas
-
-async function btnSelEtapas() {
- await trocaConteudo(telas.selecaoEtapas, mainContainer);
-  setTimeout(CheckDarkmode, 10);
-}
-
-async function btnEtapa1() {
- await trocaConteudo(telas.etapa1Tela1, mainContainer);
-  setTimeout(CheckDarkmode, 10);
-}
-async function btnEtapa2() {
- await trocaConteudo(telas.etapa2Tela1, mainContainer);
-  setTimeout(CheckDarkmode, 10);
-}
-
-async function btnEtapa3() {
- await trocaConteudo(telas.etapa3Tela1, mainContainer);
-  setTimeout(CheckDarkmode, 10);
-}
-
-async function btnEtapa4() {
-  await trocaConteudo(telas.etapa4Tela1, mainContainer);
-   setTimeout(CheckDarkmode, 10);
- }
-
 // Função de verificar se está em darkmode o contéudo da página html
 function CheckDarkmode() {
   if (darkMode.classList.contains("dark-mode")) {
@@ -74,6 +33,29 @@ function CheckDarkmode() {
     });
   }
 }
+
+
+// Lista de objeto arquivo Json para os conteúdos 
+let telas = {
+  telaInicial: "views/tela_inicial.html",
+  selecaoEtapas: "views/selecao_etapas.html",
+  etapa1Tela1: "etapa1/conteudo_inicial.html",
+  etapa2Tela1: "etapa2/conteudo_inicial2.html",
+  etapa3Tela1: "etapa3/conteudo_inicial3.html",
+  etapa4Tela1: "etapa4/conteudo_inicial4.html",
+  etapa5Tela1: "etapa5/conteudo_inicial5.html"
+};
+
+// // Função self-invoking para executar a tela inicial no index
+// (async() => {
+//   await trocaConteudo(telas.telaInicial, mainContainer);
+// })()
+
+// Função para selecionar as etapas
+ async function btnEtapa(linkTelaInicialEtapas) {
+  await trocaConteudo(linkTelaInicialEtapas, mainContainer);
+   setTimeout(CheckDarkmode, 10);
+ }
 
 // A função "otrec" atualiza a aparência e conteúdo de um elemento de 
 // mensagem em uma página da web quando uma resposta correta é dada, 

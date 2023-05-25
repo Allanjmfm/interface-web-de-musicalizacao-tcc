@@ -60,63 +60,68 @@
         </nav>
         </header>
         <div class="main-container">
-          <div id="main-container" class="mt-auto my-auto text-center align-items-center">
-            <div class="d-flex flex-column justify-content-center container align-items-center etapa1-container"> 
-                <div class="d-flex justify-content-center align-items-center etapa1-menu-container">
-                    <div class="icon-container etapa1-icon-prof">
-                        <img class="icon-img"  src="../../assets/img/professor.svg"/>
+            <div id="main-container" class="mt-auto my-auto text-center align-items-center">
+                <div class="d-flex flex-column justify-content-center container align-items-center etapa1-container"> 
+                    <div class="d-flex justify-content-center align-items-center etapa1-menu-container">
+                        <div class="icon-container etapa1-icon-prof">
+                            <img class="icon-img"  src="../../assets/img/professor.svg"/>
+                        </div>
+                        <div>
+                            <h2>Etapa 1</h2>
+                            <h5>Aprendendo o nome das notas musicais</h5>
+                        </div>
                     </div>
-                    <div>
-                        <h2>Etapa 2</h2>
-                        <h5>Aprendendo sobre Frequência Sonora (Parte 1)</h5>
+                    <div id="conteudo-etapas" class="container-estapas-div">
+                        <section class="container-content">
+                            <div class="d-flex flex-column justify-content-around etapa1-texto">
+                                <div>
+                                    <h5>Existem sete (7) notas musicais: Dó -  Ré - Mi - Fá - Sol - Lá - Si</h5>
+                                </div>
+                                <div>
+                                    <p>Essas notas podem ser representadas através de letras da seguinte forma:</p>
+                                </div>
+                            </div>
+                            <div class="etapa1-grid-notas d-flex flex-wrap justify-content-around align-items-center">
+                                <div class="etapa1-notas">
+                                    Dó = C
+                                </div>
+                                <div class="etapa1-notas">
+                                    Ré = D
+                                </div>
+                                <div class="etapa1-notas">
+                                    Mi = E
+                                </div>
+                                <div class="etapa1-notas">
+                                    Fá = F
+                                </div>
+                                <div class="etapa1-notas">
+                                    Sol = G
+                                </div>
+                                <div class="etapa1-notas">
+                                    Lá = A
+                                </div>
+                                <div class="etapa1-notas">
+                                    Si = B
+                                </div>
+                            </div>
+                        
+                        </section>
+                        
+                        <div class="btn-etapas-container d-flex justify-content-between">
+                            <div href="#" class="btn-container"> 
+                                <a href="../selecao_etapas.html" id="btn-voltar-context" class="btn selecao-etapas-btn" role="button">Voltar para seleção de etapas</a>
+                            </div>
+                            <div class="btn-container"> 
+                                <button id="btn-avancar-context" onclick="btnAvancar(conteudo_etapa1.conteudo2)" class="btn selecao-etapas-btn" role="button">Avançar</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div id="conteudo-etapas" class="container-estapas-div">
-                    <section class="container-content">
-                        <div class="d-flex flex-column justify-content-around etapa1-texto">
-                          <div>
-                            <h5>Toda nota musical possui frequência sonora específica.</h5>
-                            <p>Para entendermos isso, vamos escrever dois ciclos de Dó a Si:</p>
-                            <p>C, D, E, F, G, A, B, C, D, E, F, G, A, B</p>
-                          </div>
-                          <div>
-                            <p>Contando as notas de Dó a Dó, temos 8 notas no total.</p>
-                            <p>
-                              Dessa forma, podemos nos referir ao intervalo entre duas notas
-                              consecutivas de mesmo nome utilizando o termo "oitava"
-                            </p>
-                          </div>
-                        </div>
-                      </section>
-                      
-                      <div class="btn-etapas-container d-flex justify-content-between">
-                        <div class="btn-container">
-                          <a href="../selecao_etapas.html"
-                            id="btn-voltar-context"
-                            class="btn selecao-etapas-btn"
-                            role="button"
-                          >
-                            Voltar para seleção de etapas
-                        </a>
-                        </div>
-                        <div class="btn-container">
-                          <button
-                            id="btn-avancar-context"
-                            onclick="btnAvancar(conteudo_etapa2.etapa2Conteudo2)"
-                            class="btn selecao-etapas-btn"
-                            role="button"
-                          >
-                            Avançar
-                          </button>
-                        </div>
-                      </div>
                 </div>
             </div>
-          </div>
     <footer class="d-flex text-center">
-      <div id="text" class="container-fluid">
-        <p>Universidade Federal do Pará - 2023</p>
-      </div>
+        <div id="text" class="container-fluid">
+            <p>Universidade Federal do Pará - 2023</p>
+        </div>
     </footer>
 </body>
 </html>

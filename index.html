@@ -30,6 +30,7 @@
     <script src="assets/js/etapa2.js"></script>
     <script src="assets/js/etapa3.js"></script>
     <script src="assets/js/etapa4.js"></script>
+    <script src="assets/js/etapa5.js"></script>
     <title>Módulo de Musicalização</title> 
 </head>
 <body id="dark-mode" class="min-vh-100">
@@ -59,7 +60,39 @@
         </nav>
         </header>
         <div class="main-container">
-            <div id="main-container" conteudo="views/tela_inicial.html"  class="mt-auto my-auto text-center align-items-center">
+            <div id="main-container" class="mt-auto my-auto text-center align-items-center">
+                <div class="container-fluid">
+                    <h2 class="pb-4">
+                        <strong>Escolha uma opção:</strong>
+                    </h2>
+                </div>
+                <div class="container my-4 tela-inicial-container">
+                    <div class="d-flex flex-wrap justify-content-center">
+                        <button id="btn_inicio" class="tela-inicial-btn btn btn-ajuste" type="button">
+                            <div class="svg-container-inicial">
+                                <div class="icon-container">
+                                    <img class="icon-img"  src="assets/img/icon_read.svg"/>
+                                </div>
+                                <h5>
+                                    <strong>É a sua primeira vez na nossa plataforma?</strong>
+                                </h5>
+                                Comece do zero!
+                            </div>
+                        </button>
+                        <a href="views/selecao_etapas.html" id="btn_sel_etapas" class="tela-inicial-btn btn-ajuste" type="button">
+                            <div class="svg-container-inicial">
+                                <div class="icon-container">
+                                    <img class="icon-img" src="assets/img/icon_student.svg"/>
+                                </div>
+                                <h5>
+                                    <strong>Já acessou nossa plataforma antes?</strong>
+                                </h5>
+                                Escolha a etapa desejada!
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
             </div>
         </div>
     <footer class="d-flex text-center">
