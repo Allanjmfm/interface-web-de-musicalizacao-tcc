@@ -99,4 +99,8 @@
   .btn-etapas-container > .btn-container > button{
     width: 100%;
   }
+  .btn-etapas-container > .btn-container > a{
+    width: 100%;
+  }
 }
+
