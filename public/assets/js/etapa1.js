@@ -1,5 +1,5 @@
 let conteudo_etapa1 = {
-  conteudo1: "etapa1_tela1.html",
+  // conteudo1: "etapa1_tela1.html",
   conteudo2: "etapa1_tela2.html",
   exercicio1: "etapa1_exercicio1.html",
   exercicio2: "etapa1_exercicio2.html",
