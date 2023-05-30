@@ -36,3 +36,7 @@
     height: var(--h-100px);
 }
 
+.cor-notas-bg{
+    background-color: rgb(0, 0, 0);
+    height: 150px;
+}

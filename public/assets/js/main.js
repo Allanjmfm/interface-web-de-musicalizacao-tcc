@@ -43,7 +43,8 @@ let telas = {
   etapa2Tela1: "etapa2/conteudo_inicial2.html",
   etapa3Tela1: "etapa3/conteudo_inicial3.html",
   etapa4Tela1: "etapa4/conteudo_inicial4.html",
-  etapa5Tela1: "etapa5/conteudo_inicial5.html"
+  etapa5Tela1: "etapa5/conteudo_inicial5.html",
+  etapa6Tela1: "etapa6/conteudo_inicial6.html"
 };
 
 // // Função self-invoking para executar a tela inicial no index
