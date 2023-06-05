@@ -65,6 +65,7 @@ footer p {
 
 /* Estilos Gerais */
 a {
+  text-decoration: none;
   color: inherit;
 }
 
@@ -102,4 +103,8 @@ nav p {
 .icon-img {
   height: 100%;
   width: 100%;
+}
+
+.lista-alfa{
+  list-style-type: upper-alpha;
 }
