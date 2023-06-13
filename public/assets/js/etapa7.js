@@ -14,11 +14,13 @@ let conteudo_etapa7 = {
     etapa7Conteudo14: "etapa7_tela14.html",
     etapa7Conteudo15: "etapa7_tela15.html",
     etapa7Conteudo16: "etapa7_tela16.html",
-    etapa7Conteudo17: "etapa7_exercicio1.html",
-    etapa7Conteudo18: "etapa7_exercicio2.html",
-    etapa7Conteudo19: "etapa7_exercicio3.html",
-    etapa7Conteudo20: "etapa7_exercicio4.html",
-    etapa7Conteudo21: "etapa7_exercicio5.html",
-    etapa7Conteudo22: "etapa7_exercicio6.html",
-    etapa7Conteudo23: "etapa7_parabens.html"
+    etapa7Conteudo17: "etapa7_tela17.html",
+    etapa7Conteudo18: "etapa7_tela18.html",
+    etapa7Conteudo19: "etapa7_tela19.html",
+    etapa7Conteudo20: "etapa7_tela20.html",
+    etapa7Conteudo21: "etapa7_tela21.html",
+    etapa7Conteudo22: "etapa7_tela22.html",
+    etapa7Conteudo23: "etapa7_tela23.html",
+    etapa7Conteudo24: "etapa7_tela24.html",
+    etapa7Conteudo25: "etapa7_parabens.html"
 };
