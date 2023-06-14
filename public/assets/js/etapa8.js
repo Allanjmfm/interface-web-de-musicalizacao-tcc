@@ -1,0 +1,15 @@
+let conteudo_etapa8 = {
+    etapa8Conteudo2: "etapa8_tela2.html",
+    etapa8Conteudo3: "etapa8_tela3.html",
+    etapa8Conteudo4: "etapa8_tela4.html",
+    etapa8Conteudo5: "etapa8_tela5.html",
+    etapa8Conteudo6: "etapa8_tela6.html",
+    etapa8Conteudo7: "etapa8_tela7.html",
+    etapa8Conteudo8: "etapa8_tela8.html",
+    etapa8Conteudo9: "etapa8_tela9.html",
+    etapa8Conteudo10: "etapa8_tela10.html",
+    etapa8Conteudo11: "etapa8_tela11.html",
+    etapa8Conteudo12: "etapa8_tela12.html",
+    etapa8Conteudo13: "etapa8_tela13.html",
+    etapa8Conteudo14: "etapa8_tela14.html",
+};
