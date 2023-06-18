@@ -38,7 +38,6 @@ footer p {
 }
 
 .main-container {
-  /* height: calc(100vh - 30vh); */
   display: flex;
   flex-direction: column;
 }
@@ -108,3 +107,9 @@ nav p {
 .lista-alfa{
   list-style-type: upper-alpha;
 }
+
+/* @media (min-width: 760px) {
+  .main-container {
+    padding-bottom: 3rem;
+  }
+   */
