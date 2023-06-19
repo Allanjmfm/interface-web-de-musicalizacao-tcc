@@ -40,6 +40,7 @@ footer p {
 .main-container {
   display: flex;
   flex-direction: column;
+  border: #df2e38 solid 1px;
 }
 
 .btn-dark-mode {
@@ -60,6 +61,17 @@ footer p {
 .btn-ajuste {
   height: 100%;
   margin: 0.5rem;
+}
+
+/* Ícone dos bonecos da tela incial*/
+.icon-container-inicial {
+  padding: 1rem;
+  max-width: 150px;
+  max-height: 1500px;
+}
+.icon-img-inicial {
+  height: 100%;
+  width: 100%;
 }
 
 /* Estilos Gerais */
@@ -94,22 +106,12 @@ nav p {
 #home-menu {
   font-size: 1.2rem;
 }
-.icon-container {
-  padding: 1rem;
-  max-width: 150px;
-  max-height: 150px;
-}
-.icon-img {
-  height: 100%;
-  width: 100%;
-}
-
 .lista-alfa{
   list-style-type: upper-alpha;
 }
 
-/* @media (min-width: 760px) {
-  .main-container {
-    padding-bottom: 3rem;
-  }
-   */
+.scrollbar {
+  overflow: scroll;
+  display: block;
+  height: 150%;
+}
