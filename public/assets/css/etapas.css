@@ -8,7 +8,6 @@
 
 /* Ícone do professor das etapas*/
 .icon-container {
-    padding: 0.2rem;
     max-width: 90px;
     max-height: 90px;
 }
@@ -55,7 +54,7 @@
 .btn-etapas-container {
     width: 100%;
     max-width: 800px;
-    padding: 20px 50px 0 50px;
+    padding: 0 50px 0 50px;
 }
 
 .etapa1-texto {
@@ -97,7 +96,7 @@
     }
 
     .etapa1-menu-container {
-        padding: 1rem 2rem 2rem 2rem;
+        padding: 1rem 2rem 0.5rem 2rem;
     }
 }
 
@@ -114,29 +113,12 @@
     .btn-etapas-container {
         display: flex;
         flex-direction: column;
-    }
-
-    .btn-etapas-container>.btn-container>button {
-        width: 100%;
-    }
-
-    .btn-etapas-container>.btn-container>a {
-        width: 100%;
-    }
-
-    .container-content {
+        justify-content: center;
         width: 100%;
         height: 100%;
         min-height: 300px;
         background-color: rgba(0, 0, 0, 0.04);
         padding: 1rem;
         border-radius: 5px;
-    }
-}
-
-@media all and (min-width:600px) {
-    .img-size {
-        width: 50%;
-        max-width: 100%;
     }
 }
