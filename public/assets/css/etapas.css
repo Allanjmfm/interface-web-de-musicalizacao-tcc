@@ -1,128 +1,124 @@
 .etapa1-menu-container {
-  width: 100%;
-  height: 100%;
-  max-width: 800px;
-  max-height: 100px;
-  position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    max-height: 100px;
+    position: relative;
 }
+
 /* Ícone do professor das etapas*/
 .icon-container {
-  max-width: 90px;
-  max-height: 90px;
+    max-width: 90px;
+    max-height: 90px;
 }
+
 .icon-img {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 .container-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  background-color: rgba(0, 0, 0, 0.04);
-  padding: 1rem;
-  border-radius: 5px;
-}
-
-.etapa1-grid-notas {
-  justify-items: center;
-  height: calc(100% - 70%);
-  padding: 1rem;
-}
-
-.etapa1-notas {
-  background-color: var(--btn-bg);
-  border-radius: 10px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-  min-width: 4.5rem;
-  /* height: 100px; */
-  text-align: center;
-  padding: 0.5rem;
-}
-
-.etapa1-notas:hover{
-  transition: 0.5s;
-  background-color: var(--btn-bg-hover);
-}
-
-.btn-etapas-container {
-  width: 100%;
-  max-width: 800px;
-  padding: 0 50px 0 50px;
-}
-
-.etapa1-texto {
-  height: 100%;
-  /* max-height: 12rem; */
-}
-.etapa1-texto > div > h5 {
-  padding-bottom: 1rem;
-  font-weight: 600;
-}
-.mensagem {
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  padding: 0.5rem;
-}
-
-.msg-certa-cor {
-  color: #4a9e44;
-  background-color: #5e9c592a;
-}
-
-.msg-incorrta-cor {
-  color: #df2e38;
-  background-color: #df2e372d;
-}
-
-.container-estapas-div{
-  max-width: 800px;
-  max-height: 340px;
-  height: 100%;
-  width: 100%;
-}
-
-@media (min-width: 760px) {
-  .etapa1-icon-prof {
-    position: absolute;
-    left: 0;
-  }
-  
-  .etapa1-menu-container {
-    padding:1rem 2rem 0.5rem 2rem;
-  }
-}
-@media all and (max-width: 760px){
-
-  .main-container{
-    padding-bottom: 5rem;
-  }
-
-  .container-estapas-div{
-    max-height: 100%;
-  }
-
-  .btn-etapas-container{
     display: flex;
     flex-direction: column;
-  }
-
-  .btn-etapas-container > .btn-container > button{
-    width: 100%;
-  }
-  .btn-etapas-container > .btn-container > a{
-    width: 100%;
-  }
-  .container-content {
+    justify-content: center;
     width: 100%;
     height: 100%;
     min-height: 300px;
     background-color: rgba(0, 0, 0, 0.04);
     padding: 1rem;
     border-radius: 5px;
-  }
+}
+
+.etapa1-grid-notas {
+    justify-items: center;
+    height: calc(100% - 70%);
+    padding: 1rem;
+}
+
+.etapa1-notas {
+    background-color: var(--btn-bg);
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    min-width: 4.5rem;
+    /* height: 100px; */
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.etapa1-notas:hover {
+    transition: 0.5s;
+    background-color: var(--btn-bg-hover);
+}
+
+.btn-etapas-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 15px 50px 5px 50px;
+}
+
+.etapa1-texto {
+    height: 100%;
+    /* max-height: 12rem; */
+}
+
+.etapa1-texto>div>h5 {
+    padding-bottom: 1rem;
+    font-weight: 600;
+}
+
+.mensagem {
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.msg-certa-cor {
+    color: #4a9e44;
+    background-color: #5e9c592a;
+}
+
+.msg-incorrta-cor {
+    color: #df2e38;
+    background-color: #df2e372d;
+}
+
+.container-estapas-div {
+    max-width: 800px;
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 760px) {
+    .etapa1-icon-prof {
+        position: absolute;
+        left: 0;
+    }
+
+    .etapa1-menu-container {
+        padding: 1rem 2rem 0.5rem 2rem;
+    }
+}
+
+@media all and (max-width: 760px) {
+
+    .main-container {
+        padding-bottom: 5rem;
+    }
+
+    .container-estapas-div {
+        max-height: 100%;
+    }
+
+    .btn-etapas-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        background-color: rgba(0, 0, 0, 0.04);
+        padding: 1rem;
+        border-radius: 5px;
+    }
 }

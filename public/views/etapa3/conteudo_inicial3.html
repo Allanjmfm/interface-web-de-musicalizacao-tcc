@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,13 +28,14 @@
     <script defer src="../../assets/js/main.js"></script>
     <script src="../../assets/js/troca-conteudo.js"></script>
     <script defer src="../../assets/js/etapa3.js"></script>
-    <title>Módulo de Musicalização</title> 
+    <title>Módulo de Musicalização</title>
 </head>
+
 <body id="dark-mode" class="min-vh-100">
     <header class="container" id="nav-container">
         <nav class="d-flex flex-wrap justify-content-center justify-content-md-between py-2 mb-1 border-bottom align-items-center">
             <a href="#" class="d-flex align-items-center mb-2 mb-md-0 text-decoration-none">
-                <img class="logo" id="logo"  src="../../assets/img/logo_ufpa.svg" height="52" width="90" alt="Logo UFPA"/>
+                <img class="logo" id="logo" src="../../assets/img/logo_ufpa.svg" height="52" width="90" alt="Logo UFPA" />
                 <h1 class="pt-2"> Módulo de Musicalização</h1>
             </a>
             <ul class="nav justify-content-end">
@@ -54,45 +56,46 @@
                 </li>
             </ul>
         </nav>
-        </header>
-        <div id="main-container" class="main-container">
-            <div class="d-flex flex-column text-center justify-content-center container align-items-center etapa1-container"> 
-                <div class="d-flex justify-content-center align-items-center etapa1-menu-container">
-                    <div class="icon-container etapa1-icon-prof">
-                        <img class="icon-img"  src="../../assets/img/professor.svg"/>
-                    </div>
-                    <div>
-                        <h2>Etapa 3</h2>
-                        <h5>Aprendendo sobre Frequência Sonora (Parte 2)</h5>
-                    </div>
+    </header>
+    <div id="main-container" class="main-container">
+        <div class="d-flex flex-column text-center justify-content-center container align-items-center etapa1-container">
+            <div class="d-flex justify-content-center align-items-center etapa1-menu-container">
+                <div class="icon-container etapa1-icon-prof">
+                    <img class="icon-img" src="../../assets/img/professor.svg" />
                 </div>
-                <div id="conteudo-etapas" class="container-estapas-div">
-                    <section class="container-content">
-                        <div class="d-flex flex-column justify-content-around etapa1-texto">
-                            <div>
-                                <h5>Vamos aprender a representar as notas musicais utilizando pautas musicais ou também conhecidas como pentagrama.</h5>
-                                <p>Cada espaço e cada linha indicará a posição de uma nota diferente.</p>
-                            </div>
-                            <div class="container">
-                                <img class="w-75" src="img/pentagrama.png">
-                            </div>
+                <div>
+                    <h2>Etapa 3</h2>
+                    <h5>Aprendendo sobre Frequência Sonora (Parte 2)</h5>
+                </div>
+            </div>
+            <div id="conteudo-etapas" class="container-estapas-div">
+                <section class="container-content">
+                    <div class="d-flex flex-column justify-content-around etapa1-texto">
+                        <div>
+                            <h5>Vamos aprender a representar as notas musicais utilizando pautas musicais ou também conhecidas como pentagrama.</h5>
+                            <p>Cada espaço e cada linha indicará a posição de uma nota diferente.</p>
                         </div>
-                    </section>
-                    
-                    <div class="btn-etapas-container d-flex justify-content-between">
-                        <div class="btn-container"> 
-                            <a href="../selecao_etapas.html" id="btn-voltar-context"  class="btn selecao-etapas-btn" role="button">Voltar para seleção de etapas</a>
+                        <div class="container">
+                            <img class="w-75" src="img/pentagrama.png">
                         </div>
-                        <div class="btn-container"> 
-                            <button id="btn-avancar-context" onclick="btnAvancar(conteudo_etapa3.etapa3Conteudo2)" class="btn selecao-etapas-btn" role="button">Avançar</button>
+                    </div>
+                </section>
+                <div class="btn-etapas-container d-flex justify-content-between">
+                    <div class="btn-container">
+                        <a href="../selecao_etapas.html" id="btn-voltar-context" class="btn selecao-etapas-btn" role="button">Voltar para seleção de etapas</a>
+                    </div>
+                    <div class="btn-container">
+                        <button id="btn-avancar-context" onclick="btnAvancar(conteudo_etapa3.etapa3Conteudo2)" class="btn selecao-etapas-btn" role="button">Avançar</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     <footer class="d-flex text-center">
         <div id="text" class="container-fluid">
             <p>Universidade Federal do Pará - 2023</p>
         </div>
     </footer>
 </body>
+
 </html>

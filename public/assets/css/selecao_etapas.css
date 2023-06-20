@@ -1,12 +1,12 @@
-.icon-padding-sel-etapas{
+.icon-padding-sel-etapas {
     padding: 0 0 1rem 0;
 }
 
-.btn-container{
-    
-    margin-top: 1rem ;
-}
-.selecao-etapas-btn{
+/* .btn-container {
+    margin-top: 1rem;
+} */
+
+.selecao-etapas-btn {
     background-color: var(--btn-bg);
     padding: .5rem 1.5rem .5rem 1.5rem;
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
@@ -14,32 +14,32 @@
     position: relative;
 }
 
-.selecao-etapas-btn:hover{
+.selecao-etapas-btn:hover {
     transition: 0.5s;
     background-color: var(--btn-bg-hover);
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-.svg-container-selecao{
+.svg-container-selecao {
     width: 100%;
     height: 10rem;
 }
 
-.svg-container-selecao p{
+.svg-container-selecao p {
     margin: 0;
 }
 
-.btn-ajuste-selecao button{
-    margin:0.2rem 0.2rem ;
+.btn-ajuste-selecao button {
+    margin: 0.2rem 0.2rem;
 }
 
-.grid-etapas{
+.grid-etapas {
     margin: 0 auto;
-    display:grid;
+    display: grid;
     padding: 5px;
 }
 
-.etapas-num{
+.etapas-num {
     background-color: #C780FA;
     font-weight: 550;
     padding: 0.18rem 0.3rem;
@@ -53,14 +53,14 @@
     /* .container{
         padding-bottom: 4rem;
     } */
-    
-    .selecao-etapas-btn{
+
+    .selecao-etapas-btn {
         box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     }
 }
 
-@media( min-width: 600px){
-    .grid-etapas{ 
+@media(min-width: 600px) {
+    .grid-etapas {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -70,8 +70,8 @@
         grid-template-columns: repeat(4, 1fr);
     }
 } */
-@media( min-width: 1000px){
-    .grid-etapas{ 
+@media(min-width: 1000px) {
+    .grid-etapas {
         grid-template-columns: repeat(5, 1fr);
     }
 }
