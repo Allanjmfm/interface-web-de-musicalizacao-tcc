@@ -40,7 +40,6 @@ footer p {
 .main-container {
   display: flex;
   flex-direction: column;
-  border: #df2e38 solid 1px;
 }
 
 .btn-dark-mode {

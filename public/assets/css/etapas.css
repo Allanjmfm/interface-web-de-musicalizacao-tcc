@@ -7,7 +7,6 @@
 }
 /* Ícone do professor das etapas*/
 .icon-container {
-  padding: 0.2rem;
   max-width: 90px;
   max-height: 90px;
 }
@@ -94,7 +93,7 @@
   }
   
   .etapa1-menu-container {
-    padding:1rem 2rem 2rem 2rem;
+    padding:1rem 2rem 0.5rem 2rem;
   }
 }
 @media all and (max-width: 760px){
@@ -125,12 +124,5 @@
     background-color: rgba(0, 0, 0, 0.04);
     padding: 1rem;
     border-radius: 5px;
-  }
-}
-
-@media all and (min-width:600px){
-  .img-size{
-    width: 50%;
-    max-width: 100%;
   }
 }
