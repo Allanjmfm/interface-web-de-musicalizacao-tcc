@@ -104,6 +104,6 @@ async function btnVoltarEtapas(voltar, id) {
     setTimeout(CheckDarkmode, 10);
 }
 
-async function respostaExercicio(resposta, id) {
+// async function respostaExercicio(resposta, id) {
 
-}
+// }
