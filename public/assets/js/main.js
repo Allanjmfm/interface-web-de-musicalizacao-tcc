@@ -73,6 +73,8 @@ function otrec() {
         div.classList.add("msg-certa-cor");
     }
     div.innerHTML = "Resposta Certa. Mandou bem.";
+    // Se a pessoa acertar habilita o botão de avançar
+    // E desabilita todas as alternativas e coloca a alternativa certa na cor verde
 }
 
 // A função "odarre" atualiza a aparência e conteúdo de um 
@@ -90,6 +92,7 @@ function odarre() {
         div.classList.add("msg-incorrta-cor");
     }
     div.innerHTML = "Resposta Incorreta. Tente novamente.";
+    // A alternativa que a pessoa errou vai ser disabled
 }
 
 // função para avançar
@@ -104,6 +107,6 @@ async function btnVoltarEtapas(voltar, id) {
     setTimeout(CheckDarkmode, 10);
 }
 
-// async function respostaExercicio(resposta, id) {
+async function respostaExercicio(resposta, id) {
 
-// }
+}

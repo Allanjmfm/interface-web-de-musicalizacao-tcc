@@ -6,7 +6,9 @@
     position: relative;
 }
 
+
 /* Ícone do professor das etapas*/
+
 .icon-container {
     max-width: 90px;
     max-height: 90px;
@@ -38,8 +40,7 @@
 .etapa1-notas {
     background-color: var(--btn-bg);
     border-radius: 10px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-        rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     min-width: 4.5rem;
     /* height: 100px; */
     text-align: center;
@@ -96,22 +97,18 @@
         position: absolute;
         left: 0;
     }
-
     .etapa1-menu-container {
         padding: 1rem 2rem 0.5rem 2rem;
     }
 }
 
 @media all and (max-width: 760px) {
-
     .main-container {
         padding-bottom: 5rem;
     }
-
     .container-estapas-div {
         max-height: 100%;
     }
-
     .btn-etapas-container {
         flex-direction: column;
         justify-content: start;
@@ -121,14 +118,11 @@
         min-height: 300px;
         padding: 1rem;
     }
-
     .btn-etapas-container>.btn-container {
         width: calc(100% - 50px);
         padding: 1rem 0 0 0;
     }
-
     .btn-etapas-container>.btn-container>.selecao-etapas-btn {
         width: 100%;
     }
-
 }

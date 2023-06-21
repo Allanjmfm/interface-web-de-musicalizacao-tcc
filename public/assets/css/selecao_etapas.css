@@ -2,10 +2,6 @@
     padding: 0 0 1rem 0;
 }
 
-/* .btn-container {
-    margin-top: 1rem;
-} */
-
 .selecao-etapas-btn {
     background-color: var(--btn-bg);
     padding: .5rem 1.5rem .5rem 1.5rem;
@@ -53,7 +49,6 @@
     /* .container{
         padding-bottom: 4rem;
     } */
-
     .selecao-etapas-btn {
         box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     }
@@ -65,11 +60,13 @@
     }
 }
 
+
 /* @media( min-width: 900px){
     .grid-etapas{ 
         grid-template-columns: repeat(4, 1fr);
     }
 } */
+
 @media(min-width: 1000px) {
     .grid-etapas {
         grid-template-columns: repeat(5, 1fr);
