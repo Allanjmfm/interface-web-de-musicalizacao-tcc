@@ -137,12 +137,7 @@ nav p {
 
 /* Desabilita o botão de avançar */
 
-.disable-btn {
-    box-shadow: rgba(50, 50, 93, 0.082) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.014) 0px 18px 36px -18px inset;
-    min-width: 4.5rem;
-    text-align: center;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px 5px 5px 5px;
+.disabled-btn {
     pointer-events: none;
+    opacity: 0.4;
 }

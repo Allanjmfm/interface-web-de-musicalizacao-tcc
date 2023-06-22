@@ -43,11 +43,11 @@ let telas = {
     telaInicial: "views/tela_inicial.html",
     selecaoEtapas: "views/selecao_etapas.html",
     etapa1Tela1: "/views/etapa1/conteudo_inicial1.html",
-    etapa2Tela1: "etapa2/conteudo_inicial2.html",
-    etapa3Tela1: "etapa3/conteudo_inicial3.html",
-    etapa4Tela1: "etapa4/conteudo_inicial4.html",
-    etapa5Tela1: "etapa5/conteudo_inicial5.html",
-    etapa6Tela1: "etapa6/conteudo_inicial6.html"
+    etapa2Tela1: "/views/etapa2/conteudo_inicial2.html",
+    etapa3Tela1: "/views/etapa3/conteudo_inicial3.html",
+    etapa4Tela1: "/views/etapa4/conteudo_inicial4.html",
+    etapa5Tela1: "/views/etapa5/conteudo_inicial5.html",
+    etapa6Tela1: "/views/etapa6/conteudo_inicial6.html"
 };
 
 // // Função self-invoking para executar a tela inicial no index
@@ -96,6 +96,7 @@ function otrec(proxConteudo, id) {
 // adicionando a classe "msg-incorrta-cor" e definindo o conteúdo HTML interno como 
 // "Resposta Incorreta. Tente novamente.".
 async function odarre(revisaoEtapa) {
+    console.log(this);
     const div = document.getElementById("mensagem");
     if (!div.classList.contains("msg-incorrta-cor")) {
         if (div.classList.remove("msg-certa-cor")) {
@@ -104,13 +105,17 @@ async function odarre(revisaoEtapa) {
         div.classList.add("msg-incorrta-cor");
     }
 
-    if (tentativas != 0) {
+    if (tentativas != 1) {
         div.innerHTML = ''
         tentativas = tentativas - 1;
         div.innerHTML = `Resposta Incorreta. Tente novamente. ${tentativas} tentativas restantes`;
     } else {
         tentativas = 3;
-        recomecaEtapa(revisaoEtapa);
+        div.innerHTML = "Que pena, você errou todas as tentativas. Vamos recomeçar os estudos.";
+
+        setTimeout(() => {
+            recomecaEtapa(revisaoEtapa);
+        }, 3000);
     }
     // A alternativa que a pessoa errou vai ser disabled
     // O usuário terá 3 tentativas, caso erre as três volta para o conteúdo inicial da etapa em que está
