@@ -9,6 +9,9 @@ const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 const mainContainer = "#main-container";
 const idConteudoEtapas = "#conteudo-etapas";
 
+// Variável para número de tentativas
+let tentativas = 3;
+
 // Dark Mode
 function toggleDarkMode() {
     darkMode.classList.toggle("dark-mode");
@@ -39,7 +42,7 @@ function CheckDarkmode() {
 let telas = {
     telaInicial: "views/tela_inicial.html",
     selecaoEtapas: "views/selecao_etapas.html",
-    etapa1Tela1: "etapa1/conteudo_inicial.html",
+    etapa1Tela1: "/views/etapa1/conteudo_inicial1.html",
     etapa2Tela1: "etapa2/conteudo_inicial2.html",
     etapa3Tela1: "etapa3/conteudo_inicial3.html",
     etapa4Tela1: "etapa4/conteudo_inicial4.html",
@@ -58,13 +61,17 @@ async function btnEtapa(linkTelaInicialEtapas) {
     setTimeout(CheckDarkmode, 10);
 }
 
+async function respostaExercicio() {
+
+}
+
 // A função "otrec" atualiza a aparência e conteúdo de um elemento de 
 // mensagem em uma página da web quando uma resposta correta é dada, 
 // verificando se o elemento não tem a classe "msg-certa-cor", 
 // removendo a classe "msg-incorrta-cor" se ela existir, adicionando a classe 
 // "msg-certa-cor" e definindo o conteúdo HTML interno como 
 // "Resposta Certa. Mandou bem.".
-function otrec() {
+function otrec(proxConteudo, id) {
     const div = document.getElementById("mensagem");
     if (!div.classList.contains("msg-certa-cor")) {
         if (div.classList.remove("msg-incorrta-cor")) {
@@ -73,8 +80,13 @@ function otrec() {
         div.classList.add("msg-certa-cor");
     }
     div.innerHTML = "Resposta Certa. Mandou bem.";
-    // Se a pessoa acertar habilita o botão de avançar
-    // E desabilita todas as alternativas e coloca a alternativa certa na cor verde
+    setTimeout(async() => {
+        await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas)
+        setTimeout(CheckDarkmode, 10);
+    }, 1000);
+
+    // Se a pessoa acertar avança automaticamente para a próxima tela
+    //A alternativa fica na cor verde
 }
 
 // A função "odarre" atualiza a aparência e conteúdo de um 
@@ -83,7 +95,7 @@ function otrec() {
 // "msg-incorrta-cor", removendo a classe "msg-certa-cor" se ela existir, 
 // adicionando a classe "msg-incorrta-cor" e definindo o conteúdo HTML interno como 
 // "Resposta Incorreta. Tente novamente.".
-function odarre() {
+async function odarre(revisaoEtapa) {
     const div = document.getElementById("mensagem");
     if (!div.classList.contains("msg-incorrta-cor")) {
         if (div.classList.remove("msg-certa-cor")) {
@@ -91,9 +103,23 @@ function odarre() {
         }
         div.classList.add("msg-incorrta-cor");
     }
-    div.innerHTML = "Resposta Incorreta. Tente novamente.";
+
+    if (tentativas != 0) {
+        div.innerHTML = ''
+        tentativas = tentativas - 1;
+        div.innerHTML = `Resposta Incorreta. Tente novamente. ${tentativas} tentativas restantes`;
+    } else {
+        tentativas = 3;
+        recomecaEtapa(revisaoEtapa);
+    }
     // A alternativa que a pessoa errou vai ser disabled
+    // O usuário terá 3 tentativas, caso erre as três volta para o conteúdo inicial da etapa em que está
 }
+// Função para redirecionar o usuário para recomeçar a etapa
+function recomecaEtapa(link) {
+    location.replace(origin + link);
+}
+
 
 // função para avançar
 async function btnAvancar(proxConteudo, id) {
@@ -105,8 +131,4 @@ async function btnAvancar(proxConteudo, id) {
 async function btnVoltarEtapas(voltar, id) {
     await trocaConteudo(voltar, id ? id : idConteudoEtapas);
     setTimeout(CheckDarkmode, 10);
-}
-
-async function respostaExercicio(resposta, id) {
-
 }
