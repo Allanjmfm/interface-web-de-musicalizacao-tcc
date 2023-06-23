@@ -81,6 +81,11 @@
     background-color: #5e9c592a;
 }
 
+.btn-resp-certa {
+    background-color: #4a9e44;
+    color: #fff;
+}
+
 .msg-incorrta-cor {
     color: #df2e38;
     background-color: #df2e372d;

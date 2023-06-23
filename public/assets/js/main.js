@@ -9,10 +9,11 @@ const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 const mainContainer = "#main-container";
 const idConteudoEtapas = "#conteudo-etapas";
 
-// Variável para número de tentativas
+// Variável para número de tentativas dos exercícios
 let tentativas = 3;
 
-// Dark Mode
+
+// Função Dark Mode
 function toggleDarkMode() {
     darkMode.classList.toggle("dark-mode");
     document.querySelector("#sobre-menu").classList.toggle("letra-light");
@@ -38,7 +39,7 @@ function CheckDarkmode() {
 }
 
 
-// Lista de objeto arquivo Json para os conteúdos 
+// Lista de objeto arquivo Json para os conteúdos iniciais de cada etapa
 let telas = {
     telaInicial: "views/tela_inicial.html",
     selecaoEtapas: "views/selecao_etapas.html",
@@ -72,6 +73,8 @@ async function respostaExercicio() {
 // "msg-certa-cor" e definindo o conteúdo HTML interno como 
 // "Resposta Certa. Mandou bem.".
 function otrec(proxConteudo, id) {
+    const respCertaDiv = document.querySelector(".otrec");
+    const respErradaDiv = document.querySelectorAll(".odarre");
     const div = document.getElementById("mensagem");
     if (!div.classList.contains("msg-certa-cor")) {
         if (div.classList.remove("msg-incorrta-cor")) {
@@ -79,6 +82,12 @@ function otrec(proxConteudo, id) {
         }
         div.classList.add("msg-certa-cor");
     }
+    try {
+        // respCertaDiv.classList.add()
+        respCertaDiv.classList.add("btn-resp-certa");
+        respCertaDiv.classList.add("disabled-btn");
+        Array.from(respErradaDiv).map((e) => e.classList.add("disabled-btn"));
+    } catch {}
     div.innerHTML = "Resposta Certa. Mandou bem.";
     setTimeout(async() => {
         await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas)
@@ -96,7 +105,8 @@ function otrec(proxConteudo, id) {
 // adicionando a classe "msg-incorrta-cor" e definindo o conteúdo HTML interno como 
 // "Resposta Incorreta. Tente novamente.".
 async function odarre(revisaoEtapa) {
-    console.log(this);
+    const respCerta = document.querySelector(".otrec");
+    const respErrada = document.querySelectorAll(".odarre");
     const div = document.getElementById("mensagem");
     if (!div.classList.contains("msg-incorrta-cor")) {
         if (div.classList.remove("msg-certa-cor")) {
