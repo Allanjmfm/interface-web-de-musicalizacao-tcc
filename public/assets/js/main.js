@@ -48,7 +48,8 @@ let telas = {
     etapa3Tela1: "/views/etapa3/conteudo_inicial3.html",
     etapa4Tela1: "/views/etapa4/conteudo_inicial4.html",
     etapa5Tela1: "/views/etapa5/conteudo_inicial5.html",
-    etapa6Tela1: "/views/etapa6/conteudo_inicial6.html"
+    etapa6Tela1: "/views/etapa6/conteudo_inicial6.html",
+    etapa7Tela1: "/views/etapa7/conteudo_inicial7.html",
 };
 
 // // Função self-invoking para executar a tela inicial no index
@@ -60,10 +61,6 @@ let telas = {
 async function btnEtapa(linkTelaInicialEtapas) {
     await trocaConteudo(linkTelaInicialEtapas, mainContainer);
     setTimeout(CheckDarkmode, 10);
-}
-
-async function respostaExercicio() {
-
 }
 
 // A função "otrec" atualiza a aparência e conteúdo de um elemento de 
@@ -83,7 +80,6 @@ function otrec(proxConteudo, id) {
         div.classList.add("msg-certa-cor");
     }
     try {
-        // respCertaDiv.classList.add()
         respCertaDiv.classList.add("btn-resp-certa");
         respCertaDiv.classList.add("disabled-btn");
         Array.from(respErradaDiv).map((e) => e.classList.add("disabled-btn"));
@@ -127,7 +123,7 @@ async function odarre(revisaoEtapa) {
             recomecaEtapa(revisaoEtapa);
         }, 3000);
     }
-    // A alternativa que a pessoa errou vai ser disabled
+    // A alternativa que a pessoa errou vai ser disabled e fica na cor vermelha
     // O usuário terá 3 tentativas, caso erre as três volta para o conteúdo inicial da etapa em que está
 }
 // Função para redirecionar o usuário para recomeçar a etapa
