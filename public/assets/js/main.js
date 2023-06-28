@@ -90,6 +90,10 @@ function otrec(proxConteudo, id) {
         setTimeout(CheckDarkmode, 10);
     }, 1000);
 
+    // Imposta tentativas a 3 se il valore corrente è inferiore a 3
+    if (tentativas < 3){
+        tentativas = 3;
+    }
     // Se a pessoa acertar avança automaticamente para a próxima tela
     //A alternativa fica na cor verde
 }
@@ -101,8 +105,8 @@ function otrec(proxConteudo, id) {
 // adicionando a classe "msg-incorrta-cor" e definindo o conteúdo HTML interno como 
 // "Resposta Incorreta. Tente novamente.".
 async function odarre(revisaoEtapa) {
-    const respCerta = document.querySelector(".otrec");
-    const respErrada = document.querySelectorAll(".odarre");
+    // const respCerta = document.querySelector(".otrec");
+    // const respErrada = document.querySelectorAll(".odarre");
     const div = document.getElementById("mensagem");
     if (!div.classList.contains("msg-incorrta-cor")) {
         if (div.classList.remove("msg-certa-cor")) {
@@ -126,6 +130,7 @@ async function odarre(revisaoEtapa) {
     // A alternativa que a pessoa errou vai ser disabled e fica na cor vermelha
     // O usuário terá 3 tentativas, caso erre as três volta para o conteúdo inicial da etapa em que está
 }
+
 // Função para redirecionar o usuário para recomeçar a etapa
 function recomecaEtapa(link) {
     location.replace(origin + link);
