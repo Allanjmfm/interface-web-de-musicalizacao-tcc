@@ -105,8 +105,8 @@ function otrec(proxConteudo, id) {
 // adicionando a classe "msg-incorrta-cor" e definindo o conteúdo HTML interno como 
 // "Resposta Incorreta. Tente novamente.".
 async function odarre(revisaoEtapa) {
-    // const respCerta = document.querySelector(".otrec");
-    // const respErrada = document.querySelectorAll(".odarre");
+    const respCerta = document.querySelector(".otrec");
+    const respErrada = document.querySelectorAll(".odarre");
     const div = document.getElementById("mensagem");
     if (!div.classList.contains("msg-incorrta-cor")) {
         if (div.classList.remove("msg-certa-cor")) {
