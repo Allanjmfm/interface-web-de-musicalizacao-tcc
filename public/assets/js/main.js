@@ -114,7 +114,6 @@ async function odarre(revisaoEtapa) {
         }
         div.classList.add("msg-incorrta-cor");
     }
-
     if (tentativas != 1) {
         div.innerHTML = ''
         tentativas = tentativas - 1;
@@ -127,6 +126,7 @@ async function odarre(revisaoEtapa) {
             recomecaEtapa(revisaoEtapa);
         }, 3000);
     }
+    
     // A alternativa que a pessoa errou vai ser disabled e fica na cor vermelha
     // O usuário terá 3 tentativas, caso erre as três volta para o conteúdo inicial da etapa em que está
 }

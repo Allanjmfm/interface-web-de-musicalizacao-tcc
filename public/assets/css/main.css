@@ -135,8 +135,7 @@ nav p {
 }
 
 
-/* Desabilita o botão de avançar */
-
+/* Desabilita os botões */
 .disabled-btn {
     pointer-events: none;
     opacity: 0.4;
