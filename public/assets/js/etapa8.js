@@ -12,4 +12,13 @@ let conteudo_etapa8 = {
     etapa8Conteudo12: "etapa8_tela12.html",
     etapa8Conteudo13: "etapa8_tela13.html",
     etapa8Conteudo14: "etapa8_tela14.html",
+    etapa8Conteudo15: "etapa8_tela15.html",
+    etapa8Conteudo16: "etapa8_tela16.html",
+    etapa8Conteudo17: "etapa8_tela17.html",
+    etapa8Conteudo18: "etapa8_tela18.html",
+    etapa8Conteudo19: "etapa8_tela19.html",
+    etapa8Conteudo20: "etapa8_tela20.html",
+    etapa8Conteudo21: "etapa8_tela21.html",
+    etapa8Conteudo22: "etapa8_tela22.html",
+    etapa8Conteudo23: "etapa8_tela23.html",
 };
