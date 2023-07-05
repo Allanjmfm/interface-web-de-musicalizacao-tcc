@@ -63,12 +63,7 @@ async function btnEtapa(linkTelaInicialEtapas) {
     setTimeout(CheckDarkmode, 10);
 }
 
-// A função "otrec" atualiza a aparência e conteúdo de um elemento de 
-// mensagem em uma página da web quando uma resposta correta é dada, 
-// verificando se o elemento não tem a classe "msg-certa-cor", 
-// removendo a classe "msg-incorrta-cor" se ela existir, adicionando a classe 
-// "msg-certa-cor" e definindo o conteúdo HTML interno como 
-// "Resposta Certa. Mandou bem.".
+// Função da alternativa correta nos exercícios
 function otrec(proxConteudo, id) {
     const respCertaDiv = document.querySelector(".otrec");
     const respErradaDiv = document.querySelectorAll(".odarre");
@@ -90,20 +85,12 @@ function otrec(proxConteudo, id) {
         setTimeout(CheckDarkmode, 10);
     }, 1000);
 
-    // Imposta tentativas a 3 se il valore corrente è inferiore a 3
-    if (tentativas < 3){
+    if (tentativas < 3) {
         tentativas = 3;
     }
-    // Se a pessoa acertar avança automaticamente para a próxima tela
-    //A alternativa fica na cor verde
 }
 
-// A função "odarre" atualiza a aparência e conteúdo de um 
-// elemento de mensagem em uma página da web quando uma resposta 
-// incorreta é dada, verificando se o elemento não tem a classe 
-// "msg-incorrta-cor", removendo a classe "msg-certa-cor" se ela existir, 
-// adicionando a classe "msg-incorrta-cor" e definindo o conteúdo HTML interno como 
-// "Resposta Incorreta. Tente novamente.".
+// Função da alternativa incorreta nos exercícios
 async function odarre(revisaoEtapa) {
     const respCerta = document.querySelector(".otrec");
     const respErrada = document.querySelectorAll(".odarre");
@@ -126,9 +113,6 @@ async function odarre(revisaoEtapa) {
             recomecaEtapa(revisaoEtapa);
         }, 3000);
     }
-    
-    // A alternativa que a pessoa errou vai ser disabled e fica na cor vermelha
-    // O usuário terá 3 tentativas, caso erre as três volta para o conteúdo inicial da etapa em que está
 }
 
 // Função para redirecionar o usuário para recomeçar a etapa
