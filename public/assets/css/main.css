@@ -134,8 +134,15 @@ nav p {
     list-style-type: upper-alpha;
 }
 
+.math {
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
 
 /* Desabilita os botões */
+
 .disabled-btn {
     pointer-events: none;
     opacity: 0.4;
