@@ -141,3 +141,8 @@
         width: 100%;
     }
 }
+@media (max-width: 768px) {
+    .w-50 {
+        width: 75%!important;
+    }
+}
