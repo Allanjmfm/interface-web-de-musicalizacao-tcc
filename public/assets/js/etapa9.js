@@ -24,5 +24,9 @@ let conteudo_etapa9 = {
     etapa9Conteudo24: "etapa9_tela24.html",
     etapa9Conteudo25: "etapa9_tela25.html",
     etapa9Conteudo26: "etapa9_tela26.html",
-    etapa9Conteudo27: "etapa9_parabens.html",
+    etapa9Conteudo27: "etapa9_tela27.html",
+    etapa9Conteudo28: "etapa9_tela28.html",
+    etapa9Conteudo29: "etapa9_tela29.html",
+    etapa9Conteudo30: "etapa9_tela30.html",
+    etapa9Conteudo31: "etapa9_parabens.html",
 };
