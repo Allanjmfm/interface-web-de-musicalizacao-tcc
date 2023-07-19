@@ -19,12 +19,15 @@
     width: 100%;
 }
 
+
 /* GIF do troféu */
-.icon-container-trofeu{
+
+.icon-container-trofeu {
     max-width: 150px;
     max-height: 150px;
 }
-.icon-trofeu{
+
+.icon-trofeu {
     width: 100%;
     height: 100%;
 }
@@ -52,7 +55,15 @@
     border-radius: 10px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     min-width: 4.5rem;
-    /* height: 100px; */
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.notas-bg {
+    background-color: var(--btn-bg);
+    border-radius: 10px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    min-width: 4.5rem;
     text-align: center;
     padding: 0.5rem;
 }
@@ -141,6 +152,7 @@
         width: 100%;
     }
 }
+
 @media (max-width: 768px) {
     .w-50 {
         width: 75%!important;
