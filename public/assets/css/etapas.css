@@ -62,7 +62,7 @@
 .notas-bg {
     background-color: var(--btn-bg);
     border-radius: 10px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
     min-width: 4.5rem;
     text-align: center;
     padding: 0.5rem;
@@ -154,8 +154,8 @@
 }
 
 @media (max-width: 768px) {
-    .w-50 {
-        width: 75%!important;
+    .w-75 {
+        width: 100%!important;
     }
     ol {
         padding-inline-start: 0px !important;
