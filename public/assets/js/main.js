@@ -14,7 +14,7 @@ let tentativas = 3;
 
 
 // Função Dark Mode
-function toggleDarkMode() {
+function d() {
     darkMode.classList.toggle("dark-mode");
     document.querySelector("#sobre-menu").classList.toggle("letra-light");
     document.querySelector("#home-menu").classList.toggle("letra-light");
@@ -28,7 +28,8 @@ function toggleDarkMode() {
 
 // Função de verificar se está em darkmode o contéudo da página html
 function CheckDarkmode() {
-    if (darkMode.classList.contains("dark-mode")) {
+    let isDark = JSON.parse(localStorage.getItem('dark-mode'));
+    if (isDark) {
         document.querySelectorAll("button").forEach((a) => {
             if (!a.classList.contains("btn-dark-mode")) {
                 console.log("a");
@@ -80,7 +81,7 @@ function otrec(proxConteudo, id) {
         Array.from(respErradaDiv).map((e) => e.classList.add("disabled-btn"));
     } catch {}
     div.innerHTML = "Resposta Certa. Mandou bem.";
-    setTimeout(async() => {
+    setTimeout(async () => {
         await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas)
         setTimeout(CheckDarkmode, 10);
     }, 1000);
