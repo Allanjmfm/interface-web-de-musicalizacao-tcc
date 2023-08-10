@@ -29,3 +29,5 @@ let conteudo_etapa8 = {
     // etapa8Conteudo29: "etapa8_tela29.html",
     // etapa8Conteudo30: "etapa8_tela30.html",
 };
+
+paginaAtual();

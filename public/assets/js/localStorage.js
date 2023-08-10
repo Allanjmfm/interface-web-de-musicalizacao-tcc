@@ -1,13 +1,21 @@
+// Local Storage para o dark mode.
 if (localStorage.getItem('dark-mode') === null) {
     localStorage.setItem('dark-mode', false);
 }
 
-
-function toggleDarkMode() {
-    let isDark = localStorage.getItem('dark-mode');
+async function toggleDarkMode() {
+    let isDark = await localStorage.getItem('dark-mode');
     if (JSON.parse(isDark)) {
-        localStorage.setItem('dark-mode', false)
+        await localStorage.setItem('dark-mode', false)
+        await removeDarkMode();
     } else {
-        localStorage.setItem('dark-mode', true);
+        await localStorage.setItem('dark-mode', true);
+        await addDarkMode();
     }
+}
+
+// Para guardar a pagina que usuario ficou. 
+function paginaAtual() {
+    let conteudoAtualLink = window.location.href;
+    localStorage.setItem('pagina-atual', conteudoAtualLink);
 }

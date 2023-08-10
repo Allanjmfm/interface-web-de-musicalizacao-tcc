@@ -14,16 +14,42 @@ let tentativas = 3;
 
 
 // Função Dark Mode
-function d() {
-    darkMode.classList.toggle("dark-mode");
-    document.querySelector("#sobre-menu").classList.toggle("letra-light");
-    document.querySelector("#home-menu").classList.toggle("letra-light");
-    document.querySelector("#dark-menu").classList.toggle("letra-light");
-    document.querySelector("#font-menu").classList.toggle("letra-light");
+if (JSON.parse(localStorage.getItem('dark-mode'))) {
+    addDarkMode();
+} else {
+    removeDarkMode();
+}
+
+//Função adicionar modo escuro
+function addDarkMode() {
+    darkMode.classList.add("dark-mode");
+    document.querySelector("#sobre-menu").classList.add("letra-light");
+    document.querySelector("#home-menu").classList.add("letra-light");
+    document.querySelector("#dark-menu").classList.add("letra-light");
+    document.querySelector("#font-menu").classList.add("letra-light");
     document
         .querySelectorAll("button")
-        .forEach((a) => a.classList.toggle("btn-dark-mode"));
-    document.querySelector("footer").classList.toggle("footer-dark-mode");
+        .forEach((a) => a.classList.add("btn-dark-mode"));
+    document
+        .querySelectorAll("a")
+        .forEach((a) => a.classList.add("btn-dark-mode"));
+    document.querySelector("footer").classList.add("footer-dark-mode");
+}
+
+//Função remover modo escuro
+function removeDarkMode() {
+    darkMode.classList.remove("dark-mode");
+    document.querySelector("#sobre-menu").classList.remove("letra-light");
+    document.querySelector("#home-menu").classList.remove("letra-light");
+    document.querySelector("#dark-menu").classList.remove("letra-light");
+    document.querySelector("#font-menu").classList.remove("letra-light");
+    document
+        .querySelectorAll("button")
+        .forEach((a) => a.classList.remove("btn-dark-mode"));
+    document
+        .querySelectorAll("a")
+        .forEach((a) => a.classList.remove("btn-dark-mode"));
+    document.querySelector("footer").classList.remove("footer-dark-mode");
 }
 
 // Função de verificar se está em darkmode o contéudo da página html
@@ -32,7 +58,11 @@ function CheckDarkmode() {
     if (isDark) {
         document.querySelectorAll("button").forEach((a) => {
             if (!a.classList.contains("btn-dark-mode")) {
-                console.log("a");
+                a.classList.add("btn-dark-mode");
+            }
+        });
+        document.querySelectorAll("a").forEach((a) => {
+            if (!a.classList.contains("btn-dark-mode")) {
                 a.classList.add("btn-dark-mode");
             }
         });
@@ -124,12 +154,12 @@ function recomecaEtapa(link) {
 
 // função para avançar
 async function btnAvancar(proxConteudo, id) {
-    await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas)
-    setTimeout(CheckDarkmode, 10);
+    await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas);
+    await setTimeout(CheckDarkmode, 10);
 }
 
 // função para voltar
 async function btnVoltarEtapas(voltar, id) {
     await trocaConteudo(voltar, id ? id : idConteudoEtapas);
-    setTimeout(CheckDarkmode, 10);
+    await setTimeout(CheckDarkmode, 10);
 }

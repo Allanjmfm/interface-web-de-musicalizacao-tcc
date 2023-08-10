@@ -26,4 +26,5 @@ let conteudo_etapa3 = {
     etapa3Conteudo25: "etapa3_exercicio6.html",
     etapa3Conteudo26: "etapa3_exercicio7.html",
     etapa3Conteudo27: "etapa3_parabens.html"
-  };
+};
+paginaAtual();

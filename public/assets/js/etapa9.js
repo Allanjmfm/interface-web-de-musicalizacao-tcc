@@ -39,3 +39,5 @@ let conteudo_etapa9 = {
     etapa9Conteudo39: "etapa9_tela39.html",
     etapa9Conteudo40: "etapa9_parabens.html",
 };
+
+paginaAtual();

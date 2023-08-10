@@ -24,3 +24,5 @@ let conteudo_etapa7 = {
     etapa7Conteudo24: "etapa7_tela24.html",
     etapa7Conteudo25: "etapa7_parabens.html"
 };
+
+paginaAtual();
