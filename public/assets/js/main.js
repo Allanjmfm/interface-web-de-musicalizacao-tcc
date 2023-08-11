@@ -113,6 +113,7 @@ function otrec(proxConteudo, id) {
     div.innerHTML = "Resposta Certa. Mandou bem.";
     setTimeout(async () => {
         await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas)
+        await linkAtualDoConteudo(proxConteudo);
         setTimeout(CheckDarkmode, 10);
     }, 1000);
 
@@ -156,10 +157,12 @@ function recomecaEtapa(link) {
 async function btnAvancar(proxConteudo, id) {
     await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas);
     await setTimeout(CheckDarkmode, 10);
+    linkAtualDoConteudo(proxConteudo);
 }
 
 // função para voltar
 async function btnVoltarEtapas(voltar, id) {
     await trocaConteudo(voltar, id ? id : idConteudoEtapas);
     await setTimeout(CheckDarkmode, 10);
+    linkAtualDoConteudo(proxConteudo);
 }
