@@ -46,14 +46,8 @@
 }
 
 @media (max-width: 1000px) {
-    /* .container{
-        padding-bottom: 4rem;
-    } */
     .selecao-etapas-btn {
         box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-    }
-    .padding-5rem-inicial {
-        padding-top: 3rem;
     }
 }
 
@@ -67,7 +61,16 @@
     .grid-etapas {
         grid-template-columns: repeat(5, 1fr);
     }
-    .padding-5rem {
+}
+
+/* Padding para centralizar o conteudo do index e seleção de etapas */
+@media (min-height: 1000px){
+    .padding-4rem {
         padding-top: 4rem;
+    }
+}
+@media(max-height: 1000px){
+    .padding-3rem-inicial {
+        padding-top: 3rem;
     }
 }
