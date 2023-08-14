@@ -1,3 +1,8 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "editor.tabCompletion": "on",
+    "diffEditor.codeLens": true,
+    "docwriter.progress.trackFunctions": true,
+    "docwriter.style": "Auto-detect",
+    "docwriter.hotkey.mac": "⌥ + ."
 }
