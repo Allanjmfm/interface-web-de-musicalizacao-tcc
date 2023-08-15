@@ -22,3 +22,5 @@ let conteudo_etapa6 = {
     etapa6Conteudo22: "etapa6_exercicio6.html",
     etapa6Conteudo23: "etapa6_parabens.html"
 };
+
+paginaAtual();

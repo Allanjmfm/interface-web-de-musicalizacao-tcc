@@ -25,3 +25,5 @@ let conteudo_etapa10 = {
     etapa10Conteudo25: "etapa10_tela25.html",
     etapa10Conteudo26: "etapa10_tela26.html",
 };
+
+paginaAtual();

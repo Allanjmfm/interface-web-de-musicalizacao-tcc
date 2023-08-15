@@ -8,3 +8,4 @@ let conteudo_etapa4 = {
     etapa4Conteudo7: "etapa4_tela7.html",
     etapa4Conteudo8: "etapa4_parabens.html"
 };
+paginaAtual();
