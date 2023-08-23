@@ -222,3 +222,10 @@
 .h-93 {
     height: 92.9%;
 }
+
+@media (max-height: 768px) {
+    .cor-notas-bg {
+        height: 130px;
+        width: 100%;
+    }
+}
