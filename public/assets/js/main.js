@@ -12,6 +12,7 @@ const idConteudoEtapas = "#conteudo-etapas";
 // Variável para número de tentativas dos exercícios
 let tentativas = 3;
 
+let zoomLevel = Math.round(window.devicePixelRatio * 100);
 
 // Função Dark Mode
 if (JSON.parse(localStorage.getItem('dark-mode'))) {
@@ -111,7 +112,7 @@ function otrec(proxConteudo, id) {
         Array.from(respErradaDiv).map((e) => e.classList.add("disabled-btn"));
     } catch {}
     div.innerHTML = "Resposta Certa. Mandou bem.";
-    setTimeout(async () => {
+    setTimeout(async() => {
         await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas)
         await linkAtualDoConteudo(proxConteudo);
         setTimeout(CheckDarkmode, 10);
@@ -165,4 +166,26 @@ async function btnVoltarEtapas(voltar, id) {
     await trocaConteudo(voltar, id ? id : idConteudoEtapas);
     await setTimeout(CheckDarkmode, 10);
     linkAtualDoConteudo(proxConteudo);
+}
+
+
+
+function zoomIn() {
+    if (zoomLevel >= 200) {
+        return;
+    }
+    zoomLevel += 10;
+    zoomStorage(zoomLevel);
+    document.body.style.zoom = zoomLevel.toString() + "%";
+
+}
+
+function zoomOut() {
+    if (zoomLevel <= 70) {
+        return
+    }
+    zoomLevel -= 10;
+    zoomStorage(zoomLevel);
+    document.body.style.zoom = zoomLevel.toString() + "%";
+
 }
