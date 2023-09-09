@@ -36,7 +36,7 @@
 <body id="dark-mode" class="min-vh-100">
     <header class="container" id="nav-container">
         <nav class="d-flex flex-wrap justify-content-center justify-content-md-between py-2 mb-1 border-bottom align-items-center">
-            <a href="#" class="d-flex align-items-center mb-2 mb-md-0 text-decoration-none">
+            <a onclick="removePaginaAtual()" href="../../index.html" class="d-flex align-items-center mb-2 mb-md-0 text-decoration-none">
                 <img class="logo" id="logo" src="../../assets/img/logo_ufpa.svg" height="52" width="90" alt="Logo UFPA" />
                 <h1 class="pt-2"> Módulo de Musicalização</h1>
             </a>
@@ -55,8 +55,13 @@
                         <span class="material-symbols-outlined"> contrast</span> </a>
                 </li>
                 <li>
-                    <a onclick="increaseTextSize()" class="btn main-btn nav-link" id="font-menu" href="#" role="button">
+                    <a onclick="zoomIn()" class="btn main-btn nav-link" id="font-menu" href="#" role="button">
                         <span class="material-symbols-outlined"> text_increase</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="zoomOut()" class="btn main-btn nav-link" id="font-menu" href="#" role="button">
+                        <span class="material-symbols-outlined"> text_decrease</span>
                     </a>
                 </li>
             </ul>

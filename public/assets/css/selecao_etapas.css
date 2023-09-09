@@ -45,6 +45,13 @@
     right: 0;
 }
 
+
+@media all and (min-width: 1000px) and (max-width: 1400px){
+    .icon-padding-sel-etapas{
+        padding: 1.8rem 1rem 0.5rem 1rem;
+    }
+}
+
 @media (max-width: 1000px) {
     .selecao-etapas-btn {
         margin: 0.3rem;
