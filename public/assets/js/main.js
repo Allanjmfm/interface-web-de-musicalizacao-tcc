@@ -156,16 +156,18 @@ function recomecaEtapa(link) {
 
 // função para avançar
 async function btnAvancar(proxConteudo, id) {
-    await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas);
+    await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas, () => {
+        linkAtualDoConteudo(proxConteudo);
+    });
     await setTimeout(CheckDarkmode, 10);
-    linkAtualDoConteudo(proxConteudo);
 }
 
 // função para voltar
 async function btnVoltarEtapas(voltar, id) {
-    await trocaConteudo(voltar, id ? id : idConteudoEtapas);
+    await trocaConteudo(voltar, id ? id : idConteudoEtapas, () => {
+        linkAtualDoConteudo(proxConteudo);
+    });
     await setTimeout(CheckDarkmode, 10);
-    linkAtualDoConteudo(proxConteudo);
 }
 
 
