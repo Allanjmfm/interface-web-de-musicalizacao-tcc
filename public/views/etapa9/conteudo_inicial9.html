@@ -35,7 +35,7 @@
 <body id="dark-mode" class="min-vh-100">
     <header class="container" id="nav-container">
         <nav class="d-flex flex-wrap justify-content-center justify-content-md-between py-2 mb-1 border-bottom align-items-center">
-            <a href="#" class="d-flex align-items-center mb-2 mb-md-0 text-decoration-none">
+            <a onclick="removePaginaAtual()" href="../../index.html" class="d-flex align-items-center mb-2 mb-md-0 text-decoration-none">
                 <img class="logo" id="logo" src="../../assets/img/logo_ufpa.svg" height="52" width="90" alt="Logo UFPA" />
                 <h1 class="pt-2"> Módulo de Musicalização</h1>
             </a>
@@ -44,18 +44,23 @@
                     <a class="btn main-btn nav-link" id="sobre-menu" href="#" role="button">Sobre</a>
                 </li>
                 <li>
-                    <a class="btn main-btn nav-link" id="etapas-menu" href="../selecao_etapas.html" role="button">Etapas</a>
+                    <a onclick="removePaginaAtual()" class="btn main-btn nav-link" id="etapas-menu" href="../selecao_etapas.html" role="button">Etapas</a>
                 </li>
                 <li>
-                    <a class="btn main-btn nav-link" id="home-menu" href="../../index.html" role="button">Home</a>
+                    <a onclick="removePaginaAtual()" class="btn main-btn nav-link" id="home-menu" href="../../index.html" role="button">Home</a>
                 </li>
                 <li>
                     <a onclick="toggleDarkMode()" class="btn main-btn nav-link" id="dark-menu" href="#" role="button">
                         <span class="material-symbols-outlined"> contrast</span> </a>
                 </li>
                 <li>
-                    <a onclick="increaseTextSize()" class="btn main-btn nav-link" id="font-menu" href="#" role="button">
+                    <a onclick="zoomIn()" class="btn main-btn nav-link" id="font-menu" href="#" role="button">
                         <span class="material-symbols-outlined"> text_increase</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="zoomOut()" class="btn main-btn nav-link" id="font-menu" href="#" role="button">
+                        <span class="material-symbols-outlined"> text_decrease</span>
                     </a>
                 </li>
             </ul>
@@ -86,7 +91,7 @@
                     </section>
                     <div class="btn-etapas-container  ">
                         <div class="btn-container">
-                            <a href="../selecao_etapas.html" id="btn-voltar-context" class="btn selecao-etapas-btn" role="button">Voltar para seleção de etapas</a>
+                            <a onclick="removePaginaAtual()" href="../selecao_etapas.html" id="btn-voltar-context" class="btn selecao-etapas-btn" role="button">Voltar para seleção de etapas</a>
                         </div>
                         <div class="btn-container">
                             <button id="btn-avancar-context" onclick="btnAvancar(conteudo_etapa9.etapa9Conteudo2)" class="btn selecao-etapas-btn" role="button">Avançar</button>
@@ -95,6 +100,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="space-up">
     </div>
     <footer class="d-flex text-center">
         <div id="text" class="container-fluid">

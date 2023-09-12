@@ -5,6 +5,7 @@ if (localStorage.getItem('dark-mode') === null) {
     localStorage.setItem('dark-mode', false);
 }
 
+
 // Definição de uma função assíncrona chamada toggleDarkMode
 async function toggleDarkMode() {
     // Obtém o valor do armazenamento local associado à chave 'dark-mode'
@@ -27,7 +28,7 @@ async function toggleDarkMode() {
 }
 
 // Configura um intervalo para verificar o estado de prontidão do documento e as condições de armazenamento local
-let stateCheck = setInterval(async () => {
+let stateCheck = setInterval(async() => {
     // Verifica se o documento está totalmente carregado
     if (document.readyState === 'complete') {
         // Verifica se um item específico existe no armazenamento local
@@ -40,6 +41,14 @@ let stateCheck = setInterval(async () => {
                 // Uma vez que a ação seja executada, limpa o intervalo para parar de verificar
                 clearInterval(stateCheck);
             });
+        }
+
+        if (localStorage.getItem("zoom") !== null) {
+            const zoomLocal = localStorage.getItem("zoom");
+            document.body.style.zoom = zoomLocal.toString() + "%";
+            if (zoomLevel === 100) {
+                zoomLevel = parseInt(zoomLocal);
+            }
         }
     }
     // O documento ainda não está totalmente pronto, continue verificando
@@ -64,4 +73,8 @@ function linkAtualDoConteudo(link) {
 function removePaginaAtual() {
     localStorage.removeItem('pagina-atual');
     localStorage.removeItem('conteudoAtual');
+}
+
+function zoomStorage(zoom) {
+    localStorage.setItem('zoom', zoom);
 }

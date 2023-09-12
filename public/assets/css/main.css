@@ -31,19 +31,6 @@ body.dark-mode {
     color: var(--light-mode);
 }
 
-footer {
-    background-color: var(--light-mode);
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-footer p {
-    margin: 0;
-}
-
 .main-container {
     display: flex;
     flex-direction: column;
@@ -150,4 +137,21 @@ nav p {
 .disabled-btn {
     pointer-events: none;
     opacity: 0.4;
+}
+
+.space-up {
+    padding: 2rem;
+}
+
+footer {
+    background-color: var(--light-mode);
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer p {
+    margin: 0;
 }
