@@ -23,9 +23,7 @@ async function trocaConteudo(arquivo, id, cb) {
         xhttp.send();
         return cb() ? cb : ""; // Retorna a função de retorno ou uma string vazia
     }
-
-    // Se uma função de retorno (callback) for fornecida, executa-a
-    if (cb) {
+    if (typeof(cb)=== 'function') {
         cb();
     }
 }
