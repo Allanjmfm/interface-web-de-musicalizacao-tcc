@@ -30,6 +30,12 @@ let conteudo_etapa10 = {
     etapa10Conteudo30: "etapa10_tela30.html",
     etapa10Conteudo31: "etapa10_tela31.html",
     etapa10Conteudo32: "etapa10_tela32.html",
+    etapa10Conteudo33: "etapa10_tela33.html",
+    etapa10Conteudo34: "etapa10_tela34.html",
+    etapa10Conteudo35: "etapa10_tela35.html",
+    etapa10Conteudo36: "etapa10_tela36.html",
+    etapa10Conteudo37: "etapa10_tela37.html",
+    etapa10Conteudo38: "etapa10_tela38.html",
 };
 
 paginaAtual();
