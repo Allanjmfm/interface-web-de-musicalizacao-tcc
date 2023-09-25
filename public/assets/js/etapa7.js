@@ -22,7 +22,13 @@ let conteudo_etapa7 = {
     etapa7Conteudo22: "etapa7_tela22.html",
     etapa7Conteudo23: "etapa7_tela23.html",
     etapa7Conteudo24: "etapa7_tela24.html",
-    etapa7Conteudo25: "etapa7_parabens.html"
+    etapa7Conteudo25: "etapa7_exercicio1.html",
+    etapa7Conteudo26: "etapa7_exercicio2.html",
+    etapa7Conteudo27: "etapa7_exercicio3.html",
+    etapa7Conteudo28: "etapa7_exercicio4.html",
+    etapa7Conteudo29: "etapa7_exercicio5.html",
+    etapa7Conteudo30: "etapa7_exercicio6.html",
+    etapa7Conteudo31: "etapa7_parabens.html"
 };
 
 paginaAtual();
