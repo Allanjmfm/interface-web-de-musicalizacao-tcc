@@ -24,10 +24,11 @@ let conteudo_etapa8 = {
     etapa8Conteudo24: "etapa8_tela24.html",
     etapa8Conteudo25: "etapa8_tela25.html",
     etapa8Conteudo26: "etapa8_tela26.html",
-    etapa8Conteudo27: "etapa8_parabens.html",
-    // etapa8Conteudo28: "etapa8_tela28.html",
-    // etapa8Conteudo29: "etapa8_tela29.html",
-    // etapa8Conteudo30: "etapa8_tela30.html",
+    etapa8Conteudo27: "etapa8_exercicio1.html",
+    etapa8Conteudo28: "etapa8_exercicio2.html",
+    etapa8Conteudo29: "etapa8_exercicio3.html",
+    etapa8Conteudo30: "etapa8_exercicio4.html",
+    etapa8Conteudo31: "etapa8_parabens.html",
 };
 
 paginaAtual();

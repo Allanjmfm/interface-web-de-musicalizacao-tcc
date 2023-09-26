@@ -160,9 +160,6 @@
 }
 
 @media (max-height: 768px) {
-    .w-75 {
-        width: 50%!important;
-    }
     .ajuste-padding-notas {
         height: 60px !important;
     }
