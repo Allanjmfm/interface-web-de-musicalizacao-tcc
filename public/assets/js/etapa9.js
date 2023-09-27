@@ -37,7 +37,14 @@ let conteudo_etapa9 = {
     etapa9Conteudo37: "etapa9_tela37.html",
     etapa9Conteudo38: "etapa9_tela38.html",
     etapa9Conteudo39: "etapa9_tela39.html",
-    etapa9Conteudo40: "etapa9_parabens.html",
+    etapa9Conteudo40: "etapa9_exercicio1.html",
+    etapa9Conteudo41: "etapa9_exercicio2.html",
+    etapa9Conteudo42: "etapa9_exercicio3.html",
+    etapa9Conteudo43: "etapa9_exercicio4.html",
+    etapa9Conteudo44: "etapa9_exercicio5.html",
+    etapa9Conteudo45: "etapa9_exercicio6.html",
+    etapa9Conteudo46: "etapa9_exercicio7.html",
+    etapa9Conteudo47: "etapa9_parabens.html",
 };
 
 paginaAtual();
