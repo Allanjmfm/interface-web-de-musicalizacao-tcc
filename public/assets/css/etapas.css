@@ -159,15 +159,6 @@
     }
 }
 
-@media (max-height: 768px) {
-    .ajuste-padding-notas {
-        height: 60px !important;
-    }
-    .ajuste-padding {
-        padding: 0rem !important;
-    }
-}
-
 @media (max-width: 700px) {
     .w-75 {
         width: 100%!important;
