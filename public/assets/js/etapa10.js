@@ -42,7 +42,11 @@ let conteudo_etapa10 = {
     etapa10Conteudo42: "etapa10_exercicio8.html",
     etapa10Conteudo43: "etapa10_exercicio9.html",
     etapa10Conteudo44: "etapa10_exercicio10.html",
-    etapa10Conteudo45: "etapa10_parabens.html",
+    etapa10Conteudo45: "etapa10_exercicio11.html",
+    etapa10Conteudo46: "etapa10_exercicio12.html",
+    etapa10Conteudo47: "etapa10_exercicio13.html",
+    etapa10Conteudo48: "etapa10_exercicio14.html",
+    etapa10Conteudo49: "etapa10_parabens.html",
 };
 
 paginaAtual();
