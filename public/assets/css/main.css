@@ -132,6 +132,18 @@ nav p {
 }
 
 
+/* Circulo de progresso */
+
+.progress-bar {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+    /* background: radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(hotpink 75%, pink 0); */
+}
+
+
 /* Desabilita os botões */
 
 .disabled-btn {
