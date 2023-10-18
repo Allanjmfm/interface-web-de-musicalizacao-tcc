@@ -3,6 +3,17 @@
     --light-mode: #fff;
     --btn-bg: rgba(255, 255, 255, 0.125);
     --btn-bg-hover: #d3d4d58c;
+    --progress-container-color: white;
+    --progress-color: #E7322A;
+    /* --progress-color2: #F06222;
+    --progress-color3: #F59421;
+    --progress-color4: #F49320;
+    --progress-color5: #C0CA35;
+    --progress-color6: #7DB341;
+    --progress-color7: #41A24A;
+    --progress-color8: #1D988D;
+    --progress-color9: #0FAAC3;
+    --progress-color10: #2591C2; */
 }
 
 
@@ -134,13 +145,53 @@ nav p {
 
 /* Circulo de progresso */
 
-.progress-bar {
+
+/* .progress-container {
     width: 75px;
     height: 75px;
+    background: #ccc;
+    border-radius: 50%;
+    right: 0;
+    position: absolute;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #3498db;
+    border-radius: 50%;
+    transition: width 0.3s;
+} */
+
+@property --progress-value {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+@keyframes progress {
+    to {
+        --progress-value: 10;
+    }
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 0;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    /* background: radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(hotpink 75%, pink 0); */
+    background: radial-gradient(closest-side, rgb(0, 0, 0) 79%, transparent 80% 100%), conic-gradient(var(--progress-color) calc(var(--progress-value) * 1%), rgb(182, 182, 182) 0);
+    animation: progress 2s 1 forwards;
+}
+
+.progress-bar::before {
+    counter-reset: percentage var(--progress-value);
+    content: counter(percentage) '%';
+    animation: progress 2s 1 forwards;
 }
 
 

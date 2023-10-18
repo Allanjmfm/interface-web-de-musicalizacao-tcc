@@ -194,3 +194,10 @@ function zoomOut() {
     document.body.style.zoom = zoomLevel.toString() + "%";
 
 }
+
+function progress() {
+    const root = document.querySelector(":root");
+    root.style.setProperty("--progress-color", "#F06222");
+    root.style.setProperty("--progress-value", "20");
+    root.style.setProperty("--progress-container-color", "black");
+}
