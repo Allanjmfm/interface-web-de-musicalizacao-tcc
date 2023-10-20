@@ -14,7 +14,7 @@ const mainContainer = "#main-container";
 const idConteudoEtapas = "#conteudo-etapas";
 
 // Variável para número de tentativas dos exercícios
-let tentativas = 3;
+let tentativas = 2;
 
 let zoomLevel = Math.round(window.devicePixelRatio * 100);
 
@@ -124,14 +124,14 @@ function otrec(proxConteudo, id) {
         Array.from(respErradaDiv).map((e) => e.classList.add("disabled-btn"));
     } catch {}
     div.innerHTML = "Resposta Certa. Mandou bem.";
-    setTimeout(async () => {
+    setTimeout(async() => {
         await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas)
         await linkAtualDoConteudo(proxConteudo);
         setTimeout(CheckDarkmode, 10);
     }, 1000);
 
-    if (tentativas < 3) {
-        tentativas = 3;
+    if (tentativas < 2) {
+        tentativas = 2;
     }
 }
 
@@ -140,6 +140,7 @@ async function odarre(revisaoEtapa) {
     const respCerta = document.querySelector(".otrec");
     const respErrada = document.querySelectorAll(".odarre");
     const div = document.getElementById("mensagem");
+
     if (!div.classList.contains("msg-incorrta-cor")) {
         if (div.classList.remove("msg-certa-cor")) {
             div.classList.remove("msg-certa-cor");
@@ -149,10 +150,10 @@ async function odarre(revisaoEtapa) {
     if (tentativas != 1) {
         div.innerHTML = ''
         tentativas = tentativas - 1;
-        div.innerHTML = `Resposta Incorreta. Tente novamente. ${tentativas} tentativas restantes`;
+        div.innerHTML = `Resposta Incorreta. Tente novamente. ${tentativas} tentativa restante`;
     } else {
-        tentativas = 3;
-        div.innerHTML = "Que pena, você errou todas as tentativas. Vamos recomeçar os estudos.";
+        tentativas = 2;
+        div.innerHTML = "Que pena, você errou todas as tentativas. Vamos recomeçar os estudos desta etapa.";
 
         setTimeout(() => {
             recomecaEtapa(revisaoEtapa);
@@ -211,6 +212,30 @@ function progress(color) {
     }, {
         1: '#F06222',
         2: '#f49164',
+    }, {
+        1: '#F59421',
+        2: '#f8b463',
+    }, {
+        1: '#e6cc00',
+        2: '#eddb4c',
+    }, {
+        1: '#C0CA35',
+        2: '#d2d971',
+    }, {
+        1: '#7DB341',
+        2: '#a4c97a',
+    }, {
+        1: '#41A24A',
+        2: '#7abd80',
+    }, {
+        1: '#1D988D',
+        2: '#60b6af',
+    }, {
+        1: '#0FAAC3',
+        2: '#57c3d5',
+    }, {
+        1: '#2591C2',
+        2: '#66b2d4',
     }]
     let progressValue = trocaColor.getPropertyValue("--progress-value");
 

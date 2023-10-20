@@ -6,9 +6,9 @@
     --progress-container-color: white;
     --progress-color: #E7322A;
     --progress-container-bg-color: #FF9B9B
-        /* --progress-color2: #F06222;
+    /* --progress-color2: #F06222;
     --progress-color3: #F59421;
-    --progress-color4: #F49320;
+    --progress-color4: #e6cc00;
     --progress-color5: #C0CA35;
     --progress-color6: #7DB341;
     --progress-color7: #41A24A;
@@ -145,24 +145,6 @@ nav p {
 
 
 /* Circulo de progresso */
-
-
-/* .progress-container {
-    width: 75px;
-    height: 75px;
-    background: #ccc;
-    border-radius: 50%;
-    right: 0;
-    position: absolute;
-}
-
-.progress-bar {
-    width: 0;
-    height: 100%;
-    background: #3498db;
-    border-radius: 50%;
-    transition: width 0.3s;
-} */
 
 @property --progress-value {
     syntax: "<integer>";
