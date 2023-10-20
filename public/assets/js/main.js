@@ -204,7 +204,7 @@ function zoomOut() {
 
 }
 
-function progress(color) {
+function progress(index) {
     const arrayColor = [{
         1: '#E7322A',
         2: '#FF9B9B',
@@ -212,10 +212,14 @@ function progress(color) {
         1: '#F06222',
         2: '#f49164',
     }]
-    let progressValue = trocaColor.getPropertyValue("--progress-value");
 
+    let progressValue = +trocaColor.getPropertyValue("--progress-value");
 
-    root.style.setProperty("--progress-color", "#F06222");
-    root.style.setProperty("--progress-value", "20");
-    root.style.setProperty("--progress-container-color", "black");
+    if (typeof(progressValue) == 'number') {
+        progressValue += 10
+        root.style.setProperty("--progress-value", progressValue);
+        root.style.setProperty("--progress-color", "#F06222");
+        root.style.setProperty("--progress-container-color", "black");
+    }
+
 }
