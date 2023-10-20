@@ -2,6 +2,10 @@
 const darkMode = document.querySelector("#dark-mode");
 const contrast = document.querySelector("#dark-menu");
 
+// Variável root
+const root = document.querySelector(":root");
+const trocaColor = getComputedStyle(root);
+
 // Variável troca de conteúdo
 const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
@@ -35,6 +39,8 @@ function addDarkMode() {
         .querySelectorAll("a")
         .forEach((a) => a.classList.add("btn-dark-mode"));
     document.querySelector("footer").classList.add("footer-dark-mode");
+
+    root.style.setProperty("--progress-container-color", trocaColor.getPropertyValue("--dark-mode"));
 }
 
 //Função remover modo escuro
@@ -51,6 +57,9 @@ function removeDarkMode() {
         .querySelectorAll("a")
         .forEach((a) => a.classList.remove("btn-dark-mode"));
     document.querySelector("footer").classList.remove("footer-dark-mode");
+
+    root.style.setProperty("--progress-container-color", trocaColor.getPropertyValue("--light-mode"));
+
 }
 
 // Função de verificar se está em darkmode o contéudo da página html
@@ -115,7 +124,7 @@ function otrec(proxConteudo, id) {
         Array.from(respErradaDiv).map((e) => e.classList.add("disabled-btn"));
     } catch {}
     div.innerHTML = "Resposta Certa. Mandou bem.";
-    setTimeout(async() => {
+    setTimeout(async () => {
         await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas)
         await linkAtualDoConteudo(proxConteudo);
         setTimeout(CheckDarkmode, 10);
@@ -195,8 +204,17 @@ function zoomOut() {
 
 }
 
-function progress() {
-    const root = document.querySelector(":root");
+function progress(color) {
+    const arrayColor = [{
+        1: '#E7322A',
+        2: '#FF9B9B',
+    }, {
+        1: '#F06222',
+        2: '#f49164',
+    }]
+    let progressValue = trocaColor.getPropertyValue("--progress-value");
+
+
     root.style.setProperty("--progress-color", "#F06222");
     root.style.setProperty("--progress-value", "20");
     root.style.setProperty("--progress-container-color", "black");
