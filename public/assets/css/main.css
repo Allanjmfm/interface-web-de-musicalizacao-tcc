@@ -5,7 +5,8 @@
     --btn-bg-hover: #d3d4d58c;
     --progress-container-color: white;
     --progress-color: #E7322A;
-    /* --progress-color2: #F06222;
+    --progress-container-bg-color: #FF9B9B
+        /* --progress-color2: #F06222;
     --progress-color3: #F59421;
     --progress-color4: #F49320;
     --progress-color5: #C0CA35;
@@ -171,7 +172,7 @@ nav p {
 
 @keyframes progress {
     to {
-        --progress-value: 10;
+        --progress-value: 0;
     }
 }
 
@@ -184,7 +185,7 @@ nav p {
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background: radial-gradient(closest-side, rgb(0, 0, 0) 79%, transparent 80% 100%), conic-gradient(var(--progress-color) calc(var(--progress-value) * 1%), rgb(182, 182, 182) 0);
+    background: radial-gradient(closest-side, var(--progress-container-color) 79%, transparent 80% 100%), conic-gradient(var(--progress-color) calc(var(--progress-value) * 1%), var(--progress-container-bg-color) 0);
     animation: progress 2s 1 forwards;
 }
 
