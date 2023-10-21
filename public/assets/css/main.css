@@ -5,7 +5,8 @@
     --btn-bg-hover: #d3d4d58c;
     --progress-container-color: white;
     --progress-color: #E7322A;
-    --progress-container-bg-color: #FF9B9B
+    --progress-container-bg-color: #FF9B9B;
+    --progress-value-root: 0;
     /* --progress-color2: #F06222;
     --progress-color3: #F59421;
     --progress-color4: #e6cc00;
@@ -154,7 +155,7 @@ nav p {
 
 @keyframes progress {
     to {
-        --progress-value: 0;
+        --progress-value: var(--progress-value-root)
     }
 }
 
