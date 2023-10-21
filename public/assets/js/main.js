@@ -198,6 +198,7 @@ async function odarre(revisaoEtapa) {
 
 // Função para redirecionar o usuário para recomeçar a etapa
 function recomecaEtapa(link) {
+  removePaginaAtual();
   location.replace(origin + link);
 }
 
