@@ -363,9 +363,8 @@ function progressBar(index) {
 const sobre = document.querySelector("#sobre-menu");
 sobre.addEventListener("click", function() {
     swal({
-        title: "Este é um projeto de uma interface Web de musicalização para pessoas surdas como tema do meu Trabalho de Conclusão de Curso.",
+        title: "Este é um projeto de uma interface Web de musicalização para pessoas surdas como tema do meu TCC.",
         text: "Desenvolvido por Allan Jorge M. Ferreira Mendes",
-        footer: "Universidade Federal do Pará - 2023",
         button: {
             text: "Voltar",
         }
