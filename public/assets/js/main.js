@@ -47,6 +47,11 @@ function addDarkMode() {
 }
 
 //Função remover modo escuro
+/**
+ * Remove os estilos do modo escuro dos elementos na página.
+ *
+ * @returns {void}
+ */
 function removeDarkMode() {
   darkMode.classList.remove("dark-mode");
   document.querySelector("#sobre-menu").classList.remove("letra-light");
@@ -68,6 +73,11 @@ function removeDarkMode() {
 }
 
 // Função de verificar se está em darkmode o contéudo da página html
+/**
+ * Verifica se o modo escuro está ativado e aplica os estilos correspondentes aos botões e links.
+ *
+ * @returns {void}
+ */
 function CheckDarkmode() {
   let isDark = JSON.parse(localStorage.getItem("dark-mode"));
   if (isDark) {
@@ -100,18 +110,29 @@ let telas = {
   etapa10Tela1: "/views/etapa10/conteudo_inicial10.html",
 };
 
-// // Função self-invoking para executar a tela inicial no index
-// (async() => {
-//   await trocaConteudo(telas.telaInicial, mainContainer);
-// })()
 
 // Função para selecionar as etapas
+/**
+ * Manipula o evento de clique do botão para navegar para uma nova etapa.
+ *
+ * @async
+ * @param {string} linkTelaInicialEtapas - O link para a tela inicial da etapa.
+ * @returns {Promise<void>}
+ */
 async function btnEtapa(linkTelaInicialEtapas) {
   await trocaConteudo(linkTelaInicialEtapas, mainContainer);
   setTimeout(CheckDarkmode, 10);
 }
 
 // Função da alternativa correta nos exercícios
+/**
+ * Manipula o evento de resposta correta, atualizando a interface, avançando para o próximo conteúdo e verificando o modo escuro.
+ *
+ * @param {string} proxConteudo - O link para o próximo conteúdo.
+ * @param {number} index - O índice usado para o acompanhamento do progresso.
+ * @param {string} id - O ID do elemento de conteúdo.
+ * @returns {void}
+ */
 function otrec(proxConteudo, index, id) {
   // Seleciona o elemento com a classe "otrec" (resposta correta) e todos os elementos com a classe "odarre" (respostas erradas)
   const respCertaDiv = document.querySelector(".otrec");
@@ -148,7 +169,7 @@ function otrec(proxConteudo, index, id) {
   // Aguarda 1 segundo (1000 milissegundos) antes de executar algumas ações
   setTimeout(async () => {
     // Aguarda a troca de conteúdo
-    await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas);
+    await trocaConteudo(proxConteudo, id || idConteudoEtapas);
 
     // Aguarda a atualização do link de conteúdo
     await linkAtualDoConteudo(proxConteudo);
@@ -158,12 +179,18 @@ function otrec(proxConteudo, index, id) {
   }, 1000);
 
   // Se o número de tentativas for menor que 2, atualize-o para 2
-  if (tentativas < 2) {
-    tentativas = 2;
-  }
+  tentativas = Math.max(tentativas, 2)
 }
 
 // Função da alternativa incorreta nos exercícios
+/**
+ * Manipula o evento quando uma resposta incorreta é selecionada, atualizando a interface e gerenciando as tentativas restantes.
+ *
+ * @async
+ * @param {string} revisaoEtapa - O link para a etapa de revisão.
+ * @param {number} index - O índice usado para o acompanhamento do progresso.
+ * @returns {Promise<void>}
+ */
 async function odarre(revisaoEtapa, index) {
   const respCerta = document.querySelector(".otrec");
   const respErrada = document.querySelectorAll(".odarre");
@@ -211,9 +238,18 @@ function recomecaEtapa(link, index) {
 }
 
 // Função assíncrona para avançar para o próximo conteúdo
+/**
+ * Manipula o evento de clique do botão para avançar para a próxima etapa, atualizando o conteúdo, a barra de progresso e o modo escuro.
+ *
+ * @async
+ * @param {string} proxConteudo - O link para o próximo conteúdo.
+ * @param {number} index - O índice usado para o acompanhamento do progresso.
+ * @param {string} id - O ID do elemento de conteúdo.
+ * @returns {Promise<void>}
+ */
 async function btnAvancar(proxConteudo, index, id) {
   // Aguarda a conclusão da função trocaConteudo
-  await trocaConteudo(proxConteudo, id ? id : idConteudoEtapas, () => {
+  await trocaConteudo(proxConteudo, id || idConteudoEtapas, () => {
     // Quando trocaConteudo é concluída, chama a função linkAtualDoConteudo
     linkAtualDoConteudo(proxConteudo);
   });
@@ -222,15 +258,23 @@ async function btnAvancar(proxConteudo, index, id) {
   progressBar(index);
 
   // Aguarda 10 milissegundos antes de executar CheckDarkmode
-  await setTimeout(CheckDarkmode, 10);
+  setTimeout(CheckDarkmode, 10);
 }
 
 // função para voltar
+/**
+ * Manipula o evento de clique do botão para voltar a uma etapa anterior.
+ *
+ * @async
+ * @param {string} voltar - O link para voltar.
+ * @param {string} id - O ID do elemento de conteúdo.
+ * @returns {Promise<void>}
+ */
 async function btnVoltarEtapas(voltar, id) {
-  await trocaConteudo(voltar, id ? id : idConteudoEtapas, () => {
+  await trocaConteudo(voltar, id || idConteudoEtapas, () => {
     linkAtualDoConteudo(proxConteudo);
   });
-  await setTimeout(CheckDarkmode, 10);
+  setTimeout(CheckDarkmode, 10);
 }
 
 /**
