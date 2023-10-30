@@ -49,6 +49,18 @@ let stateCheck = setInterval(async () => {
         zoomLevel = parseInt(zoomLocal);
       }
     }
+
+    /**
+     * Verifica se o progresso do usuário existe no localStorage e atualiza a barra de progresso de acordo.
+     *
+     * @returns {void}
+     */
+    if (localStorage.getItem("userProgress") !== null) {
+      const userProgress = localStorage.getItem("userProgress");
+      const pageIndex = localStorage.getItem("pageIndex");
+
+      updateProgressBar(pageIndex, userProgress);
+    }
   }
   // O documento ainda não está totalmente pronto, continue verificando
 }, 10);
@@ -64,26 +76,102 @@ function paginaAtual() {
 }
 
 // Função para armazenar o link atual do conteúdo
+/**
+ * Define o link atual do conteúdo no localStorage.
+ *
+ * @param {string} link - O link do conteúdo atual.
+ * @returns {void}
+ */
 function linkAtualDoConteudo(link) {
   localStorage.setItem("conteudoAtual", link);
 }
 
 // Função para remover informações da página atual e conteúdo atual do armazenamento local
+/**
+ * Remove a página atual e seu conteúdo do localStorage do navegador.
+ * Se um índice for fornecido, atualiza a barra de progresso correspondente.
+ *
+ * @param {number} index - O índice da página atual.
+ * @returns {void}
+ */
 function removePaginaAtual(index) {
   localStorage.removeItem("pagina-atual");
   localStorage.removeItem("conteudoAtual");
 
-  if (index) progressBar(index);
+  if (!index) {
+    localStorage.removeItem("userProgress");
+    localStorage.removeItem("pageIndex");
+  }
+
+  if (index) {
+    progressBar(index);
+  }
 }
 
-function updateUserProgress(userProgress) {
+/**
+ * Reduz o progresso do usuário com base no índice fornecido.
+ *
+ * @param {number} index - O índice usado para determinar a redução do progresso.
+ * @returns {void}
+ */
+function reduceUserProgress(index) {
+  const updatedIndex = index - 1;
+
+  if (updatedIndex === 0) {
+    localStorage.removeItem("userProgress");
+    localStorage.removeItem("pageIndex");
+  }
+  if (updatedIndex === 1) {
+    updateUserProgressInLocalStorage(updatedIndex, "10");
+  }
+  if (updatedIndex === 2) {
+    updateUserProgressInLocalStorage(updatedIndex, "20");
+  }
+  if (updatedIndex === 3) {
+    updateUserProgressInLocalStorage(updatedIndex, "30");
+  }
+  if (updatedIndex === 4) {
+    updateUserProgressInLocalStorage(updatedIndex, "40");
+  }
+  if (updatedIndex === 5) {
+    updateUserProgressInLocalStorage(updatedIndex, "50");
+  }
+  if (updatedIndex === 6) {
+    updateUserProgressInLocalStorage(updatedIndex, "60");
+  }
+  if (updatedIndex === 7) {
+    updateUserProgressInLocalStorage(updatedIndex, "70");
+  }
+  if (updatedIndex === 8) {
+    updateUserProgressInLocalStorage(updatedIndex, "80");
+  }
+  if (updatedIndex === 9) {
+    updateUserProgressInLocalStorage(updatedIndex, "90");
+  }
+}
+
+/**
+ * Atualiza o progresso do usuário e o índice da página no localStorage do navegador.
+ *
+ * @param {number} pageIndex - O índice da página atual.
+ * @param {string} userProgress - O progresso do usuário.
+ * @returns {void}
+ */
+function updateUserProgressInLocalStorage(pageIndex, userProgress) {
   localStorage.setItem("userProgress", userProgress);
+  localStorage.setItem("pageIndex", pageIndex);
 }
 
 function getUserProgress(userProgress) {
   localStorage.getItem("userProgress", userProgress);
 }
 
+/**
+ * Atualiza o nível de zoom no localStorage do navegador.
+ *
+ * @param {number} zoom - O nível de zoom a ser armazenado.
+ * @returns {void}
+ */
 function zoomStorage(zoom) {
   localStorage.setItem("zoom", zoom);
 }
