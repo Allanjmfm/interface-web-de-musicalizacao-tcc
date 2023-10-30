@@ -29,6 +29,7 @@
     <script src="../../assets/js/troca-conteudo.js"></script>
     <script src="../../assets/js/localStorage.js"></script>
     <script defer src="../../assets/js/etapa3.js"></script>
+    <script src="../../assets/js/sweetAlert.js"></script>
     <title>Módulo de Musicalização</title>
 </head>
 
@@ -68,7 +69,7 @@
     </header>
     <div id="main-container" class="main-container">
         <div class="d-flex flex-column text-center justify-content-center container align-items-center etapa1-container">
-            
+
             <ul class="nav d-flex justify-content-between etapa1-menu-container">
                 <li>
                     <div class="icon-container etapa1-icon-prof">
@@ -78,7 +79,7 @@
                 <li>
                     <div>
                         <h2>Etapa 3</h2>
-                    <h5>Aprendendo sobre Frequência Sonora (Parte 2)</h5>
+                        <h5>Aprendendo sobre Frequência Sonora (Parte 2)</h5>
                     </div>
                 </li>
                 <li>
@@ -100,12 +101,12 @@
                         </div>
                     </div>
                 </section>
-                <div class="btn-etapas-container  ">
+                <div class="btn-etapas-container">
                     <div class="btn-container">
                         <a onclick="removePaginaAtual()" href="../selecao_etapas.html" id="btn-voltar-context" class="btn selecao-etapas-btn" role="button">Voltar para seleção de etapas</a>
                     </div>
                     <div class="btn-container">
-                        <button id="btn-avancar-context" onclick="btnAvancar(conteudo_etapa3.etapa3Conteudo2)" class="btn selecao-etapas-btn" role="button">Avançar</button>
+                        <button id="btn-avancar-context" onclick="btnAvancar(conteudo_etapa3.etapa3Conteudo2, 3)" class="btn selecao-etapas-btn" role="button">Avançar</button>
                     </div>
                 </div>
             </div>
@@ -115,7 +116,7 @@
     </div>
     <footer class="d-flex text-center">
         <div id="text" class="container-fluid">
-            <p>Universidade Federal do Pará - 2023</p>
+            <p>© Universidade Federal do Pará - 2023</p>
         </div>
     </footer>
 </body>
