@@ -167,7 +167,7 @@ function otrec(proxConteudo, index, id) {
     progressBar(index);
 
     // Aguarda 1 segundo (1000 milissegundos) antes de executar algumas ações
-    setTimeout(async () => {
+    setTimeout(async() => {
         // Aguarda a troca de conteúdo
         await trocaConteudo(proxConteudo, id || idConteudoEtapas);
 
@@ -206,8 +206,6 @@ async function odarre(revisaoEtapa, index) {
 
     if (tentativas != 1) {
         div.innerHTML = "";
-
-        tentativas = tentativas - 1;
 
         tentativas -= 1;
 
@@ -260,7 +258,7 @@ async function btnAvancar(proxConteudo, index, id) {
     progressBar(index);
 
     // Aguarda 10 milissegundos antes de executar CheckDarkmode
-    setTimeout(CheckDarkmode, 10);
+    setTimeout(CheckDarkmode, 50);
 
 }
 
@@ -277,7 +275,7 @@ async function btnVoltarEtapas(voltar, id) {
     await trocaConteudo(voltar, id || idConteudoEtapas, () => {
         linkAtualDoConteudo(proxConteudo);
     });
-    setTimeout(CheckDarkmode, 10);
+    setTimeout(CheckDarkmode, 50);
 }
 
 /**
