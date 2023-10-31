@@ -25,21 +25,24 @@ async function trocaConteudo(arquivo, id, cb) {
     // Obtém o elemento do DOM com o id especificado
     const mainContainer = document.querySelector(id);
 
-    if (arquivo) {
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // Define o conteúdo do elemento com a resposta do servidor
-                mainContainer.innerHTML = this.responseText;
-                // Chama a função trocaConteudo passando a função de retorno como argumento
-                trocaConteudo(cb);
+    try {
+        if (arquivo) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Define o conteúdo do elemento com a resposta do servidor
+                    mainContainer.innerHTML = this.responseText;
+                    setTimeout(CheckDarkmode, 10);
+                    // Chama a função trocaConteudo passando a função de retorno como argumento
+                }
             }
+            xhttp.open("GET", arquivo, true);
+            xhttp.send();
+            return cb() ? cb : ""; // Retorna a função de retorno ou uma string vazia
         }
-        xhttp.open("GET", arquivo, true);
-        xhttp.send();
-        return cb() ? cb : ""; // Retorna a função de retorno ou uma string vazia
-    }
-    if (typeof(cb)=== 'function') {
-        cb();
-    }
+        if (typeof(cb) === 'function') {
+            cb();
+        }
+    } catch (e) {}
+
 }

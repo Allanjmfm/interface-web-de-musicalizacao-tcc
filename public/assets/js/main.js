@@ -27,23 +27,30 @@ if (JSON.parse(localStorage.getItem("dark-mode"))) {
 
 //Função adicionar modo escuro
 function addDarkMode() {
-    darkMode.classList.add("dark-mode");
-    document.querySelector("#sobre-menu").classList.add("letra-light");
-    document.querySelector("#home-menu").classList.add("letra-light");
-    document.querySelector("#dark-menu").classList.add("letra-light");
-    document.querySelector("#font-menu").classList.add("letra-light");
-    document
-        .querySelectorAll("button")
-        .forEach((a) => a.classList.add("btn-dark-mode"));
-    document
-        .querySelectorAll("a")
-        .forEach((a) => a.classList.add("btn-dark-mode"));
-    document.querySelector("footer").classList.add("footer-dark-mode");
+    let stateCheck = setInterval(async() => {
+        // Verifica se o documento está totalmente carregado
+        if (document.readyState === "complete") {
+            darkMode.classList.add("dark-mode");
+            document.querySelector("#sobre-menu").classList.add("letra-light");
+            document.querySelector("#home-menu").classList.add("letra-light");
+            document.querySelector("#dark-menu").classList.add("letra-light");
+            document.querySelector("#font-menu").classList.add("letra-light");
+            document
+                .querySelectorAll("button")
+                .forEach((a) => a.classList.add("btn-dark-mode"));
+            document
+                .querySelectorAll("a")
+                .forEach((a) => a.classList.add("btn-dark-mode"));
+            document.querySelector("footer").classList.add("footer-dark-mode");
 
-    root.style.setProperty(
-        "--progress-container-color",
-        trocaColor.getPropertyValue("--dark-mode")
-    );
+            root.style.setProperty(
+                "--progress-container-color",
+                trocaColor.getPropertyValue("--dark-mode")
+            );
+            clearInterval(stateCheck);
+        }
+    }, 10);
+
 }
 
 //Função remover modo escuro
@@ -79,19 +86,26 @@ function removeDarkMode() {
  * @returns {void}
  */
 function CheckDarkmode() {
-    let isDark = JSON.parse(localStorage.getItem("dark-mode"));
-    if (isDark) {
-        document.querySelectorAll("button").forEach((a) => {
-            if (!a.classList.contains("btn-dark-mode")) {
-                a.classList.add("btn-dark-mode");
+    let stateCheck = setInterval(async() => {
+        // Verifica se o documento está totalmente carregado
+        if (document.readyState === "complete") {
+            let isDark = JSON.parse(localStorage.getItem("dark-mode"));
+            if (isDark) {
+                document.querySelectorAll("button").forEach((a) => {
+                    if (!a.classList.contains("btn-dark-mode")) {
+                        a.classList.add("btn-dark-mode");
+                    }
+                });
+                document.querySelectorAll("a").forEach((a) => {
+                    if (!a.classList.contains("btn-dark-mode")) {
+                        a.classList.add("btn-dark-mode");
+                    }
+                });
             }
-        });
-        document.querySelectorAll("a").forEach((a) => {
-            if (!a.classList.contains("btn-dark-mode")) {
-                a.classList.add("btn-dark-mode");
-            }
-        });
-    }
+            clearInterval(stateCheck);
+        }
+    }, 10);
+
 }
 
 // Lista de objeto arquivo Json para os conteúdos iniciais de cada etapa
@@ -240,7 +254,7 @@ function recomecaEtapa(link, index) {
 
 // Função assíncrona para avançar para o próximo conteúdo
 /**
- * Manipula o evento de clique do botão para avançar para a próxima etapa, atualizando o conteúdo, a barra de progresso e o modo escuro.
+ * Manipula o evento de clique do botão para avançar para a próxima tela, atualizando o conteúdo, a barra de progresso e o modo escuro.
  *
  * @async
  * @param {string} proxConteudo - O link para o próximo conteúdo.
@@ -253,29 +267,34 @@ async function btnAvancar(proxConteudo, index, id) {
     await trocaConteudo(proxConteudo, id || idConteudoEtapas, () => {
         // Quando trocaConteudo é concluída, chama a função linkAtualDoConteudo
         linkAtualDoConteudo(proxConteudo);
+        console.log("troca-conteudo");
+
     });
     //Chamar a função para atualiza a barra de progresso com base no índice fornecido
     progressBar(index);
 
     // Aguarda 10 milissegundos antes de executar CheckDarkmode
-    setTimeout(CheckDarkmode, 50);
+    // setTimeout(CheckDarkmode, 10);
 
 }
 
 // função para voltar
 /**
- * Manipula o evento de clique do botão para voltar a uma etapa anterior.
+ * Manipula o evento de clique do botão para voltar a uma tela anterior.
  *
  * @async
  * @param {string} voltar - O link para voltar.
  * @param {string} id - O ID do elemento de conteúdo.
  * @returns {Promise<void>}
  */
-async function btnVoltarEtapas(voltar, id) {
+async function btnVoltarEtapas(voltar, index, id) {
     await trocaConteudo(voltar, id || idConteudoEtapas, () => {
         linkAtualDoConteudo(proxConteudo);
     });
-    setTimeout(CheckDarkmode, 50);
+    if (index) {
+        progressBarVoltar(index);
+    }
+    setTimeout(CheckDarkmode, 10);
 }
 
 /**
@@ -356,6 +375,54 @@ function progressBar(index) {
         updateProgressBar(index, progressValue);
     }
 }
+
+// 
+function progressBarVoltar(index) {
+    index -= 1;
+
+    // Obtém o valor de progresso atual do localStorage
+    let progressValue = Number(localStorage.getItem("userProgress"));
+
+    // Verifica se progressValue é um número
+    if (typeof progressValue === "number") {
+        // Atualiza o progressValue com base no índice fornecido e nos limites de progresso
+        if (index === 0 && progressValue <= 10) {
+            progressValue -= 1.11111;
+        }
+        if (index === 1 && progressValue <= 20) {
+            progressValue -= 0.83333;
+        }
+        if (index === 2 && progressValue <= 30) {
+            progressValue -= 0.38462;
+        }
+        if (index === 3 && progressValue <= 40) {
+            progressValue -= 1.42857;
+        }
+        if (index === 4 && progressValue <= 50) {
+            progressValue -= 3.33333;
+        }
+        if (index === 5 && progressValue <= 60) {
+            progressValue -= 0.45455;
+        }
+        if (index === 6 && progressValue <= 70) {
+            progressValue -= 0.33333;
+        }
+        if (index === 7 && progressValue <= 80) {
+            progressValue -= 0.33333;
+        }
+        if (index === 8 && progressValue <= 90) {
+            progressValue -= 0.21739;
+        }
+        if (index === 9 && progressValue <= 100) {
+            progressValue -= 0.20833;
+        }
+
+        // Chama a função updateProgressBar para atualizar a barra de progresso
+        updateProgressBar(index, progressValue);
+    }
+}
+
+
 
 /**
  * Atualiza a barra de progresso e suas cores com base no índice e valor de progresso fornecidos.
