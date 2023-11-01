@@ -267,8 +267,6 @@ async function btnAvancar(proxConteudo, index, id) {
     await trocaConteudo(proxConteudo, id || idConteudoEtapas, () => {
         // Quando trocaConteudo é concluída, chama a função linkAtualDoConteudo
         linkAtualDoConteudo(proxConteudo);
-        console.log("troca-conteudo");
-
     });
     //Chamar a função para atualiza a barra de progresso com base no índice fornecido
     progressBar(index);
