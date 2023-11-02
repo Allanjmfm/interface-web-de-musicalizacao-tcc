@@ -72,7 +72,7 @@ function removeDarkMode() {
         .querySelectorAll("a")
         .forEach((a) => a.classList.remove("btn-dark-mode"));
     document.querySelector("footer").classList.remove("footer-dark-mode");
-
+  
     root.style.setProperty(
         "--progress-container-color",
         trocaColor.getPropertyValue("--light-mode")
@@ -97,6 +97,11 @@ function CheckDarkmode() {
                     }
                 });
                 document.querySelectorAll("a").forEach((a) => {
+                    if (!a.classList.contains("btn-dark-mode")) {
+                        a.classList.add("btn-dark-mode");
+                    }
+                });
+                document.querySelectorAll("span").forEach((a) => {
                     if (!a.classList.contains("btn-dark-mode")) {
                         a.classList.add("btn-dark-mode");
                     }
