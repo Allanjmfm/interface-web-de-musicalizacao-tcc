@@ -220,7 +220,7 @@ footer p {
         -webkit-touch-callout: none;
     }
     #menuToggle>input:checked~#menu {
-        display: block;
+        display: flex;
     }
     /*
      * Just a quick hamburger
@@ -277,8 +277,9 @@ footer p {
         display: none;
         flex-direction: column;
         position: absolute;
-        width: 230px;
-        margin: -100px 0 0 -70px;
+        width: 500px;
+        height: 130vh;
+        margin: -130px 0 0 -350px;
         padding: 10px;
         padding-top: 120px;
         background: #ededed;
@@ -290,8 +291,7 @@ footer p {
     }
     #menu li {
         padding: 5px 0;
-        width: 150px;
-        align-items: start;
+        width: 100%;
         font-size: 22px;
     }
     /*
