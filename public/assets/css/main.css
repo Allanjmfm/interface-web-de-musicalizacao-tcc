@@ -32,8 +32,6 @@ body {
     font-family: "Montserrat", sans-serif;
     background-color: var(--light-mode);
     color: var(--dark-mode);
-    /* margin: 0;
-    padding: 0; */
 }
 
 body.dark-mode {
@@ -201,7 +199,8 @@ footer p {
     }
     #menuToggle a {
         text-decoration: none;
-        color: var(--dark-mode);;
+        color: var(--dark-mode);
+        ;
         transition: color 0.3s ease;
     }
     #menuToggle a:hover {
@@ -220,6 +219,9 @@ footer p {
         z-index: 2;
         -webkit-touch-callout: none;
     }
+    #menuToggle>input:checked~#menu {
+        display: block;
+    }
     /*
      * Just a quick hamburger
      */
@@ -235,7 +237,7 @@ footer p {
         transform-origin: 4px 0px;
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
     }
-    #menuToggle span:hover{
+    #menuToggle span:hover {
         background-color: var(--btn-bg-hover);
         color: #000000;
     }
@@ -272,11 +274,11 @@ footer p {
      * at the top left of the screen
      */
     #menu {
-        display: flex;
+        display: none;
         flex-direction: column;
         position: absolute;
-        width: 220px;
-        margin: -100px 0 0 -30px;
+        width: 230px;
+        margin: -100px 0 0 -70px;
         padding: 10px;
         padding-top: 120px;
         background: #ededed;
@@ -299,6 +301,7 @@ footer p {
         transform: none;
     }
 }
+
 
 /* Sweet Alert (Pop Up do botão "sobre" */
 

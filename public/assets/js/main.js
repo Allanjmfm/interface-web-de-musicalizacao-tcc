@@ -72,7 +72,7 @@ function removeDarkMode() {
         .querySelectorAll("a")
         .forEach((a) => a.classList.remove("btn-dark-mode"));
     document.querySelector("footer").classList.remove("footer-dark-mode");
-  
+
     root.style.setProperty(
         "--progress-container-color",
         trocaColor.getPropertyValue("--light-mode")
@@ -312,6 +312,7 @@ function zoomIn() {
     zoomLevel += 10;
     zoomStorage(zoomLevel);
     document.body.style.zoom = zoomLevel.toString() + "%";
+    console.log(zoomIn);
 }
 
 /**
@@ -326,6 +327,7 @@ function zoomOut() {
     zoomLevel -= 10;
     zoomStorage(zoomLevel);
     document.body.style.zoom = zoomLevel.toString() + "%";
+    console.log(zoomOut);
 }
 
 /**
@@ -511,10 +513,8 @@ function updateProgressBar(index, progressValue) {
     updateUserProgressInLocalStorage(index, progressValue);
 }
 
-// Sweet Alert (Pop Up do botão "sobre"
-
-const sobre = document.querySelector("#sobre-menu");
-sobre.addEventListener("click", function() {
+// Sweet Alert (Botão sobre)
+function sweetAlert() {
     swal({
         title: "Este é um projeto de uma interface Web de musicalização para pessoas surdas como tema do meu TCC.",
         text: "Desenvolvido por Allan Jorge M. Ferreira Mendes",
@@ -522,4 +522,4 @@ sobre.addEventListener("click", function() {
             text: "Voltar",
         }
     });
-});
+};
