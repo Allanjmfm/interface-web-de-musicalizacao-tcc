@@ -16,7 +16,17 @@ const idConteudoEtapas = "#conteudo-etapas";
 // Variável para número de tentativas dos exercícios
 let tentativas = 2;
 
-let zoomLevel = Math.round(window.devicePixelRatio * 100);
+// Variável Zoom (Mobile e Desktop)
+
+let zoomLevel
+
+if (Math.round(window.devicePixelRatio) === 1) {
+    zoomLevel = Math.round(window.devicePixelRatio * 100);
+} else if (Math.round(window.devicePixelRatio) === 2) {
+    zoomLevel = Math.round(window.devicePixelRatio * 50);
+}
+
+// let zoomLevel = ((window.outerWidth - 10) / window.innerWidth) * 100;
 
 // Função Dark Mode
 if (JSON.parse(localStorage.getItem("dark-mode"))) {
@@ -306,13 +316,15 @@ async function btnVoltarEtapas(voltar, index, id) {
  * @returns {void}
  */
 function zoomIn() {
+    console.log(zoomLevel);
     if (zoomLevel >= 200) {
         return;
     }
+
     zoomLevel += 10;
     zoomStorage(zoomLevel);
     document.body.style.zoom = zoomLevel.toString() + "%";
-    console.log(zoomIn);
+
 }
 
 /**

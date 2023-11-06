@@ -33,7 +33,6 @@ async function trocaConteudo(arquivo, id, cb) {
                     // Define o conteúdo do elemento com a resposta do servidor
                     mainContainer.innerHTML = this.responseText;
                     setTimeout(CheckDarkmode, 10);
-                    // Chama a função trocaConteudo passando a função de retorno como argumento
                 }
             }
             xhttp.open("GET", arquivo, true);
