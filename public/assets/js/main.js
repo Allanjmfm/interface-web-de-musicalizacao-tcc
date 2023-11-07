@@ -16,7 +16,7 @@ const idConteudoEtapas = "#conteudo-etapas";
 // Variável para número de tentativas dos exercícios
 let tentativas = 2;
 
-// Variável Zoom (Mobile e Desktop)
+// Variável para o Zoom (Mobile e Desktop)
 
 let zoomLevel
 
@@ -26,7 +26,6 @@ if (Math.round(window.devicePixelRatio) === 1) {
     zoomLevel = Math.round(window.devicePixelRatio * 50);
 }
 
-// let zoomLevel = ((window.outerWidth - 10) / window.innerWidth) * 100;
 
 // Função Dark Mode
 if (JSON.parse(localStorage.getItem("dark-mode"))) {
@@ -50,6 +49,9 @@ function addDarkMode() {
                 .forEach((a) => a.classList.add("btn-dark-mode"));
             document
                 .querySelectorAll("a")
+                .forEach((a) => a.classList.add("btn-dark-mode"));
+            document
+                .querySelectorAll("span")
                 .forEach((a) => a.classList.add("btn-dark-mode"));
             document.querySelector("footer").classList.add("footer-dark-mode");
 
@@ -80,6 +82,9 @@ function removeDarkMode() {
         .forEach((a) => a.classList.remove("btn-dark-mode"));
     document
         .querySelectorAll("a")
+        .forEach((a) => a.classList.remove("btn-dark-mode"));
+    document
+        .querySelectorAll("span")
         .forEach((a) => a.classList.remove("btn-dark-mode"));
     document.querySelector("footer").classList.remove("footer-dark-mode");
 

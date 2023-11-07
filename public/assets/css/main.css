@@ -222,9 +222,6 @@ footer p {
     #menuToggle>input:checked~#menu {
         display: flex;
     }
-    /*
-     * Just a quick hamburger
-     */
     #menuToggle span {
         display: block;
         width: 30px;
@@ -247,41 +244,26 @@ footer p {
     #menuToggle span:nth-last-child(2) {
         transform-origin: 0% 100%;
     }
-    /* 
-     * Transform all the slices of hamburger
-     * into a crossmark.
-     */
     #menuToggle input:checked~span {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px);
         background-color: var(--dark-mode);
     }
-    /*
-     * But let's hide the middle one.
-     */
     #menuToggle input:checked~span:nth-last-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
     }
-    /*
-     * Ohyeah and the last one should go the other direction
-     */
     #menuToggle input:checked~span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px);
     }
-    /*
-     * Make this absolute positioned
-     * at the top left of the screen
-     */
     #menu {
         display: none;
         flex-direction: column;
         position: absolute;
-        width: 500px;
+        width: 420px;
         height: 130vh;
-        margin: -130px 0 0 -350px;
-        padding: 10px;
-        padding-top: 120px;
+        margin: -130px 0 0 -300px;
+        padding-top: 180px;
         background: #ededed;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
@@ -294,9 +276,6 @@ footer p {
         width: 100%;
         font-size: 22px;
     }
-    /*
-     * And let's slide it in from the left
-     */
     #menuToggle input:checked~ul {
         transform: none;
     }
@@ -328,4 +307,21 @@ footer p {
     font-size: 12px;
     border: 1px solid #3e549a;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width:500px) {
+    .swal-title:first-child {
+        font-size: 13px;
+        margin-top: 15px;
+    }
+    .swal-text {
+        font-size: 13px;
+        margin-top: 15px;
+    }
+    .swal-button {
+        font-size: 10px;
+    }
+    .swal-modal {
+        width: calc(100% - 40px);
+    }
 }
