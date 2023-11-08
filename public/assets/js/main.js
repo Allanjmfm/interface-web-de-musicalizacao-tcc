@@ -390,7 +390,7 @@ function progressBar(index) {
             progressValue += 0.21739;
         }
         if (index === 9 && progressValue <= 100) {
-            progressValue += 0.20833;
+            progressValue += 0.20933;
         }
 
         // Chama a função updateProgressBar para atualizar a barra de progresso
@@ -436,7 +436,7 @@ function progressBarVoltar(index) {
             progressValue -= 0.21739;
         }
         if (index === 9 && progressValue <= 100) {
-            progressValue -= 0.20833;
+            progressValue -= 0.20933;
         }
 
         // Chama a função updateProgressBar para atualizar a barra de progresso
