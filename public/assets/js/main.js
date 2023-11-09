@@ -256,6 +256,13 @@ async function odarre(revisaoEtapa, index) {
     }
 }
 
+// Função Score para calcular a pontuação do usuário nos exercícios
+
+// function score(){
+
+// }
+
+
 // Função para redirecionar o usuário para recomeçar a etapa
 /**
  * Reinicia a etapa atual removendo a página atual e redirecionando para um novo link.

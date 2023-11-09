@@ -329,3 +329,22 @@ footer p {
         width: calc(100% - 40px);
     }
 }
+
+
+/* Score */
+
+.score {
+    background-color: var(--btn-bg-hover);
+    border-radius: 13px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    min-width: 4.5rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.text-score {
+    display: flex;
+    justify-content: end;
+    font-size: 12px;
+    font-weight: 800;
+}
