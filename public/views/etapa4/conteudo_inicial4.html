@@ -40,6 +40,12 @@
                 <img class="logo" id="logo" src="../../assets/img/logo_ufpa.svg" height="52" width="90" alt="Logo UFPA" />
                 <h1 class="pt-2"> Módulo de Musicalização</h1>
             </a>
+            <div class="px-3">
+                <div class="text-score"><span>SCORE</span></div>
+                <div class="score">
+                    <span class="material-symbols-outlined">stars</span>
+                </div>
+            </div>
             <ul class="nav justify-content-end desktop">
                 <li>
                     <a onclick="removePaginaAtual()" class="btn main-btn nav-link" id="home-menu" href="../../index.html" role="button">Home</a>
@@ -48,7 +54,7 @@
                     <a onclick="removePaginaAtual()" class="btn main-btn nav-link" id="etapas-menu" href="../selecao_etapas.html" role="button">Etapas</a>
                 </li>
                 <li>
-                    <a class="btn main-btn nav-link" id="sobre-menu" href="#" role="button">Sobre</a>
+                    <a onclick="sweetAlert()" class="btn main-btn nav-link" id="sobre-menu" href="#" role="button">Sobre</a>
                 </li>
                 <li>
                     <a onclick="toggleDarkMode()" class="btn main-btn nav-link" id="dark-menu" href="#" role="button">

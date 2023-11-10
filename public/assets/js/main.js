@@ -214,6 +214,8 @@ function otrec(proxConteudo, index, id) {
 
     // Se o número de tentativas for menor que 2, atualize-o para 2
     tentativas = Math.max(tentativas, 2)
+
+    score();
 }
 
 // Função da alternativa incorreta nos exercícios
@@ -254,13 +256,29 @@ async function odarre(revisaoEtapa, index) {
             recomecaEtapa(revisaoEtapa, index);
         }, 3000);
     }
+
 }
 
 // Função Score para calcular a pontuação do usuário nos exercícios
 
-// function score(){
+function score() {
+    let pontosGanhos = parseInt(localStorage.getItem("pontos-ganhos"));
+    const pontosAtuais = parseInt(localStorage.getItem("pontos-atual"));
+    pontosGanhos += pontosAtuais;
 
-// }
+    storeScore(pontosGanhos);
+
+    if (pontosGanhos < 5) {
+        localStorage.setItem("pontos-ganhos", 5);
+    }
+}
+
+function AtualizaScore() {
+    const pontosAtuais = localStorage.getItem("pontos-atual");
+    let spanPontos = document.getElementsByClassName("pontos");
+    console.log(spanPontos);
+    spanPontos.innerHTML = "smamd";
+}
 
 
 // Função para redirecionar o usuário para recomeçar a etapa
@@ -277,6 +295,18 @@ function recomecaEtapa(link, index) {
     }
     location.replace(origin + link);
 
+    let pontosGanhos = parseInt(localStorage.getItem("pontos-ganhos"));
+
+    if (pontosGanhos !== 1) {
+        if (pontosGanhos !== 0) {
+            if (pontosGanhos > 3) {
+                pontosGanhos -= 2;
+            }
+            if (pontosGanhos === 3) {
+                pontosGanhos = 1;
+            }
+        }
+    }
 }
 
 // Função assíncrona para avançar para o próximo conteúdo

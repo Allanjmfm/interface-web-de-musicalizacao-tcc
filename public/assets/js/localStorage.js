@@ -61,6 +61,14 @@ let stateCheck = setInterval(async() => {
 
             updateProgressBar(pageIndex, userProgress);
         }
+        // Verifica se a pontuação atual existe no local Storage, se não adiciona 10
+        if (localStorage.getItem("pontos-atual") === null) {
+            localStorage.setItem("pontos-atual", 10);
+            localStorage.setItem("pontos-ganhos", 5);
+        }
+        if (localStorage.getItem("pontos-atual") !== null) {
+            const pontosAtuais = localStorage.getItem("pontos-atual");
+        }
         clearInterval(stateCheck);
     }
     // O documento ainda não está totalmente pronto, continue verificando
@@ -183,4 +191,10 @@ function getUserProgress(userProgress) {
  */
 function zoomStorage(zoom) {
     localStorage.setItem("zoom", zoom);
+}
+
+// Score
+function storeScore(pontosGanhos) {
+    localStorage.setItem("pontos-atual", pontosGanhos);
+    AtualizaScore();
 }
