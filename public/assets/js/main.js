@@ -276,8 +276,7 @@ function score() {
 function AtualizaScore() {
     const pontosAtuais = localStorage.getItem("pontos-atual");
     let spanPontos = document.getElementsByClassName("pontos");
-    console.log(spanPontos);
-    spanPontos.innerHTML = "smamd";
+    spanPontos[0].innerHTML = pontosAtuais;
 }
 
 
