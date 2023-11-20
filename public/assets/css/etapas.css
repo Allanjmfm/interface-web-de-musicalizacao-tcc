@@ -100,6 +100,16 @@
     padding: 0.5rem;
 }
 
+.msg-display-flex {
+    display: flex;
+    color: #4a9e44;
+    background-color: #5e9c592a;
+}
+
+.msg-display-none {
+    display: none;
+}
+
 .msg-certa-cor {
     color: #4a9e44;
     background-color: #5e9c592a;

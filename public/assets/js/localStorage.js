@@ -65,6 +65,12 @@ let stateCheck = setInterval(async() => {
         if (localStorage.getItem("pontos-atual") === null) {
             localStorage.setItem("pontos-atual", 10);
             localStorage.setItem("pontos-ganhos", 5);
+        } else {
+            AtualizaScore()
+        };
+
+        if (localStorage.getItem("status-score") === null) {
+            localStorage.setItem("status-score", 0);
         }
         if (localStorage.getItem("pontos-atual") !== null) {
             const pontosAtuais = localStorage.getItem("pontos-atual");
@@ -72,7 +78,7 @@ let stateCheck = setInterval(async() => {
         clearInterval(stateCheck);
     }
     // O documento ainda não está totalmente pronto, continue verificando
-});
+}, 10);
 
 // Para guardar a página que o usuário ficou.
 // Definição de uma função chamada paginaAtual
@@ -194,7 +200,8 @@ function zoomStorage(zoom) {
 }
 
 // Score
-function storeScore(pontosGanhos) {
+function storeScore(pontosGanhos, statusScore) {
     localStorage.setItem("pontos-atual", pontosGanhos);
+    localStorage.setItem("status-score", statusScore);
     AtualizaScore();
 }

@@ -167,13 +167,14 @@ async function btnEtapa(linkTelaInicialEtapas) {
  * @param {string} id - O ID do elemento de conteúdo.
  * @returns {void}
  */
-function otrec(proxConteudo, index, id) {
+function otrec(proxConteudo, index, statusScore, id) {
     // Seleciona o elemento com a classe "otrec" (resposta correta) e todos os elementos com a classe "odarre" (respostas erradas)
     const respCertaDiv = document.querySelector(".otrec");
     const respErradaDiv = document.querySelectorAll(".odarre");
 
     // Seleciona o elemento com o ID "mensagem"
     const div = document.getElementById("mensagem");
+
 
     // Verifica se o elemento não tem a classe "msg-certa-cor"
     if (!div.classList.contains("msg-certa-cor")) {
@@ -206,7 +207,7 @@ function otrec(proxConteudo, index, id) {
         await trocaConteudo(proxConteudo, id || idConteudoEtapas);
 
         // Aguarda a atualização do link de conteúdo
-        await linkAtualDoConteudo(proxConteudo);
+        linkAtualDoConteudo(proxConteudo);
 
         // Aguarda 10 milissegundos antes de executar CheckDarkmode
         setTimeout(CheckDarkmode, 10);
@@ -215,7 +216,7 @@ function otrec(proxConteudo, index, id) {
     // Se o número de tentativas for menor que 2, atualize-o para 2
     tentativas = Math.max(tentativas, 2)
 
-    score();
+    score(statusScore);
 }
 
 // Função da alternativa incorreta nos exercícios
@@ -261,12 +262,17 @@ async function odarre(revisaoEtapa, index) {
 
 // Função Score para calcular a pontuação do usuário nos exercícios
 
-function score() {
+function score(index) {
     let pontosGanhos = parseInt(localStorage.getItem("pontos-ganhos"));
     const pontosAtuais = parseInt(localStorage.getItem("pontos-atual"));
     pontosGanhos += pontosAtuais;
 
-    storeScore(pontosGanhos);
+    let statusScore = parseInt(localStorage.getItem("status-score"));
+
+    if (index > statusScore) {
+        storeScore(pontosGanhos, index);
+        MensagemScore();
+    }
 
     if (pontosGanhos < 5) {
         localStorage.setItem("pontos-ganhos", 5);
@@ -276,9 +282,29 @@ function score() {
 function AtualizaScore() {
     const pontosAtuais = localStorage.getItem("pontos-atual");
     let spanPontos = document.getElementsByClassName("pontos");
-    spanPontos[0].innerHTML = pontosAtuais;
+    if (spanPontos.length === 1) {
+        spanPontos[0].innerHTML = pontosAtuais;
+    }
 }
 
+
+function MensagemScore() {
+    const divScore = document.getElementById("msg-score");
+
+    if (!divScore.classList.contains("msg-display-flex")) {
+        // Remove a classe "msg-display-none" se estiver presente
+        if (divScore.classList.remove("msg-display-none")) {
+            divScore.classList.remove("msg-display-none");
+        }
+        // Adiciona a classe "msg-display-flex"
+        divScore.classList.add("msg-display-flex");
+    }
+    divScore.innerHTML = "+5";
+    setTimeout(() => {
+        divScore.classList.add("msg-display-none")
+        divScore.classList.remove("msg-display-flex");
+    }, 1000);
+}
 
 // Função para redirecionar o usuário para recomeçar a etapa
 /**
