@@ -290,6 +290,7 @@ function AtualizaScore() {
 
 function MensagemScore() {
     const divScore = document.getElementById("msg-score");
+    const scorePlus5 = document.querySelector(".plus5");
 
     if (!divScore.classList.contains("msg-display-flex")) {
         // Remove a classe "msg-display-none" se estiver presente
@@ -300,6 +301,10 @@ function MensagemScore() {
         divScore.classList.add("msg-display-flex");
     }
     divScore.innerHTML = "+5";
+
+    // Adiciona classes aos elementos de resposta certa
+    scorePlus5.classList.add("score-Plus5");
+
     setTimeout(() => {
         divScore.classList.add("msg-display-none")
         divScore.classList.remove("msg-display-flex");
