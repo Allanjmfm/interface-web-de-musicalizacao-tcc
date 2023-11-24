@@ -279,6 +279,10 @@ function score(index) {
     }
 }
 
+// function restartScore(){
+
+// }
+
 function AtualizaScore() {
     const pontosAtuais = localStorage.getItem("pontos-atual");
     let spanPontos = document.getElementsByClassName("pontos");
