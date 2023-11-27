@@ -278,6 +278,13 @@ async function odarre(proxConteudo, index, asd, id) {
             // Aguarda 10 milissegundos antes de executar CheckDarkmode
             setTimeout(CheckDarkmode, 10);
 
+            // 
+            if (localStorage.getItem("erros") != null) {
+                let errosAtual = parseInt(localStorage.getItem("erros")) + 1;
+                errosExec(errosAtual);
+            } else {
+                errosExec(1);
+            }
         }, 1000);
 
         // Se o número de tentativas for menor que 2, atualize-o para 2
