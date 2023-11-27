@@ -205,3 +205,8 @@ function storeScore(pontosGanhos, statusScore) {
     localStorage.setItem("status-score", statusScore);
     AtualizaScore();
 }
+
+// Quantidade de erros no exercicio em cada etapa
+function errosExec(erros) {
+    localStorage.setItem("erros", erros);
+}

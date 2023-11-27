@@ -228,7 +228,7 @@ function otrec(proxConteudo, index, statusScore, id) {
  * @param {number} index - O índice usado para o acompanhamento do progresso.
  * @returns {Promise<void>}
  */
-async function odarre(revisaoEtapa, index) {
+async function odarre(proxConteudo, index, asd, id) {
     const respCerta = document.querySelector(".otrec");
     const respErrada = document.querySelectorAll(".odarre");
 
@@ -251,11 +251,39 @@ async function odarre(revisaoEtapa, index) {
         tentativas = 2;
 
         div.innerHTML =
-            "Que pena, você errou todas as tentativas. Vamos recomeçar os estudos desta etapa.";
+            "Que pena, resposta incorreta.";
 
-        setTimeout(() => {
-            recomecaEtapa(revisaoEtapa, index);
-        }, 3000);
+        // Atualiza a barra de progresso com base no índice
+        progressBar(index);
+
+        for (let i = 1; i <= index; i++) {
+            if (i == index) {
+                let erros = JSON.parse(localStorage.getItem("erros"));
+                if (erros != null) {
+                    const indexAtualErros = erros.index;
+                    let arrayErros = { index: indexAtualErros + 1 };
+                    errosExec(JSON.stringify(arrayErros))
+                }
+            }
+        }
+
+        // Aguarda 1 segundo (1000 milissegundos) antes de executar algumas ações
+        setTimeout(async() => {
+            // Aguarda a troca de conteúdo
+            await trocaConteudo(proxConteudo, id || idConteudoEtapas);
+
+            // Aguarda a atualização do link de conteúdo
+            linkAtualDoConteudo(proxConteudo);
+
+            // Aguarda 10 milissegundos antes de executar CheckDarkmode
+            setTimeout(CheckDarkmode, 10);
+
+        }, 1000);
+
+        // Se o número de tentativas for menor que 2, atualize-o para 2
+        tentativas = Math.max(tentativas, 2)
+
+        // score(statusScore);
     }
 
 }
@@ -279,9 +307,18 @@ function score(index) {
     }
 }
 
-// function restartScore(){
+function refazerExec(link, index) {
+    localStorage.setItem("errosAnterior", localStorage.getItem("erros"));
+    localStorage.setItem("erros", 0);
+    recomecaEtapa(link, index);
+}
 
-// }
+function checkErros() {
+    const errosAnterior = localStorage.getItem("errosAnterior");
+    if (errosAnterior != null || parseInt(errosAnterior) != 0) {
+        let
+    }
+}
 
 function AtualizaScore() {
     const pontosAtuais = localStorage.getItem("pontos-atual");
