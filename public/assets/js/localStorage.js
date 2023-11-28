@@ -5,6 +5,11 @@ if (localStorage.getItem("dark-mode") === null) {
     localStorage.setItem("dark-mode", false);
 }
 
+if (localStorage.getItem("erros") === null) {
+    let erros = JSON.stringify([{ "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }]);
+    localStorage.setItem("erros", erros);
+}
+
 // Definição de uma função assíncrona chamada toggleDarkMode
 function toggleDarkMode() {
     // Obtém o valor do armazenamento local associado à chave 'dark-mode'
