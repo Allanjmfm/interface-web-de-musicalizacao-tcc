@@ -216,7 +216,7 @@ function otrec(proxConteudo, index, statusScore, id) {
     // Se o número de tentativas for menor que 2, atualize-o para 2
     tentativas = Math.max(tentativas, 2)
 
-    score(statusScore);
+    // score(statusScore);
 }
 
 // Função da alternativa incorreta nos exercícios
@@ -261,13 +261,11 @@ async function odarre(proxConteudo, index, asd, id) {
                 if (localStorage.getItem("erros") != null) {
 
                     let erros = JSON.parse(localStorage.getItem("erros"));
-                    console.log(erros);
                     let int = index - 1;
                     if (erros !== null) {
                         erros[int].erro += 1;
                         let arrayErros = JSON.stringify(erros);
                         localStorage.setItem("erros", arrayErros);
-                        console.log("arrayErros");
                         // errosExec(JSON.stringify(arrayErros))
                     }
                 }
@@ -297,34 +295,21 @@ async function odarre(proxConteudo, index, asd, id) {
 
 // Função Score para calcular a pontuação do usuário nos exercícios
 
-function score(index) {
-    let pontosGanhos = parseInt(localStorage.getItem("pontos-ganhos"));
-    const pontosAtuais = parseInt(localStorage.getItem("pontos-atual"));
-    pontosGanhos += pontosAtuais;
+function score(pontosGanhos) {
+    // let pontosGanhos = parseInt(localStorage.getItem("pontos-ganhos"));
+    const pontosAnterior = parseInt(localStorage.getItem("pontos-atual"));
+    let pontosAtual = pontosGanhos + pontosAnterior;
 
-    let statusScore = parseInt(localStorage.getItem("status-score"));
+    // let statusScore = parseInt(localStorage.getItem("status-score"));
 
-    if (index > statusScore) {
-        storeScore(pontosGanhos, index);
-        MensagemScore();
-    }
+    // if (index > statusScore) {
+    //     MensagemScore();
+    // }
+    storeScore(pontosAtual);
 
-    if (pontosGanhos < 5) {
-        localStorage.setItem("pontos-ganhos", 5);
-    }
-}
-
-function refazerExec(link, index) {
-    localStorage.setItem("errosAnterior", localStorage.getItem("erros"));
-    localStorage.setItem("erros", 0);
-    recomecaEtapa(link, index);
-}
-
-function checkErros() {
-    const errosAnterior = localStorage.getItem("errosAnterior");
-    if (errosAnterior != null || parseInt(errosAnterior) != 0) {
-        let
-    }
+    //     if (pontosGanhos < 5) {
+    //         localStorage.setItem("pontos-ganhos", 5);
+    //     } 
 }
 
 function AtualizaScore() {
@@ -335,6 +320,58 @@ function AtualizaScore() {
     }
 }
 
+
+function refazerExec(link, index) {
+    for (let i = 1; i <= index; i++) {
+        if (i == index) {
+            if (localStorage.getItem("erros") != null) {
+
+                let erros = JSON.parse(localStorage.getItem("erros"));
+
+                let int = index - 1;
+                if (erros !== null) {
+                    let erroAtual = erros[int].erro;
+                    erros[int].erroAnterior = erroAtual;
+                    erros[int].erro = 0;
+                    let arrayErros = JSON.stringify(erros);
+                    localStorage.setItem("erros", arrayErros);
+                }
+            }
+        }
+    }
+    recomecaEtapa(link, index);
+}
+
+function callotrec(link, index, statusScore, exercNum) {
+    otrec(link, index, statusScore);
+    checkErros(index, exercNum);
+}
+
+function checkErros(index, exercNum) {
+    console.log(exercNum);
+    for (let i = 1; i <= index; i++) {
+        if (i == index) {
+            if (localStorage.getItem("erros") != null) {
+                let scoreTotal = exercNum * 5;
+
+                let int = index - 1;
+                let erros = JSON.parse(localStorage.getItem("erros"));
+                let scoreGanho = scoreTotal - (erros[int].erro) * 5;
+
+                console.log(scoreGanho);
+
+                score(scoreGanho);
+                if (erros !== null) {
+                    let erroAtual = erros[int].erro;
+                    erros[int].erroAnterior = erroAtual;
+                    erros[int].erro = 0;
+                    let arrayErros = JSON.stringify(erros);
+                    localStorage.setItem("erros", arrayErros);
+                }
+            }
+        }
+    }
+}
 
 function MensagemScore() {
     const divScore = document.getElementById("msg-score");

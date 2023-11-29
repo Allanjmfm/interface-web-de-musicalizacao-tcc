@@ -6,7 +6,47 @@ if (localStorage.getItem("dark-mode") === null) {
 }
 
 if (localStorage.getItem("erros") === null) {
-    let erros = JSON.stringify([{ "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }, { "erro": 0 }]);
+    let erros = JSON.stringify([{
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0
+        }
+    ]);
     localStorage.setItem("erros", erros);
 }
 
@@ -69,7 +109,7 @@ let stateCheck = setInterval(async() => {
         // Verifica se a pontuação atual existe no local Storage, se não adiciona 10
         if (localStorage.getItem("pontos-atual") === null) {
             localStorage.setItem("pontos-atual", 10);
-            localStorage.setItem("pontos-ganhos", 5);
+            // localStorage.setItem("pontos-ganhos", 5);
         } else {
             AtualizaScore()
         };
@@ -117,6 +157,7 @@ function linkAtualDoConteudo(link) {
 function removePaginaAtual(index) {
     localStorage.removeItem("pagina-atual");
     localStorage.removeItem("conteudoAtual");
+    localStorage.removeItem("pontos-atual");
 
     if (!index) {
         localStorage.removeItem("userProgress");
@@ -205,9 +246,9 @@ function zoomStorage(zoom) {
 }
 
 // Score
-function storeScore(pontosGanhos, statusScore) {
-    localStorage.setItem("pontos-atual", pontosGanhos);
-    localStorage.setItem("status-score", statusScore);
+function storeScore(pontosAtual) {
+    localStorage.setItem("pontos-atual", pontosAtual);
+    // localStorage.setItem("status-score", statusScore);
     AtualizaScore();
 }
 
