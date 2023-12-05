@@ -322,23 +322,6 @@ function AtualizaScore() {
 
 
 function refazerExec(link, index) {
-    for (let i = 1; i <= index; i++) {
-        if (i == index) {
-            if (localStorage.getItem("erros") != null) {
-
-                let erros = JSON.parse(localStorage.getItem("erros"));
-
-                let int = index - 1;
-                if (erros !== null) {
-                    let erroAtual = erros[int].erro;
-                    erros[int].erroAnterior = erroAtual;
-                    erros[int].erro = 0;
-                    let arrayErros = JSON.stringify(erros);
-                    localStorage.setItem("erros", arrayErros);
-                }
-            }
-        }
-    }
     recomecaEtapa(link, index);
 }
 
@@ -348,28 +331,59 @@ function callotrec(link, index, statusScore, exercNum) {
 }
 
 function checkErros(index, exercNum) {
-    console.log(exercNum);
     for (let i = 1; i <= index; i++) {
+        
         if (i == index) {
-            if (localStorage.getItem("erros") != null) {
-                let scoreTotal = exercNum * 5;
+            let int = index - 1;
+            if (!JSON.parse(localStorage.getItem("erros"))[int].etapa){
+                if (localStorage.getItem("erros") != null) {
+                    
+                    let scoreTotal = exercNum * 5;
+                    let erros = JSON.parse(localStorage.getItem("erros"));
+                    let scoreGanho = scoreTotal - (erros[int].erro) * 5;
 
-                let int = index - 1;
+                    score(scoreGanho);
+                    if (erros !== null) {
+                        let erroAtual = erros[int].erro;
+                        erros[int].erroAnterior = erroAtual;
+                        erros[int].erro = 0;
+                        erros[int].etapa = true;
+                        let arrayErros = JSON.stringify(erros);
+                        localStorage.setItem("erros", arrayErros);
+                    }
+         
+                }
+            }else{
                 let erros = JSON.parse(localStorage.getItem("erros"));
-                let scoreGanho = scoreTotal - (erros[int].erro) * 5;
-
-                console.log(scoreGanho);
-
-                score(scoreGanho);
-                if (erros !== null) {
-                    let erroAtual = erros[int].erro;
-                    erros[int].erroAnterior = erroAtual;
-                    erros[int].erro = 0;
+                let erroAnterior = erros[int].erroAnterior;
+                let erroAtual = erros[int].erro;
+                
+                if(erroAnterior !== 0){
+                    
+                    let pontoRecuperado;
+                    if (erroAtual === 0){
+                        pontoRecuperado = erroAnterior * 5;
+                        erros[int].erroAnterior = erroAtual;
+                    }else if (erroAtual < erroAnterior){
+                        let erroAtual_Anterior = erroAnterior - erroAtual;
+                        pontoRecuperado = erroAtual_Anterior * 5;
+                        erros[int].erroAnterior = erroAtual;
+                        erros[int].erro = 0;
+                    }else{
+                        pontoRecuperado = 0;
+                    }
+                    score(pontoRecuperado);
                     let arrayErros = JSON.stringify(erros);
                     localStorage.setItem("erros", arrayErros);
                 }
             }
-        }
+            if (JSON.parse(localStorage.getItem("erros") !== null)){
+                let erros = JSON.parse(localStorage.getItem("erros"));
+                if(erros[int].erroAtual === 0 && erros[int].erroAnterior === 0){
+                    
+                }
+            }
+        }   
     }
 }
 
