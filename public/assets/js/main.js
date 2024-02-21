@@ -11,7 +11,7 @@ const selecaoEtapa = document.querySelector("#btn_sel_etapas");
 
 // IDs para trocas de conteudos
 const mainContainer = "#main-container";
-const idConteudoEtapas = "#conteudo-etapas";
+const idConteudoEtapas = "#conteudo-etapas"; 
 
 // Variável para número de tentativas dos exercícios
 let tentativas = 2;
@@ -130,7 +130,7 @@ function CheckDarkmode() {
 
 // Lista de objeto arquivo Json para os conteúdos iniciais de cada etapa
 let telas = {
-    telaInicial: "views/tela_inicial.html",
+    telaInicial: "views/index.html",
     selecaoEtapas: "views/selecao_etapas.html",
     etapa1Tela1: "/views/etapa1/conteudo_inicial1.html",
     etapa2Tela1: "/views/etapa2/conteudo_inicial2.html",
@@ -290,7 +290,6 @@ async function odarre(proxConteudo, index, asd, id) {
 
         // score(statusScore);
     }
-
 }
 
 // Função Score para calcular a pontuação do usuário nos exercícios
@@ -328,6 +327,7 @@ function refazerExec(link, index) {
 function callotrec(link, index, statusScore, exercNum) {
     otrec(link, index, statusScore);
     checkErros(index, exercNum);
+    statusRefazer(index);
 }
 
 function checkErros(index, exercNum) {
@@ -380,7 +380,7 @@ function checkErros(index, exercNum) {
             if (JSON.parse(localStorage.getItem("erros") !== null)){
                 let erros = JSON.parse(localStorage.getItem("erros"));
                 if(erros[int].erroAtual === 0 && erros[int].erroAnterior === 0){
-                    
+                    document.getElementById("refazer")
                 }
             }
         }   
@@ -706,3 +706,86 @@ function sweetAlert() {
         }
     });
 };
+
+function resetPontos(){
+    if (localStorage.getItem("pontos-atual") !== null) {
+        localStorage.setItem("pontos-atual", 10);
+        console.log("pontos-atual");
+    };
+    if (localStorage.getItem("erros") !== null){
+        let erros = JSON.stringify([{
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        }
+    ]);
+    localStorage.setItem("erros", erros);
+    console.log("erros");
+    }
+    removePaginaAtual();
+
+    swal({
+        title: "Você tem certeza?",
+        text: "Seus pontos irão ser apagados. Não será possivel recuperá-los!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Pronto! Seus pontos foram apagados.", {
+            icon: "success",
+          }).then((sucess)=>{let home = window.origin;
+            location.replace(home)
+        });
+        } else {
+          swal("Seus pontos estão salvos!");
+        }
+      });
+}
+

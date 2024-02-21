@@ -175,14 +175,16 @@ footer p {
     margin: 0;
 }
 
-.mobile {
+.mobile, .displayNone {
     display: none;
 }
 
 .desktop {
     display: flex;
 }
-
+.displayBlock{
+    display: block;
+}
 
 /* Hamburger */
 
@@ -411,9 +413,13 @@ footer p {
     padding: 7px 19px;
     border-radius: 2px;
     background-color: #4962B3;
+    color: white;
     font-size: 12px;
     border: 1px solid #3e549a;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+.swal-button:hover {
+    color: #000;
 }
 
 @media (max-width:500px) {
