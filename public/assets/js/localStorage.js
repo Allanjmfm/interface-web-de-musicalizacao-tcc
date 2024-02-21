@@ -5,6 +5,61 @@ if (localStorage.getItem("dark-mode") === null) {
     localStorage.setItem("dark-mode", false);
 }
 
+if (localStorage.getItem("erros") === null) {
+    let erros = JSON.stringify([{
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        },
+        {
+            "erro": 0,
+            "erroAnterior": 0,
+            "etapa": false, 
+        }
+    ]);
+    localStorage.setItem("erros", erros);
+}
+
 // Definição de uma função assíncrona chamada toggleDarkMode
 function toggleDarkMode() {
     // Obtém o valor do armazenamento local associado à chave 'dark-mode'
@@ -64,7 +119,7 @@ let stateCheck = setInterval(async() => {
         // Verifica se a pontuação atual existe no local Storage, se não adiciona 10
         if (localStorage.getItem("pontos-atual") === null) {
             localStorage.setItem("pontos-atual", 10);
-            localStorage.setItem("pontos-ganhos", 5);
+            AtualizaScore();
         } else {
             AtualizaScore()
         };
@@ -112,6 +167,7 @@ function linkAtualDoConteudo(link) {
 function removePaginaAtual(index) {
     localStorage.removeItem("pagina-atual");
     localStorage.removeItem("conteudoAtual");
+    // localStorage.removeItem("pontos-atual");
 
     if (!index) {
         localStorage.removeItem("userProgress");
@@ -200,8 +256,13 @@ function zoomStorage(zoom) {
 }
 
 // Score
-function storeScore(pontosGanhos, statusScore) {
-    localStorage.setItem("pontos-atual", pontosGanhos);
-    localStorage.setItem("status-score", statusScore);
+function storeScore(pontosAtual) {
+    localStorage.setItem("pontos-atual", pontosAtual);
+    // localStorage.setItem("status-score", statusScore);
     AtualizaScore();
+}
+
+// Quantidade de erros no exercicio em cada etapa
+function errosExec(erros) {
+    localStorage.setItem("erros", erros);
 }

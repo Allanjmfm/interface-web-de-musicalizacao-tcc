@@ -11,6 +11,42 @@
 }
 
 
+/* Botão de avançar etapa na tela de parabens */
+
+.parabens-btn-avancar {
+    background-color: var(--btn-bg-parabens);
+    color: white;
+    padding: .5rem 1.5rem .5rem 1.5rem;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    transition: 0.5s;
+    position: relative;
+}
+
+.parabens-btn-avancar:hover {
+    transition: 0.5s;
+    background-color: var(--btn-bg-parabens-hover);
+    color: white;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+
+/* Botões de avançar e voltar */
+
+.avancar-voltar-btn {
+    background-color: var(--btn-bg);
+    padding: .5rem 1.5rem .5rem 1.5rem;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    transition: 0.5s;
+    position: relative;
+}
+
+.avancar-voltar-btn:hover {
+    transition: 0.5s;
+    background-color: var(--btn-bg-hover);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+
 /* Ícone do professor das etapas*/
 
 .icon-container {
@@ -22,7 +58,15 @@
     height: 100%;
     width: 100%;
 }
-
+/* Cor botão reset */
+.cor-reset{
+    background-color: rgb(248, 132, 132);
+    padding: 5px;
+    border-radius: 5px;
+}
+.position-botao{
+    bottom: 40%;
+}
 
 /* GIF do troféu */
 
