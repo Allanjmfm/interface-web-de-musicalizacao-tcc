@@ -172,17 +172,20 @@
 
 /* Circulo de progresso */
 
-@property --progress-value {
+/* @property --progress-value {
     syntax: "<integer>";
     initial-value: 0;
     inherits: false;
-}
-
+} */
+/* 
 @keyframes progress {
+    from{
+        --progress-value: var(--progress-value)
+    }
     to {
         --progress-value: var(--progress-value-root)
     }
-}
+} */
 
 .progress-bar {
     display: flex;

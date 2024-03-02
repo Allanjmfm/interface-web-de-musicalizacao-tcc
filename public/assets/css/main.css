@@ -9,6 +9,7 @@
     --progress-color: #E7322A;
     --progress-container-bg-color: #FF9B9B;
     --progress-value-root: 0;
+    --progress-value: 0;
     /* --progress-color2: #F06222;
     --progress-color3: #F59421;
     --progress-color4: #e6cc00;

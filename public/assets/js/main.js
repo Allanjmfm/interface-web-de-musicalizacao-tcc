@@ -24,7 +24,12 @@ if (Math.round(window.devicePixelRatio) === 1) {
     zoomLevel = Math.round(window.devicePixelRatio * 100);
 } else if (Math.round(window.devicePixelRatio) === 2) {
     zoomLevel = Math.round(window.devicePixelRatio * 50);
+}else if (Math.round(window.devicePixelRatio) === 4) {
+    zoomLevel = Math.round(window.devicePixelRatio * 25);
+} else {
+    zoomLevel = 100;
 }
+localStorage.setItem("zoomLevel", zoomLevel);
 
 
 // Função Dark Mode
@@ -328,6 +333,8 @@ function callotrec(link, index, statusScore, exercNum) {
     otrec(link, index, statusScore);
     checkErros(index, exercNum);
     statusRefazer(index);
+
+    
 }
 
 function checkErros(index, exercNum) {
@@ -487,13 +494,14 @@ async function btnVoltarEtapas(voltar, index, id) {
  * @returns {void}
  */
 function zoomIn() {
-    console.log(zoomLevel);
+    let zoomLevel = parseInt(localStorage.getItem("zoomLevel"));
     if (zoomLevel >= 200) {
         return;
     }
 
     zoomLevel += 10;
     zoomStorage(zoomLevel);
+    localStorage.setItem("zoomLevel", zoomLevel);
     document.body.style.zoom = zoomLevel.toString() + "%";
 
 }
@@ -504,13 +512,14 @@ function zoomIn() {
  * @returns {void}
  */
 function zoomOut() {
+    let zoomLevel = parseInt(localStorage.getItem("zoomLevel"));
     if (zoomLevel <= 70) {
         return;
     }
     zoomLevel -= 10;
     zoomStorage(zoomLevel);
+    localStorage.setItem("zoomLevel", zoomLevel);
     document.body.style.zoom = zoomLevel.toString() + "%";
-    console.log(zoomOut);
 }
 
 /**
@@ -685,7 +694,7 @@ function updateProgressBar(index, progressValue) {
 
     // Arredonda o valor do progresso para um número inteiro
     root.style.setProperty(
-        "--progress-value-root",
+        "--progress-value",
         "" + Math.floor(progressValue)
     );
 
@@ -710,7 +719,6 @@ function sweetAlert() {
 function resetPontos(){
     if (localStorage.getItem("pontos-atual") !== null) {
         localStorage.setItem("pontos-atual", 10);
-        console.log("pontos-atual");
     };
     if (localStorage.getItem("erros") !== null){
         let erros = JSON.stringify([{
@@ -765,7 +773,6 @@ function resetPontos(){
         }
     ]);
     localStorage.setItem("erros", erros);
-    console.log("erros");
     }
     removePaginaAtual();
 
