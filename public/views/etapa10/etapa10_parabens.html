@@ -1,14 +1,27 @@
 <div class="d-flex flex-column justify-content-center container align-items-center etapa1-container pt-4">
     <div class="d-flex justify-content-center align-items-center etapa1-menu-container">
-        <div class="pt-4">
-            <h1 class="mb-2">Parabéns!! Você terminou o módulo de musicalização.</h1>
-            <h5 class="mb-4">Clique no botão abaixo para retornar ao menu inicial.</h5>
-        </div>
+        <h1>Parabéns! Você terminou o módulo de musicalização.</h1>
     </div>
-
     <div class="d-flex justify-content-center align-items-center icon-container-trofeu">
         <img class="icon-trofeu" src="../../assets/img/gif_trofeu.gif" />
     </div>
+    <div class="d-flex justify-content-center align-items-center etapa1-menu-container">
+        <div>
+            <div class="p-2">
+                <h5 class="certa-questao">
+                    <div class="d-flex flex-row justify-content-evenly bg-secondary p-2 text-dark bg-opacity-25">
+                        <span>Questões corretas:</span>
+                        <div>
+                            <span id="certaQuestao"></span>
+                            <span>/ 14</span>
+                        </div>
+                    </div>
+                </h5>
+            </div>
+            <h5>Clique no botão abaixo para retornar ao menu inicial ou para refazer a etapa.</h5>
+        </div>
+    </div>
+
     <div class="btn-etapas-container  ">
         <div class="btn-container">
             <a onclick="refazerExec(telas.etapa10Tela1, 10)" id="" class="btn selecao-etapas-btn" role="button">Refazer a etapa</a>

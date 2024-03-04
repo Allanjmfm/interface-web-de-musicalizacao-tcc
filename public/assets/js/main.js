@@ -276,7 +276,7 @@ async function odarre(proxConteudo, index, asd, id) {
                 }
             }
         }
-
+ 
         // Aguarda 1 segundo (1000 milissegundos) antes de executar algumas ações
         setTimeout(async() => {
             // Aguarda a troca de conteúdo
@@ -333,8 +333,7 @@ function callotrec(link, index, statusScore, exercNum) {
     otrec(link, index, statusScore);
     checkErros(index, exercNum);
     statusRefazer(index);
-
-    
+    mostraPontos(index, exercNum);
 }
 
 function checkErros(index, exercNum) {
@@ -416,6 +415,11 @@ function MensagemScore() {
         divScore.classList.remove("msg-display-flex");
     }, 1000);
 }
+
+function mostraPontos(index, exercNum){
+    
+}
+
 
 // Função para redirecionar o usuário para recomeçar a etapa
 /**
@@ -778,7 +782,7 @@ function resetPontos(){
 
     swal({
         title: "Você tem certeza?",
-        text: "Seus pontos irão ser apagados. Não será possivel recuperá-los!",
+        text: "Seus pontos irão ser apagados e você retornará à tela inicial. Não será possivel recuperá-los!",
         icon: "warning",
         buttons: true,
         dangerMode: true,

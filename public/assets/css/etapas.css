@@ -169,6 +169,10 @@
     padding: 1rem;
 }
 
+/* Texto que demonstra as questões certas na tela de parabéns */
+.certaQuestao{
+    background-color: var(--btn-bg-hover);
+}
 
 /* Circulo de progresso */
 
@@ -243,6 +247,9 @@
         padding: 1rem 0 0 0;
     }
     .btn-etapas-container>.btn-container>.selecao-etapas-btn {
+        width: 100%;
+    }
+    .btn-etapas-container>.btn-container>.parabens-btn-avancar{
         width: 100%;
     }
 }
