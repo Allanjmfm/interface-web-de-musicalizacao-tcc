@@ -149,6 +149,18 @@
     background-color: #5e9c592a;
 }
 
+.score-pont{
+    border-radius: .3rem;
+    padding: .5rem;
+    width: 10%;
+}
+.text-bold{
+
+    font-weight:bolder;
+    /* font-size: larger; */
+    /* color: ; */
+}
+
 .btn-resp-certa {
     background-color: #4a9e44;
     color: #fff;
